@@ -11,7 +11,7 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"

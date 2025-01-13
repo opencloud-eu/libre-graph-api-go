@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Drives** | Pointer to [**[]Drive**](Drive.md) | A collection of drives available for this user. Read-only. | [optional] [readonly] 
 **Drive** | Pointer to [**Drive**](Drive.md) |  | [optional] 
 **Identities** | Pointer to [**[]ObjectIdentity**](ObjectIdentity.md) | Identities associated with this account. | [optional] 
-**Mail** | Pointer to **string** | The SMTP address for the user, for example, &#39;jeff@contoso.onowncloud.com&#39;. Returned by default. | [optional] 
+**Mail** | Pointer to **string** | The SMTP address for the user, for example, &#39;jeff@contoso.onopencloud.com&#39;. Returned by default. | [optional] 
 **MemberOf** | Pointer to [**[]Group**](Group.md) | Groups that this user is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand. | [optional] [readonly] 
 **OnPremisesSamAccountName** | Pointer to **string** | Contains the on-premises SAM account name synchronized from the on-premises directory. | [optional] 
 **PasswordProfile** | Pointer to [**PasswordProfile**](PasswordProfile.md) |  | [optional] 

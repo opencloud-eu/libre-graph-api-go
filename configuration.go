@@ -96,12 +96,12 @@ func NewConfiguration() *Configuration {
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
-				URL:         "https://ocis.ocis.rolling.owncloud.works/graph",
-				Description: "ownCloud Infinite Scale Rolling Release",
+				URL:         "https://pulse.pulse.rolling.opencloud.eu/graph",
+				Description: "OpenCloud Pulse Rolling Release",
 			},
 			{
 				URL:         "https://localhost:9200/graph",
-				Description: "ownCloud Infinite Scale Development Setup",
+				Description: "OpenCloud Pulse Development Setup",
 			},
 		},
 		OperationServers: map[string]ServerConfigurations{},

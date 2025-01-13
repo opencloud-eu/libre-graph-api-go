@@ -32,7 +32,7 @@ type UserUpdate struct {
 	Drive  *Drive  `json:"drive,omitempty"`
 	// Identities associated with this account.
 	Identities []ObjectIdentity `json:"identities,omitempty"`
-	// The SMTP address for the user, for example, 'jeff@contoso.onowncloud.com'. Returned by default.
+	// The SMTP address for the user, for example, 'jeff@contoso.onopencloud.com'. Returned by default.
 	Mail *string `json:"mail,omitempty"`
 	// Groups that this user is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
 	MemberOf []Group `json:"memberOf,omitempty"`

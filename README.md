@@ -22,7 +22,7 @@ go get golang.org/x/net/context
 Put the package under your project folder and add the following in import:
 
 ```go
-import libregraph "github.com/owncloud/libre-graph-api-go"
+import libregraph "github.com/opencloud-eu/libre-graph-api-go"
 ```
 
 To use a proxy, set the environment variable `HTTP_PROXY`:
@@ -74,7 +74,7 @@ ctx = context.WithValue(context.Background(), libregraph.ContextOperationServerV
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://ocis.ocis.rolling.owncloud.works/graph*
+All URIs are relative to *https://pulse.pulse.rolling.opencloud.eu/graph*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

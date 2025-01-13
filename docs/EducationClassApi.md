@@ -1,6 +1,6 @@
 # \EducationClassApi
 
-All URIs are relative to *https://ocis.ocis.rolling.owncloud.works/graph*
+All URIs are relative to *https://pulse.pulse.rolling.opencloud.eu/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,7 +30,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func main() {
@@ -98,7 +98,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func main() {
@@ -162,7 +162,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func main() {
@@ -228,7 +228,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func main() {
@@ -297,7 +297,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func main() {
@@ -365,7 +365,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func main() {
@@ -433,7 +433,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func main() {
@@ -492,7 +492,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func main() {
