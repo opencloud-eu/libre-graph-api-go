@@ -11,8 +11,8 @@ API version: v1.0.4
 package libregraph
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -115,7 +115,6 @@ func (o *AppRole) HasDescription() bool {
 func (o *AppRole) SetDescription(v string) {
 	o.Description.Set(&v)
 }
-
 // SetDescriptionNil sets the value for Description to be an explicit nil
 func (o *AppRole) SetDescriptionNil() {
 	o.Description.Set(nil)
@@ -158,7 +157,6 @@ func (o *AppRole) HasDisplayName() bool {
 func (o *AppRole) SetDisplayName(v string) {
 	o.DisplayName.Set(&v)
 }
-
 // SetDisplayNameNil sets the value for DisplayName to be an explicit nil
 func (o *AppRole) SetDisplayNameNil() {
 	o.DisplayName.Set(nil)
@@ -194,7 +192,7 @@ func (o *AppRole) SetId(v string) {
 }
 
 func (o AppRole) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -229,10 +227,10 @@ func (o *AppRole) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -288,3 +286,5 @@ func (v *NullableAppRole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

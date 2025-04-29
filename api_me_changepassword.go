@@ -18,12 +18,13 @@ import (
 	"net/url"
 )
 
+
 // MeChangepasswordApiService MeChangepasswordApi service
 type MeChangepasswordApiService service
 
 type ApiChangeOwnPasswordRequest struct {
-	ctx            context.Context
-	ApiService     *MeChangepasswordApiService
+	ctx context.Context
+	ApiService *MeChangepasswordApiService
 	passwordChange *PasswordChange
 }
 
@@ -40,22 +41,22 @@ func (r ApiChangeOwnPasswordRequest) Execute() (*http.Response, error) {
 /*
 ChangeOwnPassword Change your own password
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiChangeOwnPasswordRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiChangeOwnPasswordRequest
 */
 func (a *MeChangepasswordApiService) ChangeOwnPassword(ctx context.Context) ApiChangeOwnPasswordRequest {
 	return ApiChangeOwnPasswordRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *MeChangepasswordApiService) ChangeOwnPasswordExecute(r ApiChangeOwnPasswordRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeChangepasswordApiService.ChangeOwnPassword")
@@ -113,14 +114,14 @@ func (a *MeChangepasswordApiService) ChangeOwnPasswordExecute(r ApiChangeOwnPass
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 

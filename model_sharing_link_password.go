@@ -17,7 +17,7 @@ import (
 // checks if the SharingLinkPassword type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SharingLinkPassword{}
 
-// SharingLinkPassword The sharing link password which should be set.
+// SharingLinkPassword The sharing link password which should be set. 
 type SharingLinkPassword struct {
 	// Password. It may require a password policy.
 	Password *string `json:"password,omitempty"`
@@ -73,7 +73,7 @@ func (o *SharingLinkPassword) SetPassword(v string) {
 }
 
 func (o SharingLinkPassword) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -123,3 +123,5 @@ func (v *NullableSharingLinkPassword) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

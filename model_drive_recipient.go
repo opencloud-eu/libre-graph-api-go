@@ -17,7 +17,7 @@ import (
 // checks if the DriveRecipient type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &DriveRecipient{}
 
-// DriveRecipient Represents a person, group, or other recipient to share a drive item with using the invite action.  When using invite to add permissions, the `driveRecipient` object would specify the `email`, `alias`, or `objectId` of the recipient. Only one of these values is required; multiple values are not accepted.
+// DriveRecipient Represents a person, group, or other recipient to share a drive item with using the invite action.  When using invite to add permissions, the `driveRecipient` object would specify the `email`, `alias`, or `objectId` of the recipient. Only one of these values is required; multiple values are not accepted. 
 type DriveRecipient struct {
 	// The unique identifier for the recipient in the directory.
 	ObjectId *string `json:"objectId,omitempty"`
@@ -111,7 +111,7 @@ func (o *DriveRecipient) SetLibreGraphRecipientType(v string) {
 }
 
 func (o DriveRecipient) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -164,3 +164,5 @@ func (v *NullableDriveRecipient) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

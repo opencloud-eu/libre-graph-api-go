@@ -18,25 +18,25 @@ import (
 // checks if the Permission type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Permission{}
 
-// Permission The Permission resource provides information about a sharing permission granted for a DriveItem resource.  ### Remarks  The Permission resource uses *facets* to provide information about the kind of permission represented by the resource.  Permissions with a `link` facet represent sharing links created on the item. Sharing links contain a unique token that provides access to the item for anyone with the link.  Permissions with a `invitation` facet represent permissions added by inviting specific users or groups to have access to the file.
+// Permission The Permission resource provides information about a sharing permission granted for a DriveItem resource.  ### Remarks  The Permission resource uses *facets* to provide information about the kind of permission represented by the resource.  Permissions with a `link` facet represent sharing links created on the item. Sharing links contain a unique token that provides access to the item for anyone with the link.  Permissions with a `invitation` facet represent permissions added by inviting specific users or groups to have access to the file. 
 type Permission struct {
 	// The unique identifier of the permission among all permissions on the item. Read-only.
 	Id *string `json:"id,omitempty"`
-	// Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only.
+	// Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. 
 	HasPassword *bool `json:"hasPassword,omitempty"`
 	// An optional expiration date which limits the permission in time.
 	ExpirationDateTime NullableTime `json:"expirationDateTime,omitempty"`
 	// An optional creation date. Libregraph only.
-	CreatedDateTime NullableTime           `json:"createdDateTime,omitempty"`
-	GrantedToV2     *SharePointIdentitySet `json:"grantedToV2,omitempty"`
-	Link            *SharingLink           `json:"link,omitempty"`
-	Roles           []string               `json:"roles,omitempty"`
+	CreatedDateTime NullableTime `json:"createdDateTime,omitempty"`
+	GrantedToV2 *SharePointIdentitySet `json:"grantedToV2,omitempty"`
+	Link *SharingLink `json:"link,omitempty"`
+	Roles []string `json:"roles,omitempty"`
 	// For link type permissions, the details of the identity to whom permission was granted. This could be used to grant access to a an external user that can be identified by email, aka guest accounts.
 	// Deprecated
 	GrantedToIdentities []IdentitySet `json:"grantedToIdentities,omitempty"`
 	// Use this to create a permission with custom actions.
-	LibreGraphPermissionsActions []string           `json:"@libre.graph.permissions.actions,omitempty"`
-	Invitation                   *SharingInvitation `json:"invitation,omitempty"`
+	LibreGraphPermissionsActions []string `json:"@libre.graph.permissions.actions,omitempty"`
+	Invitation *SharingInvitation `json:"invitation,omitempty"`
 }
 
 // NewPermission instantiates a new Permission object
@@ -152,7 +152,6 @@ func (o *Permission) HasExpirationDateTime() bool {
 func (o *Permission) SetExpirationDateTime(v time.Time) {
 	o.ExpirationDateTime.Set(&v)
 }
-
 // SetExpirationDateTimeNil sets the value for ExpirationDateTime to be an explicit nil
 func (o *Permission) SetExpirationDateTimeNil() {
 	o.ExpirationDateTime.Set(nil)
@@ -195,7 +194,6 @@ func (o *Permission) HasCreatedDateTime() bool {
 func (o *Permission) SetCreatedDateTime(v time.Time) {
 	o.CreatedDateTime.Set(&v)
 }
-
 // SetCreatedDateTimeNil sets the value for CreatedDateTime to be an explicit nil
 func (o *Permission) SetCreatedDateTimeNil() {
 	o.CreatedDateTime.Set(nil)
@@ -402,7 +400,7 @@ func (o *Permission) SetInvitation(v SharingInvitation) {
 }
 
 func (o Permission) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -479,3 +477,5 @@ func (v *NullablePermission) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

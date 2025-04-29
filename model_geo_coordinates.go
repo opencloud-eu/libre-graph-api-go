@@ -17,7 +17,7 @@ import (
 // checks if the GeoCoordinates type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GeoCoordinates{}
 
-// GeoCoordinates The GeoCoordinates resource provides geographic coordinates and elevation of a location based on metadata contained within the file. If a DriveItem has a non-null location facet, the item represents a file with a known location associated with it.
+// GeoCoordinates The GeoCoordinates resource provides geographic coordinates and elevation of a location based on metadata contained within the file. If a DriveItem has a non-null location facet, the item represents a file with a known location associated with it. 
 type GeoCoordinates struct {
 	// The altitude (height), in feet, above sea level for the item. Read-only.
 	Altitude *float64 `json:"altitude,omitempty"`
@@ -141,7 +141,7 @@ func (o *GeoCoordinates) SetLongitude(v float64) {
 }
 
 func (o GeoCoordinates) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -197,3 +197,5 @@ func (v *NullableGeoCoordinates) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

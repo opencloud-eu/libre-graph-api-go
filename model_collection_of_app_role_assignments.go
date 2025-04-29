@@ -19,8 +19,8 @@ var _ MappedNullable = &CollectionOfAppRoleAssignments{}
 
 // CollectionOfAppRoleAssignments struct for CollectionOfAppRoleAssignments
 type CollectionOfAppRoleAssignments struct {
-	Value         []AppRoleAssignment `json:"value,omitempty"`
-	OdataNextLink *string             `json:"@odata.nextLink,omitempty"`
+	Value []AppRoleAssignment `json:"value,omitempty"`
+	OdataNextLink *string `json:"@odata.nextLink,omitempty"`
 }
 
 // NewCollectionOfAppRoleAssignments instantiates a new CollectionOfAppRoleAssignments object
@@ -105,7 +105,7 @@ func (o *CollectionOfAppRoleAssignments) SetOdataNextLink(v string) {
 }
 
 func (o CollectionOfAppRoleAssignments) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -158,3 +158,5 @@ func (v *NullableCollectionOfAppRoleAssignments) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

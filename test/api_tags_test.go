@@ -11,10 +11,10 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func Test_libregraph_TagsApiService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_libregraph_TagsApiService(t *testing.T) {
 
 	t.Run("Test TagsApiService AssignTags", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		httpRes, err := apiClient.TagsApi.AssignTags(context.Background()).Execute()
 
@@ -35,7 +35,7 @@ func Test_libregraph_TagsApiService(t *testing.T) {
 
 	t.Run("Test TagsApiService GetTags", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.TagsApi.GetTags(context.Background()).Execute()
 
@@ -47,7 +47,7 @@ func Test_libregraph_TagsApiService(t *testing.T) {
 
 	t.Run("Test TagsApiService UnassignTags", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		httpRes, err := apiClient.TagsApi.UnassignTags(context.Background()).Execute()
 

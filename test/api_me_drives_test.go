@@ -11,10 +11,10 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func Test_libregraph_MeDrivesApiService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_libregraph_MeDrivesApiService(t *testing.T) {
 
 	t.Run("Test MeDrivesApiService ListMyDrives", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.MeDrivesApi.ListMyDrives(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_libregraph_MeDrivesApiService(t *testing.T) {
 
 	t.Run("Test MeDrivesApiService ListMyDrivesBeta", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.MeDrivesApi.ListMyDrivesBeta(context.Background()).Execute()
 

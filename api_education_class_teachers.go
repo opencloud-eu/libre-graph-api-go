@@ -19,13 +19,14 @@ import (
 	"strings"
 )
 
+
 // EducationClassTeachersApiService EducationClassTeachersApi service
 type EducationClassTeachersApiService service
 
 type ApiAddTeacherToClassRequest struct {
-	ctx                   context.Context
-	ApiService            *EducationClassTeachersApiService
-	classId               string
+	ctx context.Context
+	ApiService *EducationClassTeachersApiService
+	classId string
 	classTeacherReference *ClassTeacherReference
 }
 
@@ -42,24 +43,24 @@ func (r ApiAddTeacherToClassRequest) Execute() (*http.Response, error) {
 /*
 AddTeacherToClass Assign a teacher to a class
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param classId key: id or externalId of class
-	@return ApiAddTeacherToClassRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param classId key: id or externalId of class
+ @return ApiAddTeacherToClassRequest
 */
 func (a *EducationClassTeachersApiService) AddTeacherToClass(ctx context.Context, classId string) ApiAddTeacherToClassRequest {
 	return ApiAddTeacherToClassRequest{
 		ApiService: a,
-		ctx:        ctx,
-		classId:    classId,
+		ctx: ctx,
+		classId: classId,
 	}
 }
 
 // Execute executes the request
 func (a *EducationClassTeachersApiService) AddTeacherToClassExecute(r ApiAddTeacherToClassRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationClassTeachersApiService.AddTeacherToClass")
@@ -118,14 +119,14 @@ func (a *EducationClassTeachersApiService) AddTeacherToClassExecute(r ApiAddTeac
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -133,10 +134,10 @@ func (a *EducationClassTeachersApiService) AddTeacherToClassExecute(r ApiAddTeac
 }
 
 type ApiDeleteTeacherFromClassRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *EducationClassTeachersApiService
-	classId    string
-	userId     string
+	classId string
+	userId string
 }
 
 func (r ApiDeleteTeacherFromClassRequest) Execute() (*http.Response, error) {
@@ -146,26 +147,26 @@ func (r ApiDeleteTeacherFromClassRequest) Execute() (*http.Response, error) {
 /*
 DeleteTeacherFromClass Unassign user as teacher of a class
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param classId key: id or externalId of class
-	@param userId key: id or username of the user to unassign as teacher
-	@return ApiDeleteTeacherFromClassRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param classId key: id or externalId of class
+ @param userId key: id or username of the user to unassign as teacher
+ @return ApiDeleteTeacherFromClassRequest
 */
 func (a *EducationClassTeachersApiService) DeleteTeacherFromClass(ctx context.Context, classId string, userId string) ApiDeleteTeacherFromClassRequest {
 	return ApiDeleteTeacherFromClassRequest{
 		ApiService: a,
-		ctx:        ctx,
-		classId:    classId,
-		userId:     userId,
+		ctx: ctx,
+		classId: classId,
+		userId: userId,
 	}
 }
 
 // Execute executes the request
 func (a *EducationClassTeachersApiService) DeleteTeacherFromClassExecute(r ApiDeleteTeacherFromClassRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationClassTeachersApiService.DeleteTeacherFromClass")
@@ -220,14 +221,14 @@ func (a *EducationClassTeachersApiService) DeleteTeacherFromClassExecute(r ApiDe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -235,9 +236,9 @@ func (a *EducationClassTeachersApiService) DeleteTeacherFromClassExecute(r ApiDe
 }
 
 type ApiGetTeachersRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *EducationClassTeachersApiService
-	classId    string
+	classId string
 }
 
 func (r ApiGetTeachersRequest) Execute() (*CollectionOfEducationUser, *http.Response, error) {
@@ -247,27 +248,26 @@ func (r ApiGetTeachersRequest) Execute() (*CollectionOfEducationUser, *http.Resp
 /*
 GetTeachers Get the teachers for a class
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param classId key: id or externalId of class
-	@return ApiGetTeachersRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param classId key: id or externalId of class
+ @return ApiGetTeachersRequest
 */
 func (a *EducationClassTeachersApiService) GetTeachers(ctx context.Context, classId string) ApiGetTeachersRequest {
 	return ApiGetTeachersRequest{
 		ApiService: a,
-		ctx:        ctx,
-		classId:    classId,
+		ctx: ctx,
+		classId: classId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return CollectionOfEducationUser
+//  @return CollectionOfEducationUser
 func (a *EducationClassTeachersApiService) GetTeachersExecute(r ApiGetTeachersRequest) (*CollectionOfEducationUser, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *CollectionOfEducationUser
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CollectionOfEducationUser
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EducationClassTeachersApiService.GetTeachers")
@@ -321,14 +321,14 @@ func (a *EducationClassTeachersApiService) GetTeachersExecute(r ApiGetTeachersRe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

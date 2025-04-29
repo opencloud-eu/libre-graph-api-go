@@ -19,13 +19,14 @@ import (
 	"strings"
 )
 
+
 // UserAppRoleAssignmentApiService UserAppRoleAssignmentApi service
 type UserAppRoleAssignmentApiService service
 
 type ApiUserCreateAppRoleAssignmentsRequest struct {
-	ctx               context.Context
-	ApiService        *UserAppRoleAssignmentApiService
-	userId            string
+	ctx context.Context
+	ApiService *UserAppRoleAssignmentApiService
+	userId string
 	appRoleAssignment *AppRoleAssignment
 }
 
@@ -47,27 +48,27 @@ Use this API to assign a global role to a user. To grant an app role assignment 
 * `resourceId`: The `id` of the resource `servicePrincipal` or `application` that has defined the app role.
 * `appRoleId`: The `id` of the `appRole` (defined on the resource service principal or application) to assign to the user.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param userId key: id of user
-	@return ApiUserCreateAppRoleAssignmentsRequest
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param userId key: id of user
+ @return ApiUserCreateAppRoleAssignmentsRequest
 */
 func (a *UserAppRoleAssignmentApiService) UserCreateAppRoleAssignments(ctx context.Context, userId string) ApiUserCreateAppRoleAssignmentsRequest {
 	return ApiUserCreateAppRoleAssignmentsRequest{
 		ApiService: a,
-		ctx:        ctx,
-		userId:     userId,
+		ctx: ctx,
+		userId: userId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return AppRoleAssignment
+//  @return AppRoleAssignment
 func (a *UserAppRoleAssignmentApiService) UserCreateAppRoleAssignmentsExecute(r ApiUserCreateAppRoleAssignmentsRequest) (*AppRoleAssignment, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *AppRoleAssignment
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *AppRoleAssignment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAppRoleAssignmentApiService.UserCreateAppRoleAssignments")
@@ -126,14 +127,14 @@ func (a *UserAppRoleAssignmentApiService) UserCreateAppRoleAssignmentsExecute(r 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -150,11 +151,11 @@ func (a *UserAppRoleAssignmentApiService) UserCreateAppRoleAssignmentsExecute(r 
 }
 
 type ApiUserDeleteAppRoleAssignmentsRequest struct {
-	ctx                 context.Context
-	ApiService          *UserAppRoleAssignmentApiService
-	userId              string
+	ctx context.Context
+	ApiService *UserAppRoleAssignmentApiService
+	userId string
 	appRoleAssignmentId string
-	ifMatch             *string
+	ifMatch *string
 }
 
 // ETag
@@ -170,16 +171,16 @@ func (r ApiUserDeleteAppRoleAssignmentsRequest) Execute() (*http.Response, error
 /*
 UserDeleteAppRoleAssignments Delete the appRoleAssignment from a user
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param userId key: id of user
-	@param appRoleAssignmentId key: id of appRoleAssignment. This is the concatenated {user-id}:{appRole-id} separated by a colon.
-	@return ApiUserDeleteAppRoleAssignmentsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param userId key: id of user
+ @param appRoleAssignmentId key: id of appRoleAssignment. This is the concatenated {user-id}:{appRole-id} separated by a colon.
+ @return ApiUserDeleteAppRoleAssignmentsRequest
 */
 func (a *UserAppRoleAssignmentApiService) UserDeleteAppRoleAssignments(ctx context.Context, userId string, appRoleAssignmentId string) ApiUserDeleteAppRoleAssignmentsRequest {
 	return ApiUserDeleteAppRoleAssignmentsRequest{
-		ApiService:          a,
-		ctx:                 ctx,
-		userId:              userId,
+		ApiService: a,
+		ctx: ctx,
+		userId: userId,
 		appRoleAssignmentId: appRoleAssignmentId,
 	}
 }
@@ -187,9 +188,9 @@ func (a *UserAppRoleAssignmentApiService) UserDeleteAppRoleAssignments(ctx conte
 // Execute executes the request
 func (a *UserAppRoleAssignmentApiService) UserDeleteAppRoleAssignmentsExecute(r ApiUserDeleteAppRoleAssignmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAppRoleAssignmentApiService.UserDeleteAppRoleAssignments")
@@ -247,14 +248,14 @@ func (a *UserAppRoleAssignmentApiService) UserDeleteAppRoleAssignmentsExecute(r 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -262,9 +263,9 @@ func (a *UserAppRoleAssignmentApiService) UserDeleteAppRoleAssignmentsExecute(r 
 }
 
 type ApiUserListAppRoleAssignmentsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *UserAppRoleAssignmentApiService
-	userId     string
+	userId string
 }
 
 func (r ApiUserListAppRoleAssignmentsRequest) Execute() (*CollectionOfAppRoleAssignments, *http.Response, error) {
@@ -276,27 +277,26 @@ UserListAppRoleAssignments Get appRoleAssignments from a user
 
 Represents the global roles a user has been granted for an application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param userId key: id of user
-	@return ApiUserListAppRoleAssignmentsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param userId key: id of user
+ @return ApiUserListAppRoleAssignmentsRequest
 */
 func (a *UserAppRoleAssignmentApiService) UserListAppRoleAssignments(ctx context.Context, userId string) ApiUserListAppRoleAssignmentsRequest {
 	return ApiUserListAppRoleAssignmentsRequest{
 		ApiService: a,
-		ctx:        ctx,
-		userId:     userId,
+		ctx: ctx,
+		userId: userId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return CollectionOfAppRoleAssignments
+//  @return CollectionOfAppRoleAssignments
 func (a *UserAppRoleAssignmentApiService) UserListAppRoleAssignmentsExecute(r ApiUserListAppRoleAssignmentsRequest) (*CollectionOfAppRoleAssignments, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *CollectionOfAppRoleAssignments
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CollectionOfAppRoleAssignments
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAppRoleAssignmentApiService.UserListAppRoleAssignments")
@@ -350,14 +350,14 @@ func (a *UserAppRoleAssignmentApiService) UserListAppRoleAssignmentsExecute(r Ap
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

@@ -11,10 +11,10 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func Test_libregraph_DriveItemApiService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_libregraph_DriveItemApiService(t *testing.T) {
 
 	t.Run("Test DriveItemApiService DeleteDriveItem", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 		var itemId string
@@ -38,7 +38,7 @@ func Test_libregraph_DriveItemApiService(t *testing.T) {
 
 	t.Run("Test DriveItemApiService GetDriveItem", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 		var itemId string
@@ -53,7 +53,7 @@ func Test_libregraph_DriveItemApiService(t *testing.T) {
 
 	t.Run("Test DriveItemApiService UpdateDriveItem", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 		var itemId string

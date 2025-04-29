@@ -11,10 +11,10 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func Test_libregraph_ApplicationsApiService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_libregraph_ApplicationsApiService(t *testing.T) {
 
 	t.Run("Test ApplicationsApiService GetApplication", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var applicationId string
 
@@ -38,7 +38,7 @@ func Test_libregraph_ApplicationsApiService(t *testing.T) {
 
 	t.Run("Test ApplicationsApiService ListApplications", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.ApplicationsApi.ListApplications(context.Background()).Execute()
 

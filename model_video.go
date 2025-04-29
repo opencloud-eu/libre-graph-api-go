@@ -17,7 +17,7 @@ import (
 // checks if the Video type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Video{}
 
-// Video The video resource groups video-related data items into a single structure.  If a driveItem has a non-null video facet, the item represents a video file. The properties of the video resource are populated by extracting metadata from the file.
+// Video The video resource groups video-related data items into a single structure.  If a driveItem has a non-null video facet, the item represents a video file. The properties of the video resource are populated by extracting metadata from the file. 
 type Video struct {
 	// Number of audio bits per sample.
 	AudioBitsPerSample *int32 `json:"audioBitsPerSample,omitempty"`
@@ -379,7 +379,7 @@ func (o *Video) SetWidth(v int32) {
 }
 
 func (o Video) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -456,3 +456,5 @@ func (v *NullableVideo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

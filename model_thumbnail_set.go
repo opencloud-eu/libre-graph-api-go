@@ -17,13 +17,13 @@ import (
 // checks if the ThumbnailSet type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ThumbnailSet{}
 
-// ThumbnailSet The ThumbnailSet resource is a keyed collection of thumbnail resources. It's used to represent a set of thumbnails associated with a DriveItem.
+// ThumbnailSet The ThumbnailSet resource is a keyed collection of thumbnail resources. It's used to represent a set of thumbnails associated with a DriveItem. 
 type ThumbnailSet struct {
 	// The ID within the item. Read-only.
-	Id     *string    `json:"id,omitempty"`
-	Large  *Thumbnail `json:"large,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Large *Thumbnail `json:"large,omitempty"`
 	Medium *Thumbnail `json:"medium,omitempty"`
-	Small  *Thumbnail `json:"small,omitempty"`
+	Small *Thumbnail `json:"small,omitempty"`
 	Source *Thumbnail `json:"source,omitempty"`
 }
 
@@ -205,7 +205,7 @@ func (o *ThumbnailSet) SetSource(v Thumbnail) {
 }
 
 func (o ThumbnailSet) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,3 +267,5 @@ func (v *NullableThumbnailSet) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

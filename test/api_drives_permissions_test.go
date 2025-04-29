@@ -11,10 +11,10 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func Test_libregraph_DrivesPermissionsApiService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_libregraph_DrivesPermissionsApiService(t *testing.T) {
 
 	t.Run("Test DrivesPermissionsApiService CreateLink", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 		var itemId string
@@ -39,7 +39,7 @@ func Test_libregraph_DrivesPermissionsApiService(t *testing.T) {
 
 	t.Run("Test DrivesPermissionsApiService DeletePermission", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 		var itemId string
@@ -54,7 +54,7 @@ func Test_libregraph_DrivesPermissionsApiService(t *testing.T) {
 
 	t.Run("Test DrivesPermissionsApiService GetPermission", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 		var itemId string
@@ -70,7 +70,7 @@ func Test_libregraph_DrivesPermissionsApiService(t *testing.T) {
 
 	t.Run("Test DrivesPermissionsApiService Invite", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 		var itemId string
@@ -85,7 +85,7 @@ func Test_libregraph_DrivesPermissionsApiService(t *testing.T) {
 
 	t.Run("Test DrivesPermissionsApiService ListPermissions", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 		var itemId string
@@ -100,7 +100,7 @@ func Test_libregraph_DrivesPermissionsApiService(t *testing.T) {
 
 	t.Run("Test DrivesPermissionsApiService SetPermissionPassword", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 		var itemId string
@@ -116,7 +116,7 @@ func Test_libregraph_DrivesPermissionsApiService(t *testing.T) {
 
 	t.Run("Test DrivesPermissionsApiService UpdatePermission", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 		var itemId string

@@ -11,10 +11,10 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func Test_libregraph_MeDriveApiService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_libregraph_MeDriveApiService(t *testing.T) {
 
 	t.Run("Test MeDriveApiService GetHome", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.MeDriveApi.GetHome(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_libregraph_MeDriveApiService(t *testing.T) {
 
 	t.Run("Test MeDriveApiService ListSharedByMe", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.MeDriveApi.ListSharedByMe(context.Background()).Execute()
 
@@ -48,7 +48,7 @@ func Test_libregraph_MeDriveApiService(t *testing.T) {
 
 	t.Run("Test MeDriveApiService ListSharedWithMe", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.MeDriveApi.ListSharedWithMe(context.Background()).Execute()
 

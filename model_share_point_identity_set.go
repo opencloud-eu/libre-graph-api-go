@@ -19,7 +19,7 @@ var _ MappedNullable = &SharePointIdentitySet{}
 
 // SharePointIdentitySet This resource is used to represent a set of identities associated with various events for an item, such as created by or last modified by.
 type SharePointIdentitySet struct {
-	User  *Identity `json:"user,omitempty"`
+	User *Identity `json:"user,omitempty"`
 	Group *Identity `json:"group,omitempty"`
 }
 
@@ -105,7 +105,7 @@ func (o *SharePointIdentitySet) SetGroup(v Identity) {
 }
 
 func (o SharePointIdentitySet) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -158,3 +158,5 @@ func (v *NullableSharePointIdentitySet) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

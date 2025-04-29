@@ -19,14 +19,15 @@ import (
 	"strings"
 )
 
+
 // DriveItemApiService DriveItemApi service
 type DriveItemApiService service
 
 type ApiDeleteDriveItemRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DriveItemApiService
-	driveId    string
-	itemId     string
+	driveId string
+	itemId string
 }
 
 func (r ApiDeleteDriveItemRequest) Execute() (*http.Response, error) {
@@ -42,26 +43,27 @@ Deleting items using this method moves the items to the recycle bin instead of p
 
 Mounted shares in the share jail are unmounted. The `@client.synchronize` property of the `driveItem` in the [sharedWithMe](#/me.drive/ListSharedWithMe) endpoint will change to false.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param driveId key: id of drive
-	@param itemId key: id of item
-	@return ApiDeleteDriveItemRequest
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
+ @param itemId key: id of item
+ @return ApiDeleteDriveItemRequest
 */
 func (a *DriveItemApiService) DeleteDriveItem(ctx context.Context, driveId string, itemId string) ApiDeleteDriveItemRequest {
 	return ApiDeleteDriveItemRequest{
 		ApiService: a,
-		ctx:        ctx,
-		driveId:    driveId,
-		itemId:     itemId,
+		ctx: ctx,
+		driveId: driveId,
+		itemId: itemId,
 	}
 }
 
 // Execute executes the request
 func (a *DriveItemApiService) DeleteDriveItemExecute(r ApiDeleteDriveItemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DriveItemApiService.DeleteDriveItem")
@@ -116,14 +118,14 @@ func (a *DriveItemApiService) DeleteDriveItemExecute(r ApiDeleteDriveItemRequest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -131,10 +133,10 @@ func (a *DriveItemApiService) DeleteDriveItemExecute(r ApiDeleteDriveItemRequest
 }
 
 type ApiGetDriveItemRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DriveItemApiService
-	driveId    string
-	itemId     string
+	driveId string
+	itemId string
 }
 
 func (r ApiGetDriveItemRequest) Execute() (*DriveItem, *http.Response, error) {
@@ -146,29 +148,29 @@ GetDriveItem Get a DriveItem.
 
 Get a DriveItem by using its ID.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param driveId key: id of drive
-	@param itemId key: id of item
-	@return ApiGetDriveItemRequest
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
+ @param itemId key: id of item
+ @return ApiGetDriveItemRequest
 */
 func (a *DriveItemApiService) GetDriveItem(ctx context.Context, driveId string, itemId string) ApiGetDriveItemRequest {
 	return ApiGetDriveItemRequest{
 		ApiService: a,
-		ctx:        ctx,
-		driveId:    driveId,
-		itemId:     itemId,
+		ctx: ctx,
+		driveId: driveId,
+		itemId: itemId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return DriveItem
+//  @return DriveItem
 func (a *DriveItemApiService) GetDriveItemExecute(r ApiGetDriveItemRequest) (*DriveItem, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *DriveItem
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *DriveItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DriveItemApiService.GetDriveItem")
@@ -223,14 +225,14 @@ func (a *DriveItemApiService) GetDriveItemExecute(r ApiGetDriveItemRequest) (*Dr
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -247,11 +249,11 @@ func (a *DriveItemApiService) GetDriveItemExecute(r ApiGetDriveItemRequest) (*Dr
 }
 
 type ApiUpdateDriveItemRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DriveItemApiService
-	driveId    string
-	itemId     string
-	driveItem  *DriveItem
+	driveId string
+	itemId string
+	driveItem *DriveItem
 }
 
 // DriveItem properties to update
@@ -276,29 +278,29 @@ Currently it supports updating the following properties:
 
 * `@UI.Hidden` - Hides the item from the UI.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param driveId key: id of drive
-	@param itemId key: id of item
-	@return ApiUpdateDriveItemRequest
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
+ @param itemId key: id of item
+ @return ApiUpdateDriveItemRequest
 */
 func (a *DriveItemApiService) UpdateDriveItem(ctx context.Context, driveId string, itemId string) ApiUpdateDriveItemRequest {
 	return ApiUpdateDriveItemRequest{
 		ApiService: a,
-		ctx:        ctx,
-		driveId:    driveId,
-		itemId:     itemId,
+		ctx: ctx,
+		driveId: driveId,
+		itemId: itemId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return DriveItem
+//  @return DriveItem
 func (a *DriveItemApiService) UpdateDriveItemExecute(r ApiUpdateDriveItemRequest) (*DriveItem, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *DriveItem
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *DriveItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DriveItemApiService.UpdateDriveItem")
@@ -358,14 +360,14 @@ func (a *DriveItemApiService) UpdateDriveItemExecute(r ApiUpdateDriveItemRequest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

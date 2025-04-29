@@ -18,12 +18,13 @@ import (
 	"net/url"
 )
 
+
 // TagsApiService TagsApi service
 type TagsApiService service
 
 type ApiAssignTagsRequest struct {
-	ctx           context.Context
-	ApiService    *TagsApiService
+	ctx context.Context
+	ApiService *TagsApiService
 	tagAssignment *TagAssignment
 }
 
@@ -39,22 +40,22 @@ func (r ApiAssignTagsRequest) Execute() (*http.Response, error) {
 /*
 AssignTags Assign tags to a resource
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiAssignTagsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiAssignTagsRequest
 */
 func (a *TagsApiService) AssignTags(ctx context.Context) ApiAssignTagsRequest {
 	return ApiAssignTagsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *TagsApiService) AssignTagsExecute(r ApiAssignTagsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPut
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsApiService.AssignTags")
@@ -109,14 +110,14 @@ func (a *TagsApiService) AssignTagsExecute(r ApiAssignTagsRequest) (*http.Respon
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -124,7 +125,7 @@ func (a *TagsApiService) AssignTagsExecute(r ApiAssignTagsRequest) (*http.Respon
 }
 
 type ApiGetTagsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *TagsApiService
 }
 
@@ -135,25 +136,24 @@ func (r ApiGetTagsRequest) Execute() (*CollectionOfTags, *http.Response, error) 
 /*
 GetTags Get all known tags
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetTagsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetTagsRequest
 */
 func (a *TagsApiService) GetTags(ctx context.Context) ApiGetTagsRequest {
 	return ApiGetTagsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return CollectionOfTags
+//  @return CollectionOfTags
 func (a *TagsApiService) GetTagsExecute(r ApiGetTagsRequest) (*CollectionOfTags, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *CollectionOfTags
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CollectionOfTags
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsApiService.GetTags")
@@ -206,14 +206,14 @@ func (a *TagsApiService) GetTagsExecute(r ApiGetTagsRequest) (*CollectionOfTags,
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -230,8 +230,8 @@ func (a *TagsApiService) GetTagsExecute(r ApiGetTagsRequest) (*CollectionOfTags,
 }
 
 type ApiUnassignTagsRequest struct {
-	ctx             context.Context
-	ApiService      *TagsApiService
+	ctx context.Context
+	ApiService *TagsApiService
 	tagUnassignment *TagUnassignment
 }
 
@@ -247,22 +247,22 @@ func (r ApiUnassignTagsRequest) Execute() (*http.Response, error) {
 /*
 UnassignTags Unassign tags from a resource
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUnassignTagsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiUnassignTagsRequest
 */
 func (a *TagsApiService) UnassignTags(ctx context.Context) ApiUnassignTagsRequest {
 	return ApiUnassignTagsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *TagsApiService) UnassignTagsExecute(r ApiUnassignTagsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsApiService.UnassignTags")
@@ -317,14 +317,14 @@ func (a *TagsApiService) UnassignTagsExecute(r ApiUnassignTagsRequest) (*http.Re
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 

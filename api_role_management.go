@@ -19,13 +19,14 @@ import (
 	"strings"
 )
 
+
 // RoleManagementApiService RoleManagementApi service
 type RoleManagementApiService service
 
 type ApiGetPermissionRoleDefinitionRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RoleManagementApiService
-	roleId     string
+	roleId string
 }
 
 func (r ApiGetPermissionRoleDefinitionRequest) Execute() (*UnifiedRoleDefinition, *http.Response, error) {
@@ -37,27 +38,27 @@ GetPermissionRoleDefinition Get unifiedRoleDefinition
 
 Read the properties and relationships of a `unifiedRoleDefinition` object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param roleId key: id of roleDefinition
-	@return ApiGetPermissionRoleDefinitionRequest
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param roleId key: id of roleDefinition
+ @return ApiGetPermissionRoleDefinitionRequest
 */
 func (a *RoleManagementApiService) GetPermissionRoleDefinition(ctx context.Context, roleId string) ApiGetPermissionRoleDefinitionRequest {
 	return ApiGetPermissionRoleDefinitionRequest{
 		ApiService: a,
-		ctx:        ctx,
-		roleId:     roleId,
+		ctx: ctx,
+		roleId: roleId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return UnifiedRoleDefinition
+//  @return UnifiedRoleDefinition
 func (a *RoleManagementApiService) GetPermissionRoleDefinitionExecute(r ApiGetPermissionRoleDefinitionRequest) (*UnifiedRoleDefinition, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *UnifiedRoleDefinition
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UnifiedRoleDefinition
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleManagementApiService.GetPermissionRoleDefinition")
@@ -111,14 +112,14 @@ func (a *RoleManagementApiService) GetPermissionRoleDefinitionExecute(r ApiGetPe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -135,7 +136,7 @@ func (a *RoleManagementApiService) GetPermissionRoleDefinitionExecute(r ApiGetPe
 }
 
 type ApiListPermissionRoleDefinitionsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RoleManagementApiService
 }
 
@@ -148,25 +149,25 @@ ListPermissionRoleDefinitions List roleDefinitions
 
 Get a list of `unifiedRoleDefinition` objects for the permissions provider. This list determines the roles that can be selected when creating sharing invites.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiListPermissionRoleDefinitionsRequest
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiListPermissionRoleDefinitionsRequest
 */
 func (a *RoleManagementApiService) ListPermissionRoleDefinitions(ctx context.Context) ApiListPermissionRoleDefinitionsRequest {
 	return ApiListPermissionRoleDefinitionsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return UnifiedRoleDefinition
+//  @return UnifiedRoleDefinition
 func (a *RoleManagementApiService) ListPermissionRoleDefinitionsExecute(r ApiListPermissionRoleDefinitionsRequest) (*UnifiedRoleDefinition, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *UnifiedRoleDefinition
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UnifiedRoleDefinition
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleManagementApiService.ListPermissionRoleDefinitions")
@@ -219,14 +220,14 @@ func (a *RoleManagementApiService) ListPermissionRoleDefinitionsExecute(r ApiLis
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

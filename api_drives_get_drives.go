@@ -18,14 +18,15 @@ import (
 	"net/url"
 )
 
+
 // DrivesGetDrivesApiService DrivesGetDrivesApi service
 type DrivesGetDrivesApiService service
 
 type ApiListAllDrivesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DrivesGetDrivesApiService
-	orderby    *string
-	filter     *string
+	orderby *string
+	filter *string
 }
 
 // The $orderby system query option allows clients to request resources in either ascending order using asc or descending order using desc.
@@ -47,25 +48,24 @@ func (r ApiListAllDrivesRequest) Execute() (*CollectionOfDrives1, *http.Response
 /*
 ListAllDrives Get all available drives
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiListAllDrivesRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiListAllDrivesRequest
 */
 func (a *DrivesGetDrivesApiService) ListAllDrives(ctx context.Context) ApiListAllDrivesRequest {
 	return ApiListAllDrivesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return CollectionOfDrives1
+//  @return CollectionOfDrives1
 func (a *DrivesGetDrivesApiService) ListAllDrivesExecute(r ApiListAllDrivesRequest) (*CollectionOfDrives1, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *CollectionOfDrives1
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CollectionOfDrives1
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesGetDrivesApiService.ListAllDrives")
@@ -124,14 +124,14 @@ func (a *DrivesGetDrivesApiService) ListAllDrivesExecute(r ApiListAllDrivesReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -148,10 +148,10 @@ func (a *DrivesGetDrivesApiService) ListAllDrivesExecute(r ApiListAllDrivesReque
 }
 
 type ApiListAllDrivesBetaRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DrivesGetDrivesApiService
-	orderby    *string
-	filter     *string
+	orderby *string
+	filter *string
 }
 
 // The $orderby system query option allows clients to request resources in either ascending order using asc or descending order using desc.
@@ -173,25 +173,24 @@ func (r ApiListAllDrivesBetaRequest) Execute() (*CollectionOfDrives1, *http.Resp
 /*
 ListAllDrivesBeta Alias for '/v1.0/drives', the difference is that grantedtoV2 is used and roles contain unified roles instead of cs3 roles
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiListAllDrivesBetaRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiListAllDrivesBetaRequest
 */
 func (a *DrivesGetDrivesApiService) ListAllDrivesBeta(ctx context.Context) ApiListAllDrivesBetaRequest {
 	return ApiListAllDrivesBetaRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return CollectionOfDrives1
+//  @return CollectionOfDrives1
 func (a *DrivesGetDrivesApiService) ListAllDrivesBetaExecute(r ApiListAllDrivesBetaRequest) (*CollectionOfDrives1, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *CollectionOfDrives1
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CollectionOfDrives1
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesGetDrivesApiService.ListAllDrivesBeta")
@@ -250,14 +249,14 @@ func (a *DrivesGetDrivesApiService) ListAllDrivesBetaExecute(r ApiListAllDrivesB
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

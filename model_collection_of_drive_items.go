@@ -19,8 +19,8 @@ var _ MappedNullable = &CollectionOfDriveItems{}
 
 // CollectionOfDriveItems struct for CollectionOfDriveItems
 type CollectionOfDriveItems struct {
-	Value         []DriveItem `json:"value,omitempty"`
-	OdataNextLink *string     `json:"@odata.nextLink,omitempty"`
+	Value []DriveItem `json:"value,omitempty"`
+	OdataNextLink *string `json:"@odata.nextLink,omitempty"`
 }
 
 // NewCollectionOfDriveItems instantiates a new CollectionOfDriveItems object
@@ -105,7 +105,7 @@ func (o *CollectionOfDriveItems) SetOdataNextLink(v string) {
 }
 
 func (o CollectionOfDriveItems) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -158,3 +158,5 @@ func (v *NullableCollectionOfDriveItems) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

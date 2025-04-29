@@ -18,13 +18,14 @@ import (
 	"net/url"
 )
 
+
 // ActivitiesApiService ActivitiesApi service
 type ActivitiesApiService service
 
 type ApiGetActivitiesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ActivitiesApiService
-	kql        *string
+	kql *string
 }
 
 func (r ApiGetActivitiesRequest) Kql(kql string) ApiGetActivitiesRequest {
@@ -39,25 +40,24 @@ func (r ApiGetActivitiesRequest) Execute() (*CollectionOfActivities, *http.Respo
 /*
 GetActivities Get activities
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetActivitiesRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetActivitiesRequest
 */
 func (a *ActivitiesApiService) GetActivities(ctx context.Context) ApiGetActivitiesRequest {
 	return ApiGetActivitiesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return CollectionOfActivities
+//  @return CollectionOfActivities
 func (a *ActivitiesApiService) GetActivitiesExecute(r ApiGetActivitiesRequest) (*CollectionOfActivities, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *CollectionOfActivities
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CollectionOfActivities
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ActivitiesApiService.GetActivities")
@@ -113,14 +113,14 @@ func (a *ActivitiesApiService) GetActivitiesExecute(r ApiGetActivitiesRequest) (
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

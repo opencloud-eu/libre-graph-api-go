@@ -17,7 +17,7 @@ import (
 // checks if the Audio type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Audio{}
 
-// Audio The Audio resource groups audio-related properties on an item into a single structure.  If a DriveItem has a non-null audio facet, the item represents an audio file. The properties of the Audio resource are populated by extracting metadata from the file.
+// Audio The Audio resource groups audio-related properties on an item into a single structure.  If a DriveItem has a non-null audio facet, the item represents an audio file. The properties of the Audio resource are populated by extracting metadata from the file. 
 type Audio struct {
 	// The title of the album for this audio file.
 	Album *string `json:"album,omitempty"`
@@ -583,7 +583,7 @@ func (o *Audio) SetYear(v int32) {
 }
 
 func (o Audio) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -678,3 +678,5 @@ func (v *NullableAudio) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -11,10 +11,10 @@ API version: v1.0.4
 package libregraph
 
 import (
-	"bytes"
 	"encoding/json"
-	"fmt"
 	"time"
+	"bytes"
+	"fmt"
 )
 
 // checks if the Drive type satisfies the MappedNullable interface at compile time
@@ -23,31 +23,31 @@ var _ MappedNullable = &Drive{}
 // Drive The drive represents a space on the storage.
 type Drive struct {
 	// The unique identifier for this drive.
-	Id        *string      `json:"id,omitempty"`
+	Id *string `json:"id,omitempty"`
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// Date and time of item creation. Read-only.
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty" validate:"regexp=^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"`
 	// Provides a user-visible description of the item. Optional.
 	Description *string `json:"description,omitempty"`
 	// ETag for the item. Read-only.
-	ETag           *string      `json:"eTag,omitempty"`
+	ETag *string `json:"eTag,omitempty"`
 	LastModifiedBy *IdentitySet `json:"lastModifiedBy,omitempty"`
 	// Date and time the item was last modified. Read-only.
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty" validate:"regexp=^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"`
 	// The name of the item. Read-write.
-	Name            string         `json:"name"`
+	Name string `json:"name"`
 	ParentReference *ItemReference `json:"parentReference,omitempty"`
 	// URL that displays the resource in the browser. Read-only.
 	WebUrl *string `json:"webUrl,omitempty"`
 	// Describes the type of drive represented by this resource. Values are \"personal\" for users home spaces, \"project\", \"virtual\" or \"share\". Read-only.
 	DriveType *string `json:"driveType,omitempty"`
 	// The drive alias can be used in clients to make the urls user friendly. Example: 'personal/einstein'. This will be used to resolve to the correct driveID.
-	DriveAlias *string      `json:"driveAlias,omitempty"`
-	Owner      *IdentitySet `json:"owner,omitempty"`
-	Quota      *Quota       `json:"quota,omitempty"`
+	DriveAlias *string `json:"driveAlias,omitempty"`
+	Owner *IdentitySet `json:"owner,omitempty"`
+	Quota *Quota `json:"quota,omitempty"`
 	// All items contained in the drive. Read-only. Nullable.
 	Items []DriveItem `json:"items,omitempty"`
-	Root  *DriveItem  `json:"root,omitempty"`
+	Root *DriveItem `json:"root,omitempty"`
 	// A collection of special drive resources.
 	Special []DriveItem `json:"special,omitempty"`
 }
@@ -609,7 +609,7 @@ func (o *Drive) SetSpecial(v []DriveItem) {
 }
 
 func (o Drive) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -683,10 +683,10 @@ func (o *Drive) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -742,3 +742,5 @@ func (v *NullableDrive) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

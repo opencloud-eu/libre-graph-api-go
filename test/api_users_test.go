@@ -11,10 +11,10 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func Test_libregraph_UsersApiService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_libregraph_UsersApiService(t *testing.T) {
 
 	t.Run("Test UsersApiService CreateUser", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.UsersApi.CreateUser(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_libregraph_UsersApiService(t *testing.T) {
 
 	t.Run("Test UsersApiService ListUsers", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.UsersApi.ListUsers(context.Background()).Execute()
 

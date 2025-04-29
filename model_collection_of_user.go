@@ -19,7 +19,7 @@ var _ MappedNullable = &CollectionOfUser{}
 
 // CollectionOfUser struct for CollectionOfUser
 type CollectionOfUser struct {
-	Value         []User  `json:"value,omitempty"`
+	Value []User `json:"value,omitempty"`
 	OdataNextLink *string `json:"@odata.nextLink,omitempty"`
 }
 
@@ -105,7 +105,7 @@ func (o *CollectionOfUser) SetOdataNextLink(v string) {
 }
 
 func (o CollectionOfUser) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -158,3 +158,5 @@ func (v *NullableCollectionOfUser) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

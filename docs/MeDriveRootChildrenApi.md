@@ -1,6 +1,6 @@
 # \MeDriveRootChildrenApi
 
-All URIs are relative to *https://ocis.ocis.rolling.owncloud.works/graph*
+All URIs are relative to *https://localhost:9200/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func main() {

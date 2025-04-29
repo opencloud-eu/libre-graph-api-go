@@ -29,16 +29,16 @@ type UserUpdate struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// A collection of drives available for this user. Read-only.
 	Drives []Drive `json:"drives,omitempty"`
-	Drive  *Drive  `json:"drive,omitempty"`
+	Drive *Drive `json:"drive,omitempty"`
 	// Identities associated with this account.
 	Identities []ObjectIdentity `json:"identities,omitempty"`
-	// The SMTP address for the user, for example, 'jeff@contoso.onowncloud.com'. Returned by default.
+	// The SMTP address for the user, for example, 'jeff@contoso.opencloud.com'. Returned by default.
 	Mail *string `json:"mail,omitempty"`
 	// Groups that this user is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
 	MemberOf []Group `json:"memberOf,omitempty"`
 	// Contains the on-premises SAM account name synchronized from the on-premises directory.
-	OnPremisesSamAccountName *string          `json:"onPremisesSamAccountName,omitempty"`
-	PasswordProfile          *PasswordProfile `json:"passwordProfile,omitempty"`
+	OnPremisesSamAccountName *string `json:"onPremisesSamAccountName,omitempty"`
+	PasswordProfile *PasswordProfile `json:"passwordProfile,omitempty"`
 	// The user's surname (family name or last name). Returned by default.
 	Surname *string `json:"surname,omitempty"`
 	// The user's givenName. Returned by default.
@@ -46,8 +46,8 @@ type UserUpdate struct {
 	// The user`s type. This can be either \"Member\" for regular user, \"Guest\" for guest users or \"Federated\" for users imported from a federated instance.
 	UserType *string `json:"userType,omitempty"`
 	// Represents the users language setting, ISO-639-1 Code
-	PreferredLanguage *string         `json:"preferredLanguage,omitempty"`
-	SignInActivity    *SignInActivity `json:"signInActivity,omitempty"`
+	PreferredLanguage *string `json:"preferredLanguage,omitempty"`
+	SignInActivity *SignInActivity `json:"signInActivity,omitempty"`
 }
 
 // NewUserUpdate instantiates a new UserUpdate object
@@ -580,7 +580,7 @@ func (o *UserUpdate) SetSignInActivity(v SignInActivity) {
 }
 
 func (o UserUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -675,3 +675,5 @@ func (v *NullableUserUpdate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -18,13 +18,14 @@ import (
 	"net/url"
 )
 
+
 // MeUserApiService MeUserApi service
 type MeUserApiService service
 
 type ApiGetOwnUserRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *MeUserApiService
-	expand     *[]string
+	expand *[]string
 }
 
 // Expand related entities
@@ -40,25 +41,24 @@ func (r ApiGetOwnUserRequest) Execute() (*User, *http.Response, error) {
 /*
 GetOwnUser Get current user
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetOwnUserRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetOwnUserRequest
 */
 func (a *MeUserApiService) GetOwnUser(ctx context.Context) ApiGetOwnUserRequest {
 	return ApiGetOwnUserRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return User
+//  @return User
 func (a *MeUserApiService) GetOwnUserExecute(r ApiGetOwnUserRequest) (*User, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *User
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *User
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeUserApiService.GetOwnUser")
@@ -114,14 +114,14 @@ func (a *MeUserApiService) GetOwnUserExecute(r ApiGetOwnUserRequest) (*User, *ht
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -138,7 +138,7 @@ func (a *MeUserApiService) GetOwnUserExecute(r ApiGetOwnUserRequest) (*User, *ht
 }
 
 type ApiUpdateOwnUserRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *MeUserApiService
 	userUpdate *UserUpdate
 }
@@ -156,25 +156,24 @@ func (r ApiUpdateOwnUserRequest) Execute() (*User, *http.Response, error) {
 /*
 UpdateOwnUser Update the current user
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUpdateOwnUserRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiUpdateOwnUserRequest
 */
 func (a *MeUserApiService) UpdateOwnUser(ctx context.Context) ApiUpdateOwnUserRequest {
 	return ApiUpdateOwnUserRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return User
+//  @return User
 func (a *MeUserApiService) UpdateOwnUserExecute(r ApiUpdateOwnUserRequest) (*User, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *User
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *User
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeUserApiService.UpdateOwnUser")
@@ -229,14 +228,14 @@ func (a *MeUserApiService) UpdateOwnUserExecute(r ApiUpdateOwnUserRequest) (*Use
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

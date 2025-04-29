@@ -19,14 +19,15 @@ import (
 	"strings"
 )
 
+
 // DrivesRootApiService DrivesRootApi service
 type DrivesRootApiService service
 
 type ApiCreateDriveItemRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DrivesRootApiService
-	driveId    string
-	driveItem  *DriveItem
+	driveId string
+	driveItem *DriveItem
 }
 
 // In the request body, provide a JSON object with the following parameters. For mounting a share the necessary remoteItem id and permission id can be taken from the [sharedWithMe](#/me.drive/ListSharedWithMe) endpoint.
@@ -44,27 +45,27 @@ CreateDriveItem Create a drive item
 
 You can use the root childrens endpoint to mount a remoteItem in the share jail. The `@client.synchronize` property of the `driveItem` in the [sharedWithMe](#/me.drive/ListSharedWithMe) endpoint will change to true.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param driveId key: id of drive
-	@return ApiCreateDriveItemRequest
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
+ @return ApiCreateDriveItemRequest
 */
 func (a *DrivesRootApiService) CreateDriveItem(ctx context.Context, driveId string) ApiCreateDriveItemRequest {
 	return ApiCreateDriveItemRequest{
 		ApiService: a,
-		ctx:        ctx,
-		driveId:    driveId,
+		ctx: ctx,
+		driveId: driveId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return DriveItem
+//  @return DriveItem
 func (a *DrivesRootApiService) CreateDriveItemExecute(r ApiCreateDriveItemRequest) (*DriveItem, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *DriveItem
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *DriveItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesRootApiService.CreateDriveItem")
@@ -120,14 +121,14 @@ func (a *DrivesRootApiService) CreateDriveItemExecute(r ApiCreateDriveItemReques
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -144,9 +145,9 @@ func (a *DrivesRootApiService) CreateDriveItemExecute(r ApiCreateDriveItemReques
 }
 
 type ApiCreateLinkSpaceRootRequest struct {
-	ctx                 context.Context
-	ApiService          *DrivesRootApiService
-	driveId             string
+	ctx context.Context
+	ApiService *DrivesRootApiService
+	driveId string
 	driveItemCreateLink *DriveItemCreateLink
 }
 
@@ -179,27 +180,27 @@ For now, The following values are allowed for the type parameter.
 | createOnly     | File Drop         | Creates an upload-only link to the folder driveItem.            |
 | blocksDownload | Secure View       | Creates a read-only link that blocks download to the driveItem. |
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param driveId key: id of drive
-	@return ApiCreateLinkSpaceRootRequest
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
+ @return ApiCreateLinkSpaceRootRequest
 */
 func (a *DrivesRootApiService) CreateLinkSpaceRoot(ctx context.Context, driveId string) ApiCreateLinkSpaceRootRequest {
 	return ApiCreateLinkSpaceRootRequest{
 		ApiService: a,
-		ctx:        ctx,
-		driveId:    driveId,
+		ctx: ctx,
+		driveId: driveId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return Permission
+//  @return Permission
 func (a *DrivesRootApiService) CreateLinkSpaceRootExecute(r ApiCreateLinkSpaceRootRequest) (*Permission, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *Permission
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *Permission
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesRootApiService.CreateLinkSpaceRoot")
@@ -255,14 +256,14 @@ func (a *DrivesRootApiService) CreateLinkSpaceRootExecute(r ApiCreateLinkSpaceRo
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -279,10 +280,10 @@ func (a *DrivesRootApiService) CreateLinkSpaceRootExecute(r ApiCreateLinkSpaceRo
 }
 
 type ApiDeletePermissionSpaceRootRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DrivesRootApiService
-	driveId    string
-	permId     string
+	driveId string
+	permId string
 }
 
 func (r ApiDeletePermissionSpaceRootRequest) Execute() (*http.Response, error) {
@@ -296,26 +297,27 @@ Remove access to the root item of a drive.
 
 Only sharing permissions that are not inherited can be deleted. The `inheritedFrom` property must be `null`.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param driveId key: id of drive
-	@param permId key: id of permission
-	@return ApiDeletePermissionSpaceRootRequest
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
+ @param permId key: id of permission
+ @return ApiDeletePermissionSpaceRootRequest
 */
 func (a *DrivesRootApiService) DeletePermissionSpaceRoot(ctx context.Context, driveId string, permId string) ApiDeletePermissionSpaceRootRequest {
 	return ApiDeletePermissionSpaceRootRequest{
 		ApiService: a,
-		ctx:        ctx,
-		driveId:    driveId,
-		permId:     permId,
+		ctx: ctx,
+		driveId: driveId,
+		permId: permId,
 	}
 }
 
 // Execute executes the request
 func (a *DrivesRootApiService) DeletePermissionSpaceRootExecute(r ApiDeletePermissionSpaceRootRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesRootApiService.DeletePermissionSpaceRoot")
@@ -370,14 +372,14 @@ func (a *DrivesRootApiService) DeletePermissionSpaceRootExecute(r ApiDeletePermi
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -385,10 +387,10 @@ func (a *DrivesRootApiService) DeletePermissionSpaceRootExecute(r ApiDeletePermi
 }
 
 type ApiGetPermissionSpaceRootRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DrivesRootApiService
-	driveId    string
-	permId     string
+	driveId string
+	permId string
 }
 
 func (r ApiGetPermissionSpaceRootRequest) Execute() (*Permission, *http.Response, error) {
@@ -400,29 +402,29 @@ GetPermissionSpaceRoot Get a single sharing permission for the root item of a dr
 
 Return the effective sharing permission for a particular permission resource.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param driveId key: id of drive
-	@param permId key: id of permission
-	@return ApiGetPermissionSpaceRootRequest
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
+ @param permId key: id of permission
+ @return ApiGetPermissionSpaceRootRequest
 */
 func (a *DrivesRootApiService) GetPermissionSpaceRoot(ctx context.Context, driveId string, permId string) ApiGetPermissionSpaceRootRequest {
 	return ApiGetPermissionSpaceRootRequest{
 		ApiService: a,
-		ctx:        ctx,
-		driveId:    driveId,
-		permId:     permId,
+		ctx: ctx,
+		driveId: driveId,
+		permId: permId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return Permission
+//  @return Permission
 func (a *DrivesRootApiService) GetPermissionSpaceRootExecute(r ApiGetPermissionSpaceRootRequest) (*Permission, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *Permission
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *Permission
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesRootApiService.GetPermissionSpaceRoot")
@@ -477,14 +479,14 @@ func (a *DrivesRootApiService) GetPermissionSpaceRootExecute(r ApiGetPermissionS
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -501,9 +503,9 @@ func (a *DrivesRootApiService) GetPermissionSpaceRootExecute(r ApiGetPermissionS
 }
 
 type ApiGetRootRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DrivesRootApiService
-	driveId    string
+	driveId string
 }
 
 func (r ApiGetRootRequest) Execute() (*DriveItem, *http.Response, error) {
@@ -513,27 +515,26 @@ func (r ApiGetRootRequest) Execute() (*DriveItem, *http.Response, error) {
 /*
 GetRoot Get root from arbitrary space
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param driveId key: id of drive
-	@return ApiGetRootRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
+ @return ApiGetRootRequest
 */
 func (a *DrivesRootApiService) GetRoot(ctx context.Context, driveId string) ApiGetRootRequest {
 	return ApiGetRootRequest{
 		ApiService: a,
-		ctx:        ctx,
-		driveId:    driveId,
+		ctx: ctx,
+		driveId: driveId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return DriveItem
+//  @return DriveItem
 func (a *DrivesRootApiService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *DriveItem
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *DriveItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesRootApiService.GetRoot")
@@ -587,14 +588,14 @@ func (a *DrivesRootApiService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -611,9 +612,9 @@ func (a *DrivesRootApiService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, 
 }
 
 type ApiInviteSpaceRootRequest struct {
-	ctx             context.Context
-	ApiService      *DrivesRootApiService
-	driveId         string
+	ctx context.Context
+	ApiService *DrivesRootApiService
+	driveId string
 	driveItemInvite *DriveItemInvite
 }
 
@@ -638,27 +639,27 @@ The response will be a permission object with the grantedToV2 property containin
 ## Roles property values
 For now, roles are only identified by a uuid. There are no hardcoded aliases like `read` or `write` because role actions can be completely customized.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param driveId key: id of drive
-	@return ApiInviteSpaceRootRequest
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
+ @return ApiInviteSpaceRootRequest
 */
 func (a *DrivesRootApiService) InviteSpaceRoot(ctx context.Context, driveId string) ApiInviteSpaceRootRequest {
 	return ApiInviteSpaceRootRequest{
 		ApiService: a,
-		ctx:        ctx,
-		driveId:    driveId,
+		ctx: ctx,
+		driveId: driveId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return CollectionOfPermissions
+//  @return CollectionOfPermissions
 func (a *DrivesRootApiService) InviteSpaceRootExecute(r ApiInviteSpaceRootRequest) (*CollectionOfPermissions, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *CollectionOfPermissions
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CollectionOfPermissions
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesRootApiService.InviteSpaceRoot")
@@ -721,18 +722,18 @@ func (a *DrivesRootApiService) InviteSpaceRootExecute(r ApiInviteSpaceRootReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-			newErr.model = v
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -749,11 +750,11 @@ func (a *DrivesRootApiService) InviteSpaceRootExecute(r ApiInviteSpaceRootReques
 }
 
 type ApiListPermissionsSpaceRootRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DrivesRootApiService
-	driveId    string
-	filter     *string
-	select_    *[]string
+	driveId string
+	filter *string
+	select_ *[]string
 }
 
 // Filter items by property values. By default all permissions are returned and the avalable sharing roles are limited to normal users. To get a list of sharing roles applicable to federated users use the example $select query and combine it with $filter to omit the list of permissions.
@@ -785,27 +786,27 @@ All permission objects have an `id`. A permission representing
 * a link has the `link` facet filled with details.
 * a share has the `roles` property set and the `grantedToV2` property filled with the grant recipient details.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param driveId key: id of drive
-	@return ApiListPermissionsSpaceRootRequest
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
+ @return ApiListPermissionsSpaceRootRequest
 */
 func (a *DrivesRootApiService) ListPermissionsSpaceRoot(ctx context.Context, driveId string) ApiListPermissionsSpaceRootRequest {
 	return ApiListPermissionsSpaceRootRequest{
 		ApiService: a,
-		ctx:        ctx,
-		driveId:    driveId,
+		ctx: ctx,
+		driveId: driveId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return CollectionOfPermissionsWithAllowedValues
+//  @return CollectionOfPermissionsWithAllowedValues
 func (a *DrivesRootApiService) ListPermissionsSpaceRootExecute(r ApiListPermissionsSpaceRootRequest) (*CollectionOfPermissionsWithAllowedValues, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *CollectionOfPermissionsWithAllowedValues
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CollectionOfPermissionsWithAllowedValues
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesRootApiService.ListPermissionsSpaceRoot")
@@ -865,14 +866,14 @@ func (a *DrivesRootApiService) ListPermissionsSpaceRootExecute(r ApiListPermissi
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -889,10 +890,10 @@ func (a *DrivesRootApiService) ListPermissionsSpaceRootExecute(r ApiListPermissi
 }
 
 type ApiSetPermissionPasswordSpaceRootRequest struct {
-	ctx                 context.Context
-	ApiService          *DrivesRootApiService
-	driveId             string
-	permId              string
+	ctx context.Context
+	ApiService *DrivesRootApiService
+	driveId string
+	permId string
 	sharingLinkPassword *SharingLinkPassword
 }
 
@@ -913,29 +914,29 @@ Set the password of a sharing permission.
 
 Only the `password` property can be modified this way.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param driveId key: id of drive
-	@param permId key: id of permission
-	@return ApiSetPermissionPasswordSpaceRootRequest
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
+ @param permId key: id of permission
+ @return ApiSetPermissionPasswordSpaceRootRequest
 */
 func (a *DrivesRootApiService) SetPermissionPasswordSpaceRoot(ctx context.Context, driveId string, permId string) ApiSetPermissionPasswordSpaceRootRequest {
 	return ApiSetPermissionPasswordSpaceRootRequest{
 		ApiService: a,
-		ctx:        ctx,
-		driveId:    driveId,
-		permId:     permId,
+		ctx: ctx,
+		driveId: driveId,
+		permId: permId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return Permission
+//  @return Permission
 func (a *DrivesRootApiService) SetPermissionPasswordSpaceRootExecute(r ApiSetPermissionPasswordSpaceRootRequest) (*Permission, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *Permission
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *Permission
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesRootApiService.SetPermissionPasswordSpaceRoot")
@@ -995,14 +996,14 @@ func (a *DrivesRootApiService) SetPermissionPasswordSpaceRootExecute(r ApiSetPer
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1019,10 +1020,10 @@ func (a *DrivesRootApiService) SetPermissionPasswordSpaceRootExecute(r ApiSetPer
 }
 
 type ApiUpdatePermissionSpaceRootRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DrivesRootApiService
-	driveId    string
-	permId     string
+	driveId string
+	permId string
 	permission *Permission
 }
 
@@ -1043,29 +1044,29 @@ Update the properties of a sharing permission by patching the permission resourc
 
 Only the `roles`, `expirationDateTime` and `password` properties can be modified this way.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param driveId key: id of drive
-	@param permId key: id of permission
-	@return ApiUpdatePermissionSpaceRootRequest
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
+ @param permId key: id of permission
+ @return ApiUpdatePermissionSpaceRootRequest
 */
 func (a *DrivesRootApiService) UpdatePermissionSpaceRoot(ctx context.Context, driveId string, permId string) ApiUpdatePermissionSpaceRootRequest {
 	return ApiUpdatePermissionSpaceRootRequest{
 		ApiService: a,
-		ctx:        ctx,
-		driveId:    driveId,
-		permId:     permId,
+		ctx: ctx,
+		driveId: driveId,
+		permId: permId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return Permission
+//  @return Permission
 func (a *DrivesRootApiService) UpdatePermissionSpaceRootExecute(r ApiUpdatePermissionSpaceRootRequest) (*Permission, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *Permission
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *Permission
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrivesRootApiService.UpdatePermissionSpaceRoot")
@@ -1125,14 +1126,14 @@ func (a *DrivesRootApiService) UpdatePermissionSpaceRootExecute(r ApiUpdatePermi
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v OdataError
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-		newErr.model = v
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

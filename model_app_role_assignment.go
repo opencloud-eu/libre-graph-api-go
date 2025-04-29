@@ -11,10 +11,10 @@ API version: v1.0.4
 package libregraph
 
 import (
-	"bytes"
 	"encoding/json"
-	"fmt"
 	"time"
+	"bytes"
+	"fmt"
 )
 
 // checks if the AppRoleAssignment type satisfies the MappedNullable interface at compile time
@@ -23,7 +23,7 @@ var _ MappedNullable = &AppRoleAssignment{}
 // AppRoleAssignment struct for AppRoleAssignment
 type AppRoleAssignment struct {
 	// The unique identifier for the object. 12345678-9abc-def0-1234-56789abcde. The value of the ID property is often, but not exclusively, in the form of a GUID. The value should be treated as an opaque identifier and not based in being a GUID. Null values are not allowed. Read-only.
-	Id              *string    `json:"id,omitempty"`
+	Id *string `json:"id,omitempty"`
 	DeletedDateTime *time.Time `json:"deletedDateTime,omitempty" validate:"regexp=^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"`
 	// The identifier (id) for the app role which is assigned to the user. Required on create.
 	AppRoleId string `json:"appRoleId" validate:"regexp=^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"`
@@ -183,7 +183,6 @@ func (o *AppRoleAssignment) HasCreatedDateTime() bool {
 func (o *AppRoleAssignment) SetCreatedDateTime(v time.Time) {
 	o.CreatedDateTime.Set(&v)
 }
-
 // SetCreatedDateTimeNil sets the value for CreatedDateTime to be an explicit nil
 func (o *AppRoleAssignment) SetCreatedDateTimeNil() {
 	o.CreatedDateTime.Set(nil)
@@ -226,7 +225,6 @@ func (o *AppRoleAssignment) HasPrincipalDisplayName() bool {
 func (o *AppRoleAssignment) SetPrincipalDisplayName(v string) {
 	o.PrincipalDisplayName.Set(&v)
 }
-
 // SetPrincipalDisplayNameNil sets the value for PrincipalDisplayName to be an explicit nil
 func (o *AppRoleAssignment) SetPrincipalDisplayNameNil() {
 	o.PrincipalDisplayName.Set(nil)
@@ -295,7 +293,6 @@ func (o *AppRoleAssignment) HasPrincipalType() bool {
 func (o *AppRoleAssignment) SetPrincipalType(v string) {
 	o.PrincipalType.Set(&v)
 }
-
 // SetPrincipalTypeNil sets the value for PrincipalType to be an explicit nil
 func (o *AppRoleAssignment) SetPrincipalTypeNil() {
 	o.PrincipalType.Set(nil)
@@ -338,7 +335,6 @@ func (o *AppRoleAssignment) HasResourceDisplayName() bool {
 func (o *AppRoleAssignment) SetResourceDisplayName(v string) {
 	o.ResourceDisplayName.Set(&v)
 }
-
 // SetResourceDisplayNameNil sets the value for ResourceDisplayName to be an explicit nil
 func (o *AppRoleAssignment) SetResourceDisplayNameNil() {
 	o.ResourceDisplayName.Set(nil)
@@ -376,7 +372,7 @@ func (o *AppRoleAssignment) SetResourceId(v string) {
 }
 
 func (o AppRoleAssignment) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -424,10 +420,10 @@ func (o *AppRoleAssignment) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -483,3 +479,5 @@ func (v *NullableAppRoleAssignment) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

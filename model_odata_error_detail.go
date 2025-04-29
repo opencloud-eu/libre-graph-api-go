@@ -11,8 +11,8 @@ API version: v1.0.4
 package libregraph
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -21,9 +21,9 @@ var _ MappedNullable = &OdataErrorDetail{}
 
 // OdataErrorDetail struct for OdataErrorDetail
 type OdataErrorDetail struct {
-	Code    string  `json:"code"`
-	Message string  `json:"message"`
-	Target  *string `json:"target,omitempty"`
+	Code string `json:"code"`
+	Message string `json:"message"`
+	Target *string `json:"target,omitempty"`
 }
 
 type _OdataErrorDetail OdataErrorDetail
@@ -128,7 +128,7 @@ func (o *OdataErrorDetail) SetTarget(v string) {
 }
 
 func (o OdataErrorDetail) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -159,10 +159,10 @@ func (o *OdataErrorDetail) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -218,3 +218,5 @@ func (v *NullableOdataErrorDetail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

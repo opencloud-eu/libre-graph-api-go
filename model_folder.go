@@ -20,8 +20,8 @@ var _ MappedNullable = &Folder{}
 // Folder Folder metadata, if the item is a folder. Read-only.
 type Folder struct {
 	// Number of children contained immediately within this container.
-	ChildCount *int32      `json:"childCount,omitempty"`
-	View       *FolderView `json:"view,omitempty"`
+	ChildCount *int32 `json:"childCount,omitempty"`
+	View *FolderView `json:"view,omitempty"`
 }
 
 // NewFolder instantiates a new Folder object
@@ -106,7 +106,7 @@ func (o *Folder) SetView(v FolderView) {
 }
 
 func (o Folder) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -159,3 +159,5 @@ func (v *NullableFolder) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

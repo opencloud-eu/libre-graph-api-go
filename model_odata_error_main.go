@@ -11,8 +11,8 @@ API version: v1.0.4
 package libregraph
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -21,9 +21,9 @@ var _ MappedNullable = &OdataErrorMain{}
 
 // OdataErrorMain struct for OdataErrorMain
 type OdataErrorMain struct {
-	Code    string             `json:"code"`
-	Message string             `json:"message"`
-	Target  *string            `json:"target,omitempty"`
+	Code string `json:"code"`
+	Message string `json:"message"`
+	Target *string `json:"target,omitempty"`
 	Details []OdataErrorDetail `json:"details,omitempty"`
 	// The structure of this object is service-specific
 	Innererror map[string]interface{} `json:"innererror,omitempty"`
@@ -195,7 +195,7 @@ func (o *OdataErrorMain) SetInnererror(v map[string]interface{}) {
 }
 
 func (o OdataErrorMain) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -232,10 +232,10 @@ func (o *OdataErrorMain) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -291,3 +291,5 @@ func (v *NullableOdataErrorMain) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

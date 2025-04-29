@@ -11,10 +11,10 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func Test_libregraph_UserAppRoleAssignmentApiService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_libregraph_UserAppRoleAssignmentApiService(t *testing.T) {
 
 	t.Run("Test UserAppRoleAssignmentApiService UserCreateAppRoleAssignments", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var userId string
 
@@ -38,7 +38,7 @@ func Test_libregraph_UserAppRoleAssignmentApiService(t *testing.T) {
 
 	t.Run("Test UserAppRoleAssignmentApiService UserDeleteAppRoleAssignments", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var userId string
 		var appRoleAssignmentId string
@@ -52,7 +52,7 @@ func Test_libregraph_UserAppRoleAssignmentApiService(t *testing.T) {
 
 	t.Run("Test UserAppRoleAssignmentApiService UserListAppRoleAssignments", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var userId string
 

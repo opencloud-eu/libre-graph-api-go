@@ -11,10 +11,10 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func Test_libregraph_UserApiService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_libregraph_UserApiService(t *testing.T) {
 
 	t.Run("Test UserApiService DeleteUser", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var userId string
 
@@ -37,7 +37,7 @@ func Test_libregraph_UserApiService(t *testing.T) {
 
 	t.Run("Test UserApiService ExportPersonalData", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var userId string
 
@@ -50,7 +50,7 @@ func Test_libregraph_UserApiService(t *testing.T) {
 
 	t.Run("Test UserApiService GetUser", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var userId string
 
@@ -64,7 +64,7 @@ func Test_libregraph_UserApiService(t *testing.T) {
 
 	t.Run("Test UserApiService UpdateUser", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var userId string
 

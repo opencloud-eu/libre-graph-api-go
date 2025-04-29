@@ -17,7 +17,7 @@ import (
 // checks if the SharingLink type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SharingLink{}
 
-// SharingLink The `SharingLink` resource groups link-related data items into a single structure.  If a `permission` resource has a non-null `sharingLink` facet, the permission represents a sharing link (as opposed to permissions granted to a person or group).
+// SharingLink The `SharingLink` resource groups link-related data items into a single structure.  If a `permission` resource has a non-null `sharingLink` facet, the permission represents a sharing link (as opposed to permissions granted to a person or group). 
 type SharingLink struct {
 	Type *SharingLinkType `json:"type,omitempty"`
 	// If `true` then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item.
@@ -208,7 +208,7 @@ func (o *SharingLink) SetLibreGraphQuickLink(v bool) {
 }
 
 func (o SharingLink) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -270,3 +270,5 @@ func (v *NullableSharingLink) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

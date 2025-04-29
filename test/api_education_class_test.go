@@ -11,10 +11,10 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func Test_libregraph_EducationClassApiService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_libregraph_EducationClassApiService(t *testing.T) {
 
 	t.Run("Test EducationClassApiService AddUserToClass", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var classId string
 
@@ -37,7 +37,7 @@ func Test_libregraph_EducationClassApiService(t *testing.T) {
 
 	t.Run("Test EducationClassApiService CreateClass", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.EducationClassApi.CreateClass(context.Background()).Execute()
 
@@ -49,7 +49,7 @@ func Test_libregraph_EducationClassApiService(t *testing.T) {
 
 	t.Run("Test EducationClassApiService DeleteClass", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var classId string
 
@@ -62,7 +62,7 @@ func Test_libregraph_EducationClassApiService(t *testing.T) {
 
 	t.Run("Test EducationClassApiService DeleteUserFromClass", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var classId string
 		var userId string
@@ -76,7 +76,7 @@ func Test_libregraph_EducationClassApiService(t *testing.T) {
 
 	t.Run("Test EducationClassApiService GetClass", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var classId string
 
@@ -90,7 +90,7 @@ func Test_libregraph_EducationClassApiService(t *testing.T) {
 
 	t.Run("Test EducationClassApiService ListClassMembers", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var classId string
 
@@ -104,7 +104,7 @@ func Test_libregraph_EducationClassApiService(t *testing.T) {
 
 	t.Run("Test EducationClassApiService ListClasses", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.EducationClassApi.ListClasses(context.Background()).Execute()
 
@@ -116,7 +116,7 @@ func Test_libregraph_EducationClassApiService(t *testing.T) {
 
 	t.Run("Test EducationClassApiService UpdateClass", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var classId string
 

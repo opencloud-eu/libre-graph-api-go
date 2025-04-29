@@ -19,7 +19,7 @@ var _ MappedNullable = &CollectionOfGroup{}
 
 // CollectionOfGroup struct for CollectionOfGroup
 type CollectionOfGroup struct {
-	Value         []Group `json:"value,omitempty"`
+	Value []Group `json:"value,omitempty"`
 	OdataNextLink *string `json:"@odata.nextLink,omitempty"`
 }
 
@@ -105,7 +105,7 @@ func (o *CollectionOfGroup) SetOdataNextLink(v string) {
 }
 
 func (o CollectionOfGroup) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -158,3 +158,5 @@ func (v *NullableCollectionOfGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

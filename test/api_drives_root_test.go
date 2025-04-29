@@ -11,10 +11,10 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func Test_libregraph_DrivesRootApiService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_libregraph_DrivesRootApiService(t *testing.T) {
 
 	t.Run("Test DrivesRootApiService CreateDriveItem", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 
@@ -38,7 +38,7 @@ func Test_libregraph_DrivesRootApiService(t *testing.T) {
 
 	t.Run("Test DrivesRootApiService CreateLinkSpaceRoot", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 
@@ -52,7 +52,7 @@ func Test_libregraph_DrivesRootApiService(t *testing.T) {
 
 	t.Run("Test DrivesRootApiService DeletePermissionSpaceRoot", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 		var permId string
@@ -66,7 +66,7 @@ func Test_libregraph_DrivesRootApiService(t *testing.T) {
 
 	t.Run("Test DrivesRootApiService GetPermissionSpaceRoot", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 		var permId string
@@ -81,7 +81,7 @@ func Test_libregraph_DrivesRootApiService(t *testing.T) {
 
 	t.Run("Test DrivesRootApiService GetRoot", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 
@@ -95,7 +95,7 @@ func Test_libregraph_DrivesRootApiService(t *testing.T) {
 
 	t.Run("Test DrivesRootApiService InviteSpaceRoot", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 
@@ -109,7 +109,7 @@ func Test_libregraph_DrivesRootApiService(t *testing.T) {
 
 	t.Run("Test DrivesRootApiService ListPermissionsSpaceRoot", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 
@@ -123,7 +123,7 @@ func Test_libregraph_DrivesRootApiService(t *testing.T) {
 
 	t.Run("Test DrivesRootApiService SetPermissionPasswordSpaceRoot", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 		var permId string
@@ -138,7 +138,7 @@ func Test_libregraph_DrivesRootApiService(t *testing.T) {
 
 	t.Run("Test DrivesRootApiService UpdatePermissionSpaceRoot", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 		var permId string

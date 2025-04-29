@@ -17,7 +17,7 @@ import (
 // checks if the SharingInvitation type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SharingInvitation{}
 
-// SharingInvitation invitation-related data items
+// SharingInvitation invitation-related data items 
 type SharingInvitation struct {
 	InvitedBy *IdentitySet `json:"invitedBy,omitempty"`
 }
@@ -72,7 +72,7 @@ func (o *SharingInvitation) SetInvitedBy(v IdentitySet) {
 }
 
 func (o SharingInvitation) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -122,3 +122,5 @@ func (v *NullableSharingInvitation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

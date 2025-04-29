@@ -21,40 +21,40 @@ var _ MappedNullable = &DriveItem{}
 // DriveItem Represents a resource inside a drive. Read-only.
 type DriveItem struct {
 	// Read-only.
-	Id        *string      `json:"id,omitempty"`
+	Id *string `json:"id,omitempty"`
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// Date and time of item creation. Read-only.
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty" validate:"regexp=^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"`
 	// Provides a user-visible description of the item. Optional.
 	Description *string `json:"description,omitempty"`
 	// ETag for the item. Read-only.
-	ETag           *string      `json:"eTag,omitempty"`
+	ETag *string `json:"eTag,omitempty"`
 	LastModifiedBy *IdentitySet `json:"lastModifiedBy,omitempty"`
 	// Date and time the item was last modified. Read-only.
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty" validate:"regexp=^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?([Zz]|[+-][0-9][0-9]:[0-9][0-9])$"`
 	// The name of the item. Read-write.
-	Name            *string        `json:"name,omitempty"`
+	Name *string `json:"name,omitempty"`
 	ParentReference *ItemReference `json:"parentReference,omitempty"`
 	// URL that displays the resource in the browser. Read-only.
 	WebUrl *string `json:"webUrl,omitempty"`
 	// The content stream, if the item represents a file.
 	Content *string `json:"content,omitempty"`
 	// An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
-	CTag           *string         `json:"cTag,omitempty"`
-	Deleted        *Deleted        `json:"deleted,omitempty"`
-	File           *OpenGraphFile  `json:"file,omitempty"`
+	CTag *string `json:"cTag,omitempty"`
+	Deleted *Deleted `json:"deleted,omitempty"`
+	File *OpenGraphFile `json:"file,omitempty"`
 	FileSystemInfo *FileSystemInfo `json:"fileSystemInfo,omitempty"`
-	Folder         *Folder         `json:"folder,omitempty"`
-	Image          *Image          `json:"image,omitempty"`
-	Photo          *Photo          `json:"photo,omitempty"`
-	Location       *GeoCoordinates `json:"location,omitempty"`
+	Folder *Folder `json:"folder,omitempty"`
+	Image *Image `json:"image,omitempty"`
+	Photo *Photo `json:"photo,omitempty"`
+	Location *GeoCoordinates `json:"location,omitempty"`
 	// Collection containing ThumbnailSet objects associated with the item. Read-only. Nullable.
 	Thumbnails []ThumbnailSet `json:"thumbnails,omitempty"`
 	// If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.
-	Root          map[string]interface{} `json:"root,omitempty"`
-	Trash         *Trash                 `json:"trash,omitempty"`
-	SpecialFolder *SpecialFolder         `json:"specialFolder,omitempty"`
-	RemoteItem    *RemoteItem            `json:"remoteItem,omitempty"`
+	Root map[string]interface{} `json:"root,omitempty"`
+	Trash *Trash `json:"trash,omitempty"`
+	SpecialFolder *SpecialFolder `json:"specialFolder,omitempty"`
+	RemoteItem *RemoteItem `json:"remoteItem,omitempty"`
 	// Size of the item in bytes. Read-only.
 	Size *int64 `json:"size,omitempty"`
 	// WebDAV compatible URL for the item. Read-only.
@@ -63,8 +63,8 @@ type DriveItem struct {
 	Children []DriveItem `json:"children,omitempty"`
 	// The set of permissions for the item. Read-only. Nullable.
 	Permissions []Permission `json:"permissions,omitempty"`
-	Audio       *Audio       `json:"audio,omitempty"`
-	Video       *Video       `json:"video,omitempty"`
+	Audio *Audio `json:"audio,omitempty"`
+	Video *Video `json:"video,omitempty"`
 	// Indicates if the item is synchronized with the underlying storage provider. Read-only.
 	ClientSynchronize *bool `json:"@client.synchronize,omitempty"`
 	// Properties or facets (see UI.Facet) annotated with this term will not be rendered if the annotation evaluates to true. Users can set this to hide permissions.
@@ -1113,7 +1113,7 @@ func (o *DriveItem) SetUIHidden(v bool) {
 }
 
 func (o DriveItem) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1256,3 +1256,5 @@ func (v *NullableDriveItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -11,10 +11,10 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func Test_libregraph_MeChangepasswordApiService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_libregraph_MeChangepasswordApiService(t *testing.T) {
 
 	t.Run("Test MeChangepasswordApiService ChangeOwnPassword", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		httpRes, err := apiClient.MeChangepasswordApi.ChangeOwnPassword(context.Background()).Execute()
 

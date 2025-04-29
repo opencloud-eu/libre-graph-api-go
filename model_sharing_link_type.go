@@ -15,16 +15,16 @@ import (
 	"fmt"
 )
 
-// SharingLinkType The type of the link created.  | Value          | Display name      | Description                                                     | | -------------- | ----------------- | --------------------------------------------------------------- | | internal       | Internal          | Creates an internal link without any permissions.               | | view           | View              | Creates a read-only link to the driveItem.                      | | upload         | Upload            | Creates a read-write link to the folder driveItem.              | | edit           | Edit              | Creates a read-write link to the driveItem.                     | | createOnly     | File Drop         | Creates an upload-only link to the folder driveItem.            | | blocksDownload | Secure View       | Creates a read-only link that blocks download to the driveItem. |
+// SharingLinkType The type of the link created.  | Value          | Display name      | Description                                                     | | -------------- | ----------------- | --------------------------------------------------------------- | | internal       | Internal          | Creates an internal link without any permissions.               | | view           | View              | Creates a read-only link to the driveItem.                      | | upload         | Upload            | Creates a read-write link to the folder driveItem.              | | edit           | Edit              | Creates a read-write link to the driveItem.                     | | createOnly     | File Drop         | Creates an upload-only link to the folder driveItem.            | | blocksDownload | Secure View       | Creates a read-only link that blocks download to the driveItem. | 
 type SharingLinkType string
 
 // List of sharingLinkType
 const (
-	INTERNAL        SharingLinkType = "internal"
-	VIEW            SharingLinkType = "view"
-	UPLOAD          SharingLinkType = "upload"
-	EDIT            SharingLinkType = "edit"
-	CREATE_ONLY     SharingLinkType = "createOnly"
+	INTERNAL SharingLinkType = "internal"
+	VIEW SharingLinkType = "view"
+	UPLOAD SharingLinkType = "upload"
+	EDIT SharingLinkType = "edit"
+	CREATE_ONLY SharingLinkType = "createOnly"
 	BLOCKS_DOWNLOAD SharingLinkType = "blocksDownload"
 )
 
@@ -116,3 +116,4 @@ func (v *NullableSharingLinkType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+

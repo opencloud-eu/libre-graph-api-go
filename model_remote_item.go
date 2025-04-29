@@ -22,10 +22,10 @@ var _ MappedNullable = &RemoteItem{}
 type RemoteItem struct {
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// Date and time of item creation. Read-only.
-	CreatedDateTime *time.Time      `json:"createdDateTime,omitempty" validate:"regexp=^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$"`
-	File            *OpenGraphFile  `json:"file,omitempty"`
-	FileSystemInfo  *FileSystemInfo `json:"fileSystemInfo,omitempty"`
-	Folder          *Folder         `json:"folder,omitempty"`
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty" validate:"regexp=^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$"`
+	File *OpenGraphFile `json:"file,omitempty"`
+	FileSystemInfo *FileSystemInfo `json:"fileSystemInfo,omitempty"`
+	Folder *Folder `json:"folder,omitempty"`
 	// The drive alias can be used in clients to make the urls user friendly. Example: 'personal/einstein'. This will be used to resolve to the correct driveID.
 	DriveAlias *string `json:"driveAlias,omitempty"`
 	// The relative path of the item in relation to its drive root.
@@ -33,8 +33,8 @@ type RemoteItem struct {
 	// Unique identifier for the drive root of this item. Read-only.
 	RootId *string `json:"rootId,omitempty"`
 	// Unique identifier for the remote item in its drive. Read-only.
-	Id             *string      `json:"id,omitempty"`
-	Image          *Image       `json:"image,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Image *Image `json:"image,omitempty"`
 	LastModifiedBy *IdentitySet `json:"lastModifiedBy,omitempty"`
 	// Date and time the item was last modified. Read-only.
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty" validate:"regexp=^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$"`
@@ -43,12 +43,12 @@ type RemoteItem struct {
 	// ETag for the item. Read-only.
 	ETag *string `json:"eTag,omitempty"`
 	// An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
-	CTag            *string        `json:"cTag,omitempty"`
+	CTag *string `json:"cTag,omitempty"`
 	ParentReference *ItemReference `json:"parentReference,omitempty"`
 	// The set of permissions for the item. Read-only. Nullable.
 	Permissions []Permission `json:"permissions,omitempty"`
 	// Size of the remote item. Read-only.
-	Size          *int64         `json:"size,omitempty"`
+	Size *int64 `json:"size,omitempty"`
 	SpecialFolder *SpecialFolder `json:"specialFolder,omitempty"`
 	// DAV compatible URL for the item.
 	WebDavUrl *string `json:"webDavUrl,omitempty"`
@@ -746,7 +746,7 @@ func (o *RemoteItem) SetWebUrl(v string) {
 }
 
 func (o RemoteItem) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -856,3 +856,5 @@ func (v *NullableRemoteItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

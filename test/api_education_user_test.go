@@ -11,10 +11,10 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func Test_libregraph_EducationUserApiService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_libregraph_EducationUserApiService(t *testing.T) {
 
 	t.Run("Test EducationUserApiService CreateEducationUser", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.EducationUserApi.CreateEducationUser(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_libregraph_EducationUserApiService(t *testing.T) {
 
 	t.Run("Test EducationUserApiService DeleteEducationUser", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var userId string
 
@@ -49,7 +49,7 @@ func Test_libregraph_EducationUserApiService(t *testing.T) {
 
 	t.Run("Test EducationUserApiService GetEducationUser", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var userId string
 
@@ -63,7 +63,7 @@ func Test_libregraph_EducationUserApiService(t *testing.T) {
 
 	t.Run("Test EducationUserApiService ListEducationUsers", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.EducationUserApi.ListEducationUsers(context.Background()).Execute()
 
@@ -75,7 +75,7 @@ func Test_libregraph_EducationUserApiService(t *testing.T) {
 
 	t.Run("Test EducationUserApiService UpdateEducationUser", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var userId string
 

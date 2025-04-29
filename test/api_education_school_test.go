@@ -11,10 +11,10 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func Test_libregraph_EducationSchoolApiService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_libregraph_EducationSchoolApiService(t *testing.T) {
 
 	t.Run("Test EducationSchoolApiService AddClassToSchool", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var schoolId string
 
@@ -37,7 +37,7 @@ func Test_libregraph_EducationSchoolApiService(t *testing.T) {
 
 	t.Run("Test EducationSchoolApiService AddUserToSchool", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var schoolId string
 
@@ -50,7 +50,7 @@ func Test_libregraph_EducationSchoolApiService(t *testing.T) {
 
 	t.Run("Test EducationSchoolApiService CreateSchool", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.EducationSchoolApi.CreateSchool(context.Background()).Execute()
 
@@ -62,7 +62,7 @@ func Test_libregraph_EducationSchoolApiService(t *testing.T) {
 
 	t.Run("Test EducationSchoolApiService DeleteClassFromSchool", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var schoolId string
 		var classId string
@@ -76,7 +76,7 @@ func Test_libregraph_EducationSchoolApiService(t *testing.T) {
 
 	t.Run("Test EducationSchoolApiService DeleteSchool", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var schoolId string
 
@@ -89,7 +89,7 @@ func Test_libregraph_EducationSchoolApiService(t *testing.T) {
 
 	t.Run("Test EducationSchoolApiService DeleteUserFromSchool", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var schoolId string
 		var userId string
@@ -103,7 +103,7 @@ func Test_libregraph_EducationSchoolApiService(t *testing.T) {
 
 	t.Run("Test EducationSchoolApiService GetSchool", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var schoolId string
 
@@ -117,7 +117,7 @@ func Test_libregraph_EducationSchoolApiService(t *testing.T) {
 
 	t.Run("Test EducationSchoolApiService ListSchoolClasses", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var schoolId string
 
@@ -131,7 +131,7 @@ func Test_libregraph_EducationSchoolApiService(t *testing.T) {
 
 	t.Run("Test EducationSchoolApiService ListSchoolUsers", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var schoolId string
 
@@ -145,7 +145,7 @@ func Test_libregraph_EducationSchoolApiService(t *testing.T) {
 
 	t.Run("Test EducationSchoolApiService ListSchools", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.EducationSchoolApi.ListSchools(context.Background()).Execute()
 
@@ -157,7 +157,7 @@ func Test_libregraph_EducationSchoolApiService(t *testing.T) {
 
 	t.Run("Test EducationSchoolApiService UpdateSchool", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var schoolId string
 

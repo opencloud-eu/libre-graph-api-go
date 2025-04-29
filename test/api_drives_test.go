@@ -11,10 +11,10 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func Test_libregraph_DrivesApiService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_libregraph_DrivesApiService(t *testing.T) {
 
 	t.Run("Test DrivesApiService CreateDrive", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.DrivesApi.CreateDrive(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_libregraph_DrivesApiService(t *testing.T) {
 
 	t.Run("Test DrivesApiService DeleteDrive", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 
@@ -49,7 +49,7 @@ func Test_libregraph_DrivesApiService(t *testing.T) {
 
 	t.Run("Test DrivesApiService GetDrive", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 
@@ -63,7 +63,7 @@ func Test_libregraph_DrivesApiService(t *testing.T) {
 
 	t.Run("Test DrivesApiService UpdateDrive", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var driveId string
 

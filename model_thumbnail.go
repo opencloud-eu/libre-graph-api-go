@@ -17,7 +17,7 @@ import (
 // checks if the Thumbnail type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Thumbnail{}
 
-// Thumbnail The thumbnail resource type represents a thumbnail for an image, video, document, or any item that has a bitmap representation.
+// Thumbnail The thumbnail resource type represents a thumbnail for an image, video, document, or any item that has a bitmap representation. 
 type Thumbnail struct {
 	// The content stream for the thumbnail.
 	Content *string `json:"content,omitempty"`
@@ -209,7 +209,7 @@ func (o *Thumbnail) SetWidth(v int32) {
 }
 
 func (o Thumbnail) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -271,3 +271,5 @@ func (v *NullableThumbnail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

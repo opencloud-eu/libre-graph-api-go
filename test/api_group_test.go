@@ -11,10 +11,10 @@ package libregraph
 
 import (
 	"context"
-	openapiclient "github.com/owncloud/libre-graph-api-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
 )
 
 func Test_libregraph_GroupApiService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_libregraph_GroupApiService(t *testing.T) {
 
 	t.Run("Test GroupApiService AddMember", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var groupId string
 
@@ -37,7 +37,7 @@ func Test_libregraph_GroupApiService(t *testing.T) {
 
 	t.Run("Test GroupApiService DeleteGroup", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var groupId string
 
@@ -50,7 +50,7 @@ func Test_libregraph_GroupApiService(t *testing.T) {
 
 	t.Run("Test GroupApiService DeleteMember", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var groupId string
 		var directoryObjectId string
@@ -64,7 +64,7 @@ func Test_libregraph_GroupApiService(t *testing.T) {
 
 	t.Run("Test GroupApiService GetGroup", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var groupId string
 
@@ -78,7 +78,7 @@ func Test_libregraph_GroupApiService(t *testing.T) {
 
 	t.Run("Test GroupApiService ListMembers", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var groupId string
 
@@ -92,7 +92,7 @@ func Test_libregraph_GroupApiService(t *testing.T) {
 
 	t.Run("Test GroupApiService UpdateGroup", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var groupId string
 

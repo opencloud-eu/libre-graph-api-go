@@ -17,7 +17,7 @@ import (
 // checks if the UnifiedRoleDefinition type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UnifiedRoleDefinition{}
 
-// UnifiedRoleDefinition A role definition is a collection of permissions in libre graph listing the operations that can be performed and the resources against which they can performed.
+// UnifiedRoleDefinition A role definition is a collection of permissions in libre graph listing the operations that can be performed and the resources against which they can performed. 
 type UnifiedRoleDefinition struct {
 	// The description for the unifiedRoleDefinition.
 	Description *string `json:"description,omitempty"`
@@ -27,7 +27,7 @@ type UnifiedRoleDefinition struct {
 	Id *string `json:"id,omitempty"`
 	// List of permissions included in the role.
 	RolePermissions []UnifiedRolePermission `json:"rolePermissions,omitempty"`
-	// When presenting a list of roles the weight can be used to order them in a meaningful way. Lower weight gets higher precedence. So content with lower weight will come first. If set, weights should be non-zero, as 0 is interpreted as an unset weight.
+	// When presenting a list of roles the weight can be used to order them in a meaningful way. Lower weight gets higher precedence. So content with lower weight will come first. If set, weights should be non-zero, as 0 is interpreted as an unset weight. 
 	LibreGraphWeight *int32 `json:"@libre.graph.weight,omitempty"`
 }
 
@@ -209,7 +209,7 @@ func (o *UnifiedRoleDefinition) SetLibreGraphWeight(v int32) {
 }
 
 func (o UnifiedRoleDefinition) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -271,3 +271,5 @@ func (v *NullableUnifiedRoleDefinition) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+
