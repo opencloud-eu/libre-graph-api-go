@@ -20,11 +20,13 @@ api_me_drive.go
 api_me_drive_root.go
 api_me_drive_root_children.go
 api_me_drives.go
+api_me_photo.go
 api_me_user.go
 api_role_management.go
 api_tags.go
 api_user.go
 api_user_app_role_assignment.go
+api_user_photo.go
 api_users.go
 client.go
 configuration.go
@@ -95,6 +97,7 @@ docs/MeDriveApi.md
 docs/MeDriveRootApi.md
 docs/MeDriveRootChildrenApi.md
 docs/MeDrivesApi.md
+docs/MePhotoApi.md
 docs/MeUserApi.md
 docs/MemberReference.md
 docs/ObjectIdentity.md
@@ -127,6 +130,7 @@ docs/UnifiedRolePermission.md
 docs/User.md
 docs/UserApi.md
 docs/UserAppRoleAssignmentApi.md
+docs/UserPhotoApi.md
 docs/UserUpdate.md
 docs/UsersApi.md
 docs/Video.md
@@ -230,10 +234,12 @@ test/api_me_drive_root_children_test.go
 test/api_me_drive_root_test.go
 test/api_me_drive_test.go
 test/api_me_drives_test.go
+test/api_me_photo_test.go
 test/api_me_user_test.go
 test/api_role_management_test.go
 test/api_tags_test.go
 test/api_user_app_role_assignment_test.go
+test/api_user_photo_test.go
 test/api_user_test.go
 test/api_users_test.go
 utils.go

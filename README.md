@@ -149,6 +149,10 @@ Class | Method | HTTP request | Description
 *MeDriveRootChildrenApi* | [**HomeGetChildren**](docs/MeDriveRootChildrenApi.md#homegetchildren) | **Get** /v1.0/me/drive/root/children | Get children from drive
 *MeDrivesApi* | [**ListMyDrives**](docs/MeDrivesApi.md#listmydrives) | **Get** /v1.0/me/drives | Get all drives where the current user is a regular member of
 *MeDrivesApi* | [**ListMyDrivesBeta**](docs/MeDrivesApi.md#listmydrivesbeta) | **Get** /v1beta1/me/drives | Alias for &#39;/v1.0/drives&#39;, the difference is that grantedtoV2 is used and roles contain unified roles instead of cs3 roles
+*MePhotoApi* | [**DeleteOwnUserPhoto**](docs/MePhotoApi.md#deleteownuserphoto) | **Delete** /v1.0/me/photo/$value | Delete the current user&#39;s profile photo
+*MePhotoApi* | [**GetOwnUserPhoto**](docs/MePhotoApi.md#getownuserphoto) | **Get** /v1.0/me/photo/$value | Get the current user&#39;s profile photo
+*MePhotoApi* | [**UpdateOwnUserPhotoPatch**](docs/MePhotoApi.md#updateownuserphotopatch) | **Patch** /v1.0/me/photo/$value | Update the current user&#39;s profile photo
+*MePhotoApi* | [**UpdateOwnUserPhotoPut**](docs/MePhotoApi.md#updateownuserphotoput) | **Put** /v1.0/me/photo/$value | Update the current user&#39;s profile photo
 *MeUserApi* | [**GetOwnUser**](docs/MeUserApi.md#getownuser) | **Get** /v1.0/me | Get current user
 *MeUserApi* | [**UpdateOwnUser**](docs/MeUserApi.md#updateownuser) | **Patch** /v1.0/me | Update the current user
 *RoleManagementApi* | [**GetPermissionRoleDefinition**](docs/RoleManagementApi.md#getpermissionroledefinition) | **Get** /v1beta1/roleManagement/permissions/roleDefinitions/{role-id} | Get unifiedRoleDefinition
@@ -163,6 +167,7 @@ Class | Method | HTTP request | Description
 *UserAppRoleAssignmentApi* | [**UserCreateAppRoleAssignments**](docs/UserAppRoleAssignmentApi.md#usercreateapproleassignments) | **Post** /v1.0/users/{user-id}/appRoleAssignments | Grant an appRoleAssignment to a user
 *UserAppRoleAssignmentApi* | [**UserDeleteAppRoleAssignments**](docs/UserAppRoleAssignmentApi.md#userdeleteapproleassignments) | **Delete** /v1.0/users/{user-id}/appRoleAssignments/{appRoleAssignment-id} | Delete the appRoleAssignment from a user
 *UserAppRoleAssignmentApi* | [**UserListAppRoleAssignments**](docs/UserAppRoleAssignmentApi.md#userlistapproleassignments) | **Get** /v1.0/users/{user-id}/appRoleAssignments | Get appRoleAssignments from a user
+*UserPhotoApi* | [**GetUserPhoto**](docs/UserPhotoApi.md#getuserphoto) | **Get** /v1.0/users/{user-id}/photo/$value | Get the photo of a user
 *UsersApi* | [**CreateUser**](docs/UsersApi.md#createuser) | **Post** /v1.0/users | Add new entity to users
 *UsersApi* | [**ListUsers**](docs/UsersApi.md#listusers) | **Get** /v1.0/users | Get entities from users
 
