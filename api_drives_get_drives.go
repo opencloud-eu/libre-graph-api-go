@@ -152,6 +152,7 @@ type ApiListAllDrivesBetaRequest struct {
 	ApiService *DrivesGetDrivesApiService
 	orderby *string
 	filter *string
+	expand *string
 }
 
 // The $orderby system query option allows clients to request resources in either ascending order using asc or descending order using desc.
@@ -163,6 +164,12 @@ func (r ApiListAllDrivesBetaRequest) Orderby(orderby string) ApiListAllDrivesBet
 // Filter items by property values
 func (r ApiListAllDrivesBetaRequest) Filter(filter string) ApiListAllDrivesBetaRequest {
 	r.filter = &filter
+	return r
+}
+
+// Expand related entities
+func (r ApiListAllDrivesBetaRequest) Expand(expand string) ApiListAllDrivesBetaRequest {
+	r.expand = &expand
 	return r
 }
 
@@ -209,6 +216,9 @@ func (a *DrivesGetDrivesApiService) ListAllDrivesBetaExecute(r ApiListAllDrivesB
 	}
 	if r.filter != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "$filter", r.filter, "form", "")
+	}
+	if r.expand != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$expand", r.expand, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
