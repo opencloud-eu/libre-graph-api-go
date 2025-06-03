@@ -446,7 +446,7 @@ Name | Type | Description  | Notes
 
 ## ListPermissionsSpaceRoot
 
-> CollectionOfPermissionsWithAllowedValues ListPermissionsSpaceRoot(ctx, driveId).Filter(filter).Select_(select_).Execute()
+> CollectionOfPermissionsWithAllowedValues ListPermissionsSpaceRoot(ctx, driveId).Filter(filter).Select_(select_).Count(count).Top(top).Execute()
 
 List the effective permissions on the root item of a drive.
 
@@ -468,10 +468,12 @@ func main() {
 	driveId := "driveId_example" // string | key: id of drive
 	filter := "@libre.graph.permissions.roles.allowedValues/rolePermissions/any(p:contains(p/condition, '@Subject.UserType=="Federated"'))" // string | Filter items by property values. By default all permissions are returned and the avalable sharing roles are limited to normal users. To get a list of sharing roles applicable to federated users use the example $select query and combine it with $filter to omit the list of permissions. (optional)
 	select_ := []string{"Select_example"} // []string | Select properties to be returned. By default all properties are returned. Select the roles property to fetch the available sharing roles without resolving all the permissions. Combine this with the $filter parameter to fetch the actions applicable to federated users. (optional)
+	count := true // bool | Include count of items (optional)
+	top := int32(50) // int32 | Show only the first n items (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DrivesRootApi.ListPermissionsSpaceRoot(context.Background(), driveId).Filter(filter).Select_(select_).Execute()
+	resp, r, err := apiClient.DrivesRootApi.ListPermissionsSpaceRoot(context.Background(), driveId).Filter(filter).Select_(select_).Count(count).Top(top).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.ListPermissionsSpaceRoot``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -499,6 +501,8 @@ Name | Type | Description  | Notes
 
  **filter** | **string** | Filter items by property values. By default all permissions are returned and the avalable sharing roles are limited to normal users. To get a list of sharing roles applicable to federated users use the example $select query and combine it with $filter to omit the list of permissions. | 
  **select_** | **[]string** | Select properties to be returned. By default all properties are returned. Select the roles property to fetch the available sharing roles without resolving all the permissions. Combine this with the $filter parameter to fetch the actions applicable to federated users. | 
+ **count** | **bool** | Include count of items | 
+ **top** | **int32** | Show only the first n items | 
 
 ### Return type
 

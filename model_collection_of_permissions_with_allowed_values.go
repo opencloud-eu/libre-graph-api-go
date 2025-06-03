@@ -24,6 +24,8 @@ type CollectionOfPermissionsWithAllowedValues struct {
 	// A list of actions that can be chosen for a custom role.  Following the CS3 API we can represent the CS3 permissions by mapping them to driveItem properties or relations like this: | [CS3 ResourcePermission](https://cs3org.github.io/cs3apis/#cs3.storage.provider.v1beta1.ResourcePermissions) | action | comment | | ------------------------------------------------------------------------------------------------------------ | ------ | ------- | | `stat` | `libre.graph/driveItem/basic/read` | `basic` because it does not include versions or trashed items | | `get_quota` | `libre.graph/driveItem/quota/read` | read only the `quota` property | | `get_path` | `libre.graph/driveItem/path/read` | read only the `path` property | | `move` | `libre.graph/driveItem/path/update` | allows updating the `path` property of a CS3 resource | | `delete` | `libre.graph/driveItem/standard/delete` | `standard` because deleting is a common update operation | | `list_container` | `libre.graph/driveItem/children/read` | | | `create_container` | `libre.graph/driveItem/children/create` | | | `initiate_file_download` | `libre.graph/driveItem/content/read` | `content` is the property read when initiating a download | | `initiate_file_upload` | `libre.graph/driveItem/upload/create` | `uploads` are a separate property. postprocessing creates the `content` | | `add_grant` | `libre.graph/driveItem/permissions/create` | | | `list_grant` | `libre.graph/driveItem/permissions/read` | | | `update_grant` | `libre.graph/driveItem/permissions/update` | | | `remove_grant` | `libre.graph/driveItem/permissions/delete` | | | `deny_grant` | `libre.graph/driveItem/permissions/deny` | uses a non CRUD action `deny` | | `list_file_versions` | `libre.graph/driveItem/versions/read` | `versions` is a `driveItemVersion` collection | | `restore_file_version` | `libre.graph/driveItem/versions/update` | the only `update` action is restore | | `list_recycle` | `libre.graph/driveItem/deleted/read` | reading a driveItem `deleted` property implies listing | | `restore_recycle_item` | `libre.graph/driveItem/deleted/update` | the only `update` action is restore | | `purge_recycle` | `libre.graph/driveItem/deleted/delete` | allows purging deleted `driveItems` | 
 	LibreGraphPermissionsActionsAllowedValues []string `json:"@libre.graph.permissions.actions.allowedValues,omitempty"`
 	Value []Permission `json:"value,omitempty"`
+	// The total number of permissions available, only present if the `count` query parameter is set to true.
+	OdataCount *int32 `json:"@odata.count,omitempty"`
 }
 
 // NewCollectionOfPermissionsWithAllowedValues instantiates a new CollectionOfPermissionsWithAllowedValues object
@@ -139,6 +141,38 @@ func (o *CollectionOfPermissionsWithAllowedValues) SetValue(v []Permission) {
 	o.Value = v
 }
 
+// GetOdataCount returns the OdataCount field value if set, zero value otherwise.
+func (o *CollectionOfPermissionsWithAllowedValues) GetOdataCount() int32 {
+	if o == nil || IsNil(o.OdataCount) {
+		var ret int32
+		return ret
+	}
+	return *o.OdataCount
+}
+
+// GetOdataCountOk returns a tuple with the OdataCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CollectionOfPermissionsWithAllowedValues) GetOdataCountOk() (*int32, bool) {
+	if o == nil || IsNil(o.OdataCount) {
+		return nil, false
+	}
+	return o.OdataCount, true
+}
+
+// HasOdataCount returns a boolean if a field has been set.
+func (o *CollectionOfPermissionsWithAllowedValues) HasOdataCount() bool {
+	if o != nil && !IsNil(o.OdataCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetOdataCount gets a reference to the given int32 and assigns it to the OdataCount field.
+func (o *CollectionOfPermissionsWithAllowedValues) SetOdataCount(v int32) {
+	o.OdataCount = &v
+}
+
 func (o CollectionOfPermissionsWithAllowedValues) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -157,6 +191,9 @@ func (o CollectionOfPermissionsWithAllowedValues) ToMap() (map[string]interface{
 	}
 	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
+	}
+	if !IsNil(o.OdataCount) {
+		toSerialize["@odata.count"] = o.OdataCount
 	}
 	return toSerialize, nil
 }

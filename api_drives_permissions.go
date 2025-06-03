@@ -542,6 +542,8 @@ type ApiListPermissionsRequest struct {
 	itemId string
 	filter *string
 	select_ *[]string
+	count *bool
+	top *int32
 }
 
 // Filter items by property values. By default all permissions are returned and the avalable sharing roles are limited to normal users. To get a list of sharing roles applicable to federated users use the example $select query and combine it with $filter to omit the list of permissions.
@@ -553,6 +555,18 @@ func (r ApiListPermissionsRequest) Filter(filter string) ApiListPermissionsReque
 // Select properties to be returned. By default all properties are returned. Select the roles property to fetch the available sharing roles without resolving all the permissions. Combine this with the $filter parameter to fetch the actions applicable to federated users.
 func (r ApiListPermissionsRequest) Select_(select_ []string) ApiListPermissionsRequest {
 	r.select_ = &select_
+	return r
+}
+
+// Include count of items
+func (r ApiListPermissionsRequest) Count(count bool) ApiListPermissionsRequest {
+	r.count = &count
+	return r
+}
+
+// Show only the first n items
+func (r ApiListPermissionsRequest) Top(top int32) ApiListPermissionsRequest {
+	r.top = &top
 	return r
 }
 
@@ -616,6 +630,12 @@ func (a *DrivesPermissionsApiService) ListPermissionsExecute(r ApiListPermission
 	}
 	if r.select_ != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "$select", r.select_, "form", "csv")
+	}
+	if r.count != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$count", r.count, "form", "")
+	}
+	if r.top != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$top", r.top, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
