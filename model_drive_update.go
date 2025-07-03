@@ -48,6 +48,8 @@ type DriveUpdate struct {
 	Root *DriveItem `json:"root,omitempty"`
 	// A collection of special drive resources.
 	Special []DriveItem `json:"special,omitempty"`
+	// Indicates whether the drive has items in the trash. Read-only.
+	LibreGraphHasTrashedItems *bool `json:"@libre.graph.hasTrashedItems,omitempty"`
 }
 
 // NewDriveUpdate instantiates a new DriveUpdate object
@@ -611,6 +613,38 @@ func (o *DriveUpdate) SetSpecial(v []DriveItem) {
 	o.Special = v
 }
 
+// GetLibreGraphHasTrashedItems returns the LibreGraphHasTrashedItems field value if set, zero value otherwise.
+func (o *DriveUpdate) GetLibreGraphHasTrashedItems() bool {
+	if o == nil || IsNil(o.LibreGraphHasTrashedItems) {
+		var ret bool
+		return ret
+	}
+	return *o.LibreGraphHasTrashedItems
+}
+
+// GetLibreGraphHasTrashedItemsOk returns a tuple with the LibreGraphHasTrashedItems field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DriveUpdate) GetLibreGraphHasTrashedItemsOk() (*bool, bool) {
+	if o == nil || IsNil(o.LibreGraphHasTrashedItems) {
+		return nil, false
+	}
+	return o.LibreGraphHasTrashedItems, true
+}
+
+// HasLibreGraphHasTrashedItems returns a boolean if a field has been set.
+func (o *DriveUpdate) HasLibreGraphHasTrashedItems() bool {
+	if o != nil && !IsNil(o.LibreGraphHasTrashedItems) {
+		return true
+	}
+
+	return false
+}
+
+// SetLibreGraphHasTrashedItems gets a reference to the given bool and assigns it to the LibreGraphHasTrashedItems field.
+func (o *DriveUpdate) SetLibreGraphHasTrashedItems(v bool) {
+	o.LibreGraphHasTrashedItems = &v
+}
+
 func (o DriveUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -671,6 +705,9 @@ func (o DriveUpdate) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Special) {
 		toSerialize["special"] = o.Special
+	}
+	if !IsNil(o.LibreGraphHasTrashedItems) {
+		toSerialize["@libre.graph.hasTrashedItems"] = o.LibreGraphHasTrashedItems
 	}
 	return toSerialize, nil
 }

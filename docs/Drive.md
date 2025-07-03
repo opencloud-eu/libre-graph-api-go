@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **Items** | Pointer to [**[]DriveItem**](DriveItem.md) | All items contained in the drive. Read-only. Nullable. | [optional] [readonly] 
 **Root** | Pointer to [**DriveItem**](DriveItem.md) |  | [optional] 
 **Special** | Pointer to [**[]DriveItem**](DriveItem.md) | A collection of special drive resources. | [optional] 
+**LibreGraphHasTrashedItems** | Pointer to **bool** | Indicates whether the drive has items in the trash. Read-only. | [optional] [readonly] 
 
 ## Methods
 
@@ -460,6 +461,31 @@ SetSpecial sets Special field to given value.
 `func (o *Drive) HasSpecial() bool`
 
 HasSpecial returns a boolean if a field has been set.
+
+### GetLibreGraphHasTrashedItems
+
+`func (o *Drive) GetLibreGraphHasTrashedItems() bool`
+
+GetLibreGraphHasTrashedItems returns the LibreGraphHasTrashedItems field if non-nil, zero value otherwise.
+
+### GetLibreGraphHasTrashedItemsOk
+
+`func (o *Drive) GetLibreGraphHasTrashedItemsOk() (*bool, bool)`
+
+GetLibreGraphHasTrashedItemsOk returns a tuple with the LibreGraphHasTrashedItems field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLibreGraphHasTrashedItems
+
+`func (o *Drive) SetLibreGraphHasTrashedItems(v bool)`
+
+SetLibreGraphHasTrashedItems sets LibreGraphHasTrashedItems field to given value.
+
+### HasLibreGraphHasTrashedItems
+
+`func (o *Drive) HasLibreGraphHasTrashedItems() bool`
+
+HasLibreGraphHasTrashedItems returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

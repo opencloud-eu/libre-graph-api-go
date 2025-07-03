@@ -4821,6 +4821,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -7776,6 +7777,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -10731,6 +10733,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -13686,6 +13689,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -16641,6 +16645,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -19632,6 +19637,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -22622,6 +22628,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -25577,6 +25584,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -28532,6 +28540,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -31487,6 +31496,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -34442,6 +34452,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -37433,6 +37444,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -40456,6 +40468,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -43411,6 +43424,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -46366,6 +46380,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -49321,6 +49336,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -52276,6 +52292,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -55267,6 +55284,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -58287,6 +58305,7 @@ components:
             id: id
         createdDateTime: 2000-01-23T04:56:07.000+00:00
         description: description
+        '@libre.graph.hasTrashedItems': true
         special:
         - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
           createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -61272,6 +61291,10 @@ components:
           items:
             $ref: '#/components/schemas/driveItem'
           type: array
+        '@libre.graph.hasTrashedItems':
+          description: Indicates whether the drive has items in the trash. Read-only.
+          readOnly: true
+          type: boolean
       type: object
     driveRecipient:
       description: |
@@ -61513,6 +61536,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -64468,6 +64492,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -67423,6 +67448,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -70378,6 +70404,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -73333,6 +73360,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -76324,6 +76352,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -81610,6 +81639,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -84565,6 +84595,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -87520,6 +87551,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -90475,6 +90507,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -93430,6 +93463,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -96398,6 +96432,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -99353,6 +99388,7 @@ components:
               id: id
           createdDateTime: 2000-01-23T04:56:07.000+00:00
           description: description
+          '@libre.graph.hasTrashedItems': true
           special:
           - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
             createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -102789,6 +102825,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -105744,6 +105781,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -108699,6 +108737,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -111654,6 +111693,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -114609,6 +114649,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -117600,6 +117641,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -120590,6 +120632,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -123545,6 +123588,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -126500,6 +126544,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -129455,6 +129500,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -132410,6 +132456,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -135401,6 +135448,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -142464,6 +142512,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -145419,6 +145468,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -148374,6 +148424,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -151329,6 +151380,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -154284,6 +154336,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -157275,6 +157328,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -160265,6 +160319,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -163220,6 +163275,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -166175,6 +166231,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -169130,6 +169187,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -172085,6 +172143,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -175076,6 +175135,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -178122,6 +178182,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -181077,6 +181138,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -184032,6 +184094,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -186987,6 +187050,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -189942,6 +190006,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -192933,6 +192998,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -195902,6 +195968,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -198857,6 +198924,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -201812,6 +201880,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -204767,6 +204836,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -207722,6 +207792,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -210713,6 +210784,7 @@ components:
                 id: id
             createdDateTime: 2000-01-23T04:56:07.000+00:00
             description: description
+            '@libre.graph.hasTrashedItems': true
             special:
             - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
               createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -213740,6 +213812,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -216695,6 +216768,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -219650,6 +219724,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -222605,6 +222680,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -225560,6 +225636,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -228551,6 +228628,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -231541,6 +231619,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -234496,6 +234575,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -237451,6 +237531,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -240406,6 +240487,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -243361,6 +243443,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -246352,6 +246435,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -249354,6 +249438,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -252309,6 +252394,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -255264,6 +255350,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -258219,6 +258306,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -261174,6 +261262,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -264165,6 +264254,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -267155,6 +267245,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -270110,6 +270201,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -273065,6 +273157,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -276020,6 +276113,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -278975,6 +279069,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -281966,6 +282061,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -284985,6 +285081,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -287940,6 +288037,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -290895,6 +290993,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -293850,6 +293949,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -296805,6 +296905,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -299796,6 +299897,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -302786,6 +302888,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -305741,6 +305844,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -308696,6 +308800,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -311651,6 +311756,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -314606,6 +314712,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -317597,6 +317704,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -320599,6 +320707,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -323554,6 +323663,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -326509,6 +326619,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -329464,6 +329575,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -332419,6 +332531,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -335410,6 +335523,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -338400,6 +338514,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -341355,6 +341470,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -344310,6 +344426,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -347265,6 +347382,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -350220,6 +350338,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
@@ -353211,6 +353330,7 @@ components:
                   id: id
               createdDateTime: 2000-01-23T04:56:07.000+00:00
               description: description
+              '@libre.graph.hasTrashedItems': true
               special:
               - lastModifiedDateTime: 2000-01-23T04:56:07.000+00:00
                 createdDateTime: 2000-01-23T04:56:07.000+00:00
