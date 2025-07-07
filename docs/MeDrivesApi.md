@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ## ListMyDrivesBeta
 
-> CollectionOfDrives ListMyDrivesBeta(ctx).Orderby(orderby).Filter(filter).Expand(expand).Execute()
+> CollectionOfDrives ListMyDrivesBeta(ctx).Orderby(orderby).Filter(filter).Expand(expand).Select_(select_).Execute()
 
 Alias for '/v1.0/drives', the difference is that grantedtoV2 is used and roles contain unified roles instead of cs3 roles
 
@@ -97,10 +97,11 @@ func main() {
 	orderby := "lastModifiedDateTime desc" // string | The $orderby system query option allows clients to request resources in either ascending order using asc or descending order using desc. (optional)
 	filter := "driveType eq 'project'" // string | Filter items by property values (optional)
 	expand := "root($expand=permissions)" // string | Expand related entities (optional)
+	select_ := []string{"Select_example"} // []string | Select properties to be returned. By default all properties are returned. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MeDrivesApi.ListMyDrivesBeta(context.Background()).Orderby(orderby).Filter(filter).Expand(expand).Execute()
+	resp, r, err := apiClient.MeDrivesApi.ListMyDrivesBeta(context.Background()).Orderby(orderby).Filter(filter).Expand(expand).Select_(select_).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MeDrivesApi.ListMyDrivesBeta``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -124,6 +125,7 @@ Name | Type | Description  | Notes
  **orderby** | **string** | The $orderby system query option allows clients to request resources in either ascending order using asc or descending order using desc. | 
  **filter** | **string** | Filter items by property values | 
  **expand** | **string** | Expand related entities | 
+ **select_** | **[]string** | Select properties to be returned. By default all properties are returned. | 
 
 ### Return type
 

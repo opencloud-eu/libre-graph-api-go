@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ## GetDrive
 
-> Drive GetDrive(ctx, driveId).Execute()
+> Drive GetDrive(ctx, driveId).Select_(select_).Execute()
 
 Get drive by id
 
@@ -163,10 +163,11 @@ import (
 
 func main() {
 	driveId := "driveId_example" // string | key: id of drive
+	select_ := []string{"Select_example"} // []string | Select properties to be returned. By default all properties are returned. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DrivesApi.GetDrive(context.Background(), driveId).Execute()
+	resp, r, err := apiClient.DrivesApi.GetDrive(context.Background(), driveId).Select_(select_).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DrivesApi.GetDrive``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -192,6 +193,7 @@ Other parameters are passed through a pointer to a apiGetDriveRequest struct via
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **select_** | **[]string** | Select properties to be returned. By default all properties are returned. | 
 
 ### Return type
 

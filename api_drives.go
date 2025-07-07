@@ -252,6 +252,13 @@ type ApiGetDriveRequest struct {
 	ctx context.Context
 	ApiService *DrivesApiService
 	driveId string
+	select_ *[]string
+}
+
+// Select properties to be returned. By default all properties are returned.
+func (r ApiGetDriveRequest) Select_(select_ []string) ApiGetDriveRequest {
+	r.select_ = &select_
+	return r
 }
 
 func (r ApiGetDriveRequest) Execute() (*Drive, *http.Response, error) {
@@ -295,6 +302,9 @@ func (a *DrivesApiService) GetDriveExecute(r ApiGetDriveRequest) (*Drive, *http.
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.select_ != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$select", r.select_, "form", "csv")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

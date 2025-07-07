@@ -265,6 +265,20 @@ paths:
         schema:
           type: string
         style: form
+      - description: Select properties to be returned. By default all properties are
+          returned.
+        explode: false
+        in: query
+        name: $select
+        required: false
+        schema:
+          items:
+            enum:
+            - '@libre.graph.hasTrashedItems'
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -392,6 +406,20 @@ paths:
         required: false
         schema:
           type: string
+        style: form
+      - description: Select properties to be returned. By default all properties are
+          returned.
+        explode: false
+        in: query
+        name: $select
+        required: false
+        schema:
+          items:
+            enum:
+            - '@libre.graph.hasTrashedItems'
+            type: string
+          type: array
+          uniqueItems: true
         style: form
       responses:
         "200":
@@ -551,6 +579,20 @@ paths:
           type: string
         style: simple
         x-ms-docs-key-type: drive
+      - description: Select properties to be returned. By default all properties are
+          returned.
+        explode: false
+        in: query
+        name: $select
+        required: false
+        schema:
+          items:
+            enum:
+            - '@libre.graph.hasTrashedItems'
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -4582,6 +4624,21 @@ components:
       required: false
       schema:
         type: string
+      style: form
+    drivesSelect:
+      description: Select properties to be returned. By default all properties are
+        returned.
+      explode: false
+      in: query
+      name: $select
+      required: false
+      schema:
+        items:
+          enum:
+          - '@libre.graph.hasTrashedItems'
+          type: string
+        type: array
+        uniqueItems: true
       style: form
     drivesExpand:
       description: Expand related entities
