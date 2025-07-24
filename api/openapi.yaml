@@ -2701,7 +2701,20 @@ paths:
       description: |
         The `driveItems` returned from the `sharedByMe` method always include the `permissions` relation that indicates they are shared items.
       operationId: ListSharedByMe
-      parameters: []
+      parameters:
+      - description: Expand related entities
+        explode: false
+        in: query
+        name: $expand
+        required: false
+        schema:
+          items:
+            enum:
+            - thumbnails
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -2749,7 +2762,20 @@ paths:
       description: |
         The `driveItems` returned from the `sharedWithMe` method always include the `remoteItem` facet that indicates they are items from a different drive.
       operationId: ListSharedWithMe
-      parameters: []
+      parameters:
+      - description: Expand related entities
+        explode: false
+        in: query
+        name: $expand
+        required: false
+        schema:
+          items:
+            enum:
+            - thumbnails
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:

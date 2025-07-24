@@ -71,7 +71,7 @@ Other parameters are passed through a pointer to a apiGetHomeRequest struct via 
 
 ## ListSharedByMe
 
-> CollectionOfDriveItems1 ListSharedByMe(ctx).Execute()
+> CollectionOfDriveItems1 ListSharedByMe(ctx).Expand(expand).Execute()
 
 Get a list of driveItem objects shared by the current user.
 
@@ -90,10 +90,11 @@ import (
 )
 
 func main() {
+	expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MeDriveApi.ListSharedByMe(context.Background()).Execute()
+	resp, r, err := apiClient.MeDriveApi.ListSharedByMe(context.Background()).Expand(expand).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MeDriveApi.ListSharedByMe``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -105,12 +106,16 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiListSharedByMeRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **expand** | **[]string** | Expand related entities | 
 
 ### Return type
 
@@ -132,7 +137,7 @@ Other parameters are passed through a pointer to a apiListSharedByMeRequest stru
 
 ## ListSharedWithMe
 
-> CollectionOfDriveItems1 ListSharedWithMe(ctx).Execute()
+> CollectionOfDriveItems1 ListSharedWithMe(ctx).Expand(expand).Execute()
 
 Get a list of driveItem objects shared with the owner of a drive.
 
@@ -151,10 +156,11 @@ import (
 )
 
 func main() {
+	expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MeDriveApi.ListSharedWithMe(context.Background()).Execute()
+	resp, r, err := apiClient.MeDriveApi.ListSharedWithMe(context.Background()).Expand(expand).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MeDriveApi.ListSharedWithMe``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,12 +172,16 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiListSharedWithMeRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **expand** | **[]string** | Expand related entities | 
 
 ### Return type
 
