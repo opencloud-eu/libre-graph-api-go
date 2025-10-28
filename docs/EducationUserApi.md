@@ -82,6 +82,8 @@ Name | Type | Description  | Notes
 
 Delete educationUser
 
+
+
 ### Example
 
 ```go
@@ -95,7 +97,7 @@ import (
 )
 
 func main() {
-	userId := "90eedea1-dea1-90ee-a1de-ee90a1deee90" // string | key: id or username of user
+	userId := "90eedea1-dea1-90ee-a1de-ee90a1deee90" // string | key: internal user id (UUID format) or username of user.  **Note:** If you only have an external ID, first query the user  with `GET /graph/v1.0/education/users?$filter=externalId eq '{value}'`  to retrieve the internal ID. 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -113,7 +115,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | key: id or username of user | 
+**userId** | **string** | key: internal user id (UUID format) or username of user.  **Note:** If you only have an external ID, first query the user  with &#x60;GET /graph/v1.0/education/users?$filter&#x3D;externalId eq &#39;{value}&#39;&#x60;  to retrieve the internal ID.  | 
 
 ### Other Parameters
 
@@ -214,9 +216,11 @@ Name | Type | Description  | Notes
 
 ## ListEducationUsers
 
-> CollectionOfEducationUser ListEducationUsers(ctx).Orderby(orderby).Expand(expand).Execute()
+> CollectionOfEducationUser ListEducationUsers(ctx).Filter(filter).Orderby(orderby).Expand(expand).Execute()
 
 Get entities from education users
+
+
 
 ### Example
 
@@ -231,12 +235,13 @@ import (
 )
 
 func main() {
+	filter := "externalId eq 'ext_12345'" // string | Filter items by property values. Supports a subset of OData filter expressions.  **Supported filters:** - By external ID: `externalId eq 'ext_12345'`  (optional)
 	orderby := []string{"Orderby_example"} // []string | Order items by property values (optional)
 	expand := []string{"Expand_example"} // []string | Expand related entities (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.EducationUserApi.ListEducationUsers(context.Background()).Orderby(orderby).Expand(expand).Execute()
+	resp, r, err := apiClient.EducationUserApi.ListEducationUsers(context.Background()).Filter(filter).Orderby(orderby).Expand(expand).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `EducationUserApi.ListEducationUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -257,6 +262,7 @@ Other parameters are passed through a pointer to a apiListEducationUsersRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filter** | **string** | Filter items by property values. Supports a subset of OData filter expressions.  **Supported filters:** - By external ID: &#x60;externalId eq &#39;ext_12345&#39;&#x60;  | 
  **orderby** | **[]string** | Order items by property values | 
  **expand** | **[]string** | Expand related entities | 
 

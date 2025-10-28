@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **DisplayName** | Pointer to **string** | The name displayed in the address book for the user. This value is usually the combination of the user&#39;s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $orderby. | [optional] 
 **Drives** | Pointer to [**[]Drive**](Drive.md) | A collection of drives available for this user. Read-only. | [optional] [readonly] 
 **Drive** | Pointer to [**Drive**](Drive.md) |  | [optional] 
+**ExternalId** | Pointer to **string** | An external unique ID for the user. Use it to associate a user in another system, such as a student or employee ID number. | [optional] 
 **Identities** | Pointer to [**[]ObjectIdentity**](ObjectIdentity.md) | Identities associated with this account. | [optional] 
 **Mail** | Pointer to **string** | The SMTP address for the user, for example, &#39;jeff@contoso.opencloud.com&#39;. Returned by default. | [optional] 
 **MemberOf** | Pointer to [**[]Group**](Group.md) | Groups that this user is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand. | [optional] 
@@ -162,6 +163,31 @@ SetDrive sets Drive field to given value.
 `func (o *EducationUser) HasDrive() bool`
 
 HasDrive returns a boolean if a field has been set.
+
+### GetExternalId
+
+`func (o *EducationUser) GetExternalId() string`
+
+GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
+
+### GetExternalIdOk
+
+`func (o *EducationUser) GetExternalIdOk() (*string, bool)`
+
+GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalId
+
+`func (o *EducationUser) SetExternalId(v string)`
+
+SetExternalId sets ExternalId field to given value.
+
+### HasExternalId
+
+`func (o *EducationUser) HasExternalId() bool`
+
+HasExternalId returns a boolean if a field has been set.
 
 ### GetIdentities
 
