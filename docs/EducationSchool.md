@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | The unique identifier for an entity. Read-only. | [optional] [readonly] 
 **DisplayName** | Pointer to **string** | The organization name | [optional] 
 **SchoolNumber** | Pointer to **string** | School number | [optional] 
+**ExternalId** | Pointer to **string** | External identifier of the school | [optional] 
 **TerminationDate** | Pointer to **NullableTime** | Date and time at which the service for this organization is scheduled to be terminated | [optional] 
 
 ## Methods
@@ -102,6 +103,31 @@ SetSchoolNumber sets SchoolNumber field to given value.
 `func (o *EducationSchool) HasSchoolNumber() bool`
 
 HasSchoolNumber returns a boolean if a field has been set.
+
+### GetExternalId
+
+`func (o *EducationSchool) GetExternalId() string`
+
+GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
+
+### GetExternalIdOk
+
+`func (o *EducationSchool) GetExternalIdOk() (*string, bool)`
+
+GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalId
+
+`func (o *EducationSchool) SetExternalId(v string)`
+
+SetExternalId sets ExternalId field to given value.
+
+### HasExternalId
+
+`func (o *EducationSchool) HasExternalId() bool`
+
+HasExternalId returns a boolean if a field has been set.
 
 ### GetTerminationDate
 

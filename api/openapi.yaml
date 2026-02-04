@@ -4860,6 +4860,7 @@ components:
       example:
         terminationDate: 2000-01-23T04:56:07.000+00:00
         displayName: displayName
+        externalId: externalId
         id: id
         schoolNumber: schoolNumber
       properties:
@@ -4872,6 +4873,9 @@ components:
           type: string
         schoolNumber:
           description: School number
+          type: string
+        externalId:
+          description: External identifier of the school
           type: string
         terminationDate:
           description: Date and time at which the service for this organization is
@@ -213858,10 +213862,12 @@ components:
         value:
         - terminationDate: 2000-01-23T04:56:07.000+00:00
           displayName: displayName
+          externalId: externalId
           id: id
           schoolNumber: schoolNumber
         - terminationDate: 2000-01-23T04:56:07.000+00:00
           displayName: displayName
+          externalId: externalId
           id: id
           schoolNumber: schoolNumber
       properties:
