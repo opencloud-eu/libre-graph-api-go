@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## ListPermissionRoleDefinitions
 
-> UnifiedRoleDefinition ListPermissionRoleDefinitions(ctx).Execute()
+> []UnifiedRoleDefinition ListPermissionRoleDefinitions(ctx).Execute()
 
 List roleDefinitions
 
@@ -108,7 +108,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RoleManagementApi.ListPermissionRoleDefinitions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListPermissionRoleDefinitions`: UnifiedRoleDefinition
+	// response from `ListPermissionRoleDefinitions`: []UnifiedRoleDefinition
 	fmt.Fprintf(os.Stdout, "Response from `RoleManagementApi.ListPermissionRoleDefinitions`: %v\n", resp)
 }
 ```
@@ -124,7 +124,7 @@ Other parameters are passed through a pointer to a apiListPermissionRoleDefiniti
 
 ### Return type
 
-[**UnifiedRoleDefinition**](UnifiedRoleDefinition.md)
+[**[]UnifiedRoleDefinition**](UnifiedRoleDefinition.md)
 
 ### Authorization
 
