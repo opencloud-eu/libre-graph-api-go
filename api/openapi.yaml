@@ -3548,7 +3548,30 @@ paths:
       - educationUser
   /v1.0/education/schools:
     get:
+      description: |
+        Retrieves a collection of education schools with optional filtering and ordering.
+
+        **Filtering by external ID:**
+        Use `$filter` to query schools by their external identifier, for example:
+        `$filter=externalId eq 'EX12345'`
       operationId: ListSchools
+      parameters:
+      - description: |
+          Filter items by property values. Supports a subset of OData filter expressions.
+
+          **Supported filters:**
+          - By external ID: `externalId eq 'ext_12345'`
+        examples:
+          externalId:
+            summary: Filter by external ID
+            value: externalId eq 'ext_12345'
+        explode: true
+        in: query
+        name: $filter
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:

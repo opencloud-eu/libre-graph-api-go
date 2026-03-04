@@ -630,9 +630,11 @@ Name | Type | Description  | Notes
 
 ## ListSchools
 
-> CollectionOfSchools ListSchools(ctx).Execute()
+> CollectionOfSchools ListSchools(ctx).Filter(filter).Execute()
 
 Get a list of schools and their properties
+
+
 
 ### Example
 
@@ -647,10 +649,11 @@ import (
 )
 
 func main() {
+	filter := "externalId eq 'ext_12345'" // string | Filter items by property values. Supports a subset of OData filter expressions.  **Supported filters:** - By external ID: `externalId eq 'ext_12345'`  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.EducationSchoolApi.ListSchools(context.Background()).Execute()
+	resp, r, err := apiClient.EducationSchoolApi.ListSchools(context.Background()).Filter(filter).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `EducationSchoolApi.ListSchools``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -662,12 +665,16 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiListSchoolsRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | Filter items by property values. Supports a subset of OData filter expressions.  **Supported filters:** - By external ID: &#x60;externalId eq &#39;ext_12345&#39;&#x60;  | 
 
 ### Return type
 
