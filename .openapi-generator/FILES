@@ -15,6 +15,7 @@ api_education_school.go
 api_education_user.go
 api_group.go
 api_groups.go
+api_invitations.go
 api_me_changepassword.go
 api_me_drive.go
 api_me_drive_root.go
@@ -53,6 +54,7 @@ docs/CollectionOfDrives1.md
 docs/CollectionOfEducationClass.md
 docs/CollectionOfEducationUser.md
 docs/CollectionOfGroup.md
+docs/CollectionOfInvitations.md
 docs/CollectionOfPermissions.md
 docs/CollectionOfPermissionsWithAllowedValues.md
 docs/CollectionOfSchools.md
@@ -79,6 +81,7 @@ docs/EducationSchoolApi.md
 docs/EducationUser.md
 docs/EducationUserApi.md
 docs/EducationUserReference.md
+docs/EmailAddress.md
 docs/ExportPersonalDataRequest.md
 docs/FileSystemInfo.md
 docs/Folder.md
@@ -91,6 +94,9 @@ docs/Hashes.md
 docs/Identity.md
 docs/IdentitySet.md
 docs/Image.md
+docs/Invitation.md
+docs/InvitationsApi.md
+docs/InvitedUserMessageInfo.md
 docs/ItemReference.md
 docs/MeChangepasswordApi.md
 docs/MeDriveApi.md
@@ -110,6 +116,7 @@ docs/PasswordProfile.md
 docs/Permission.md
 docs/Photo.md
 docs/Quota.md
+docs/Recipient.md
 docs/RemoteItem.md
 docs/RoleManagementApi.md
 docs/SharePointIdentitySet.md
@@ -158,6 +165,7 @@ model_collection_of_drives_1.go
 model_collection_of_education_class.go
 model_collection_of_education_user.go
 model_collection_of_group.go
+model_collection_of_invitations.go
 model_collection_of_permissions.go
 model_collection_of_permissions_with_allowed_values.go
 model_collection_of_schools.go
@@ -175,6 +183,7 @@ model_education_class.go
 model_education_school.go
 model_education_user.go
 model_education_user_reference.go
+model_email_address.go
 model_export_personal_data_request.go
 model_file_system_info.go
 model_folder.go
@@ -185,6 +194,8 @@ model_hashes.go
 model_identity.go
 model_identity_set.go
 model_image.go
+model_invitation.go
+model_invited_user_message_info.go
 model_item_reference.go
 model_member_reference.go
 model_object_identity.go
@@ -197,6 +208,7 @@ model_password_profile.go
 model_permission.go
 model_photo.go
 model_quota.go
+model_recipient.go
 model_remote_item.go
 model_share_point_identity_set.go
 model_sharing_invitation.go
@@ -229,6 +241,7 @@ test/api_education_school_test.go
 test/api_education_user_test.go
 test/api_group_test.go
 test/api_groups_test.go
+test/api_invitations_test.go
 test/api_me_changepassword_test.go
 test/api_me_drive_root_children_test.go
 test/api_me_drive_root_test.go
