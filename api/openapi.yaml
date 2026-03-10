@@ -2757,6 +2757,64 @@ paths:
       tags:
       - me.drive
       x-ms-docs-operation-type: operation
+  /v1.0/me/drive/items/{item-id}/follow:
+    post:
+      description: Follow a DriveItem.
+      operationId: FollowDriveItem
+      parameters:
+      - description: "key: id of item"
+        explode: false
+        in: path
+        name: item-id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-ms-docs-key-type: item
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/driveItem'
+          description: Created
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Follow a DriveItem
+      tags:
+      - me.drive
+      x-ms-docs-operation-type: operation
+  /v1.0/me/drive/following/{item-id}:
+    delete:
+      description: Unfollow a DriveItem.
+      operationId: UnfollowDriveItem
+      parameters:
+      - description: "key: id of item"
+        explode: false
+        in: path
+        name: item-id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-ms-docs-key-type: item
+      responses:
+        "204":
+          description: No Content
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/odata.error'
+          description: error
+      summary: Unfollow a DriveItem
+      tags:
+      - me.drive
+      x-ms-docs-operation-type: operation
   /v1beta1/me/drive/sharedWithMe:
     get:
       description: |
@@ -3416,10 +3474,12 @@ paths:
         See the [ListEducationUsers](#/educationUser/ListEducationUsers) operation for query details.
       operationId: DeleteEducationUser
       parameters:
-      - description: "key: internal user id (UUID format) or username of user.\n\n\
-          **Note:** If you only have an external ID, first query the user \nwith `GET\
-          \ /graph/v1.0/education/users?$filter=externalId eq '{value}'` \nto retrieve\
-          \ the internal ID.\n"
+      - description: |
+          key: internal user id (UUID format) or username of user.
+
+          **Note:** If you only have an external ID, first query the user
+          with `GET /graph/v1.0/education/users?$filter=externalId eq '{value}'`
+          to retrieve the internal ID.
         explode: false
         in: path
         name: user-id

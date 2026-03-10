@@ -97,7 +97,7 @@ import (
 )
 
 func main() {
-	userId := "90eedea1-dea1-90ee-a1de-ee90a1deee90" // string | key: internal user id (UUID format) or username of user.  **Note:** If you only have an external ID, first query the user  with `GET /graph/v1.0/education/users?$filter=externalId eq '{value}'`  to retrieve the internal ID. 
+	userId := "90eedea1-dea1-90ee-a1de-ee90a1deee90" // string | key: internal user id (UUID format) or username of user.  **Note:** If you only have an external ID, first query the user with `GET /graph/v1.0/education/users?$filter=externalId eq '{value}'` to retrieve the internal ID. 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -115,7 +115,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | key: internal user id (UUID format) or username of user.  **Note:** If you only have an external ID, first query the user  with &#x60;GET /graph/v1.0/education/users?$filter&#x3D;externalId eq &#39;{value}&#39;&#x60;  to retrieve the internal ID.  | 
+**userId** | **string** | key: internal user id (UUID format) or username of user.  **Note:** If you only have an external ID, first query the user with &#x60;GET /graph/v1.0/education/users?$filter&#x3D;externalId eq &#39;{value}&#39;&#x60; to retrieve the internal ID.  | 
 
 ### Other Parameters
 

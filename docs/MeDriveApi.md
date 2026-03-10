@@ -4,10 +4,82 @@ All URIs are relative to *https://localhost:9200/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**FollowDriveItem**](MeDriveApi.md#FollowDriveItem) | **Post** /v1.0/me/drive/items/{item-id}/follow | Follow a DriveItem
 [**GetHome**](MeDriveApi.md#GetHome) | **Get** /v1.0/me/drive | Get personal space for user
 [**ListSharedByMe**](MeDriveApi.md#ListSharedByMe) | **Get** /v1beta1/me/drive/sharedByMe | Get a list of driveItem objects shared by the current user.
 [**ListSharedWithMe**](MeDriveApi.md#ListSharedWithMe) | **Get** /v1beta1/me/drive/sharedWithMe | Get a list of driveItem objects shared with the owner of a drive.
+[**UnfollowDriveItem**](MeDriveApi.md#UnfollowDriveItem) | **Delete** /v1.0/me/drive/following/{item-id} | Unfollow a DriveItem
 
+
+
+## FollowDriveItem
+
+> DriveItem FollowDriveItem(ctx, itemId).Execute()
+
+Follow a DriveItem
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
+)
+
+func main() {
+	itemId := "itemId_example" // string | key: id of item
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MeDriveApi.FollowDriveItem(context.Background(), itemId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MeDriveApi.FollowDriveItem``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `FollowDriveItem`: DriveItem
+	fmt.Fprintf(os.Stdout, "Response from `MeDriveApi.FollowDriveItem`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**itemId** | **string** | key: id of item | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiFollowDriveItemRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**DriveItem**](DriveItem.md)
+
+### Authorization
+
+[openId](../README.md#openId), [basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## GetHome
@@ -186,6 +258,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CollectionOfDriveItems1**](CollectionOfDriveItems1.md)
+
+### Authorization
+
+[openId](../README.md#openId), [basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UnfollowDriveItem
+
+> UnfollowDriveItem(ctx, itemId).Execute()
+
+Unfollow a DriveItem
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
+)
+
+func main() {
+	itemId := "itemId_example" // string | key: id of item
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.MeDriveApi.UnfollowDriveItem(context.Background(), itemId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MeDriveApi.UnfollowDriveItem``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**itemId** | **string** | key: id of item | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUnfollowDriveItemRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
 
 ### Authorization
 
