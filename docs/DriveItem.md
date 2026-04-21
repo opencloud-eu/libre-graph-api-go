@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **Audio** | Pointer to [**Audio**](Audio.md) |  | [optional] 
 **Video** | Pointer to [**Video**](Video.md) |  | [optional] 
 **ClientSynchronize** | Pointer to **bool** | Indicates if the item is synchronized with the underlying storage provider. Read-only. | [optional] 
+**MicrosoftGraphDownloadUrl** | Pointer to **string** | A pre-authenticated URL that can be used to download the item&#39;s content without providing an Authorization header. The URL is short-lived and cannot be cached.  This annotation is only populated when explicitly requested via &#x60;$select&#x60;, and only for items that have a &#x60;file&#x60; facet. The returned URL is valid for a limited time and should be used promptly.  | [optional] [readonly] 
 **UIHidden** | Pointer to **bool** | Properties or facets (see UI.Facet) annotated with this term will not be rendered if the annotation evaluates to true. Users can set this to hide permissions. | [optional] 
 
 ## Methods
@@ -830,6 +831,31 @@ SetClientSynchronize sets ClientSynchronize field to given value.
 `func (o *DriveItem) HasClientSynchronize() bool`
 
 HasClientSynchronize returns a boolean if a field has been set.
+
+### GetMicrosoftGraphDownloadUrl
+
+`func (o *DriveItem) GetMicrosoftGraphDownloadUrl() string`
+
+GetMicrosoftGraphDownloadUrl returns the MicrosoftGraphDownloadUrl field if non-nil, zero value otherwise.
+
+### GetMicrosoftGraphDownloadUrlOk
+
+`func (o *DriveItem) GetMicrosoftGraphDownloadUrlOk() (*string, bool)`
+
+GetMicrosoftGraphDownloadUrlOk returns a tuple with the MicrosoftGraphDownloadUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMicrosoftGraphDownloadUrl
+
+`func (o *DriveItem) SetMicrosoftGraphDownloadUrl(v string)`
+
+SetMicrosoftGraphDownloadUrl sets MicrosoftGraphDownloadUrl field to given value.
+
+### HasMicrosoftGraphDownloadUrl
+
+`func (o *DriveItem) HasMicrosoftGraphDownloadUrl() bool`
+
+HasMicrosoftGraphDownloadUrl returns a boolean if a field has been set.
 
 ### GetUIHidden
 

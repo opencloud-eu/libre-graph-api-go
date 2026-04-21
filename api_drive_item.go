@@ -137,6 +137,13 @@ type ApiGetDriveItemRequest struct {
 	ApiService *DriveItemApiService
 	driveId string
 	itemId string
+	select_ *[]string
+}
+
+// Select additional properties to be returned.
+func (r ApiGetDriveItemRequest) Select_(select_ []string) ApiGetDriveItemRequest {
+	r.select_ = &select_
+	return r
 }
 
 func (r ApiGetDriveItemRequest) Execute() (*DriveItem, *http.Response, error) {
@@ -186,6 +193,9 @@ func (a *DriveItemApiService) GetDriveItemExecute(r ApiGetDriveItemRequest) (*Dr
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.select_ != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$select", r.select_, "form", "csv")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -224,6 +234,149 @@ func (a *DriveItemApiService) GetDriveItemExecute(r ApiGetDriveItemRequest) (*Dr
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
+		}
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetDriveItemContentRequest struct {
+	ctx context.Context
+	ApiService *DriveItemApiService
+	driveId string
+	itemId string
+}
+
+func (r ApiGetDriveItemContentRequest) Execute() (*OdataError, *http.Response, error) {
+	return r.ApiService.GetDriveItemContentExecute(r)
+}
+
+/*
+GetDriveItemContent Download the content of a DriveItem
+
+Download the contents of the primary stream (file) of a driveItem. Only
+driveItem objects with a `file` facet can be downloaded.
+
+The response is a `302 Found` redirecting to a pre-authenticated download
+URL for the file. This is the same URL that is returned via the
+`@microsoft.graph.downloadUrl` instance annotation on the driveItem when
+requested via `$select`. Choose between the two based on whether you
+want to call the redirecting `/content` endpoint directly (for example,
+with a client that follows redirects automatically) or you want to
+inspect / schedule / prefetch the URL yourself via the annotation.
+
+The pre-authenticated URL is short-lived and does not require an
+`Authorization` header.
+
+To download a partial range of bytes, apply the `Range` header to the
+redirect target (the pre-authenticated URL), not to the `/content`
+request.
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
+ @param itemId key: id of item
+ @return ApiGetDriveItemContentRequest
+*/
+func (a *DriveItemApiService) GetDriveItemContent(ctx context.Context, driveId string, itemId string) ApiGetDriveItemContentRequest {
+	return ApiGetDriveItemContentRequest{
+		ApiService: a,
+		ctx: ctx,
+		driveId: driveId,
+		itemId: itemId,
+	}
+}
+
+// Execute executes the request
+//  @return OdataError
+func (a *DriveItemApiService) GetDriveItemContentExecute(r ApiGetDriveItemContentRequest) (*OdataError, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OdataError
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DriveItemApiService.GetDriveItemContent")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v1beta1/drives/{drive-id}/items/{item-id}/content"
+	localVarPath = strings.Replace(localVarPath, "{"+"drive-id"+"}", url.PathEscape(parameterValueToString(r.driveId, "driveId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"item-id"+"}", url.PathEscape(parameterValueToString(r.itemId, "itemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 			var v OdataError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))

@@ -83,6 +83,7 @@ Class | Method | HTTP request | Description
 *ApplicationsApi* | [**ListApplications**](docs/ApplicationsApi.md#listapplications) | **Get** /v1.0/applications | Get all applications
 *DriveItemApi* | [**DeleteDriveItem**](docs/DriveItemApi.md#deletedriveitem) | **Delete** /v1beta1/drives/{drive-id}/items/{item-id} | Delete a DriveItem.
 *DriveItemApi* | [**GetDriveItem**](docs/DriveItemApi.md#getdriveitem) | **Get** /v1beta1/drives/{drive-id}/items/{item-id} | Get a DriveItem.
+*DriveItemApi* | [**GetDriveItemContent**](docs/DriveItemApi.md#getdriveitemcontent) | **Get** /v1beta1/drives/{drive-id}/items/{item-id}/content | Download the content of a DriveItem
 *DriveItemApi* | [**UpdateDriveItem**](docs/DriveItemApi.md#updatedriveitem) | **Patch** /v1beta1/drives/{drive-id}/items/{item-id} | Update a DriveItem.
 *DrivesApi* | [**CreateDrive**](docs/DrivesApi.md#createdrive) | **Post** /v1.0/drives | Create a new drive of a specific type
 *DrivesApi* | [**DeleteDrive**](docs/DrivesApi.md#deletedrive) | **Delete** /v1.0/drives/{drive-id} | Delete a specific space

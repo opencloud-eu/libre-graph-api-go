@@ -67,6 +67,8 @@ type DriveItem struct {
 	Video *Video `json:"video,omitempty"`
 	// Indicates if the item is synchronized with the underlying storage provider. Read-only.
 	ClientSynchronize *bool `json:"@client.synchronize,omitempty"`
+	// A pre-authenticated URL that can be used to download the item's content without providing an Authorization header. The URL is short-lived and cannot be cached.  This annotation is only populated when explicitly requested via `$select`, and only for items that have a `file` facet. The returned URL is valid for a limited time and should be used promptly. 
+	MicrosoftGraphDownloadUrl *string `json:"@microsoft.graph.downloadUrl,omitempty"`
 	// Properties or facets (see UI.Facet) annotated with this term will not be rendered if the annotation evaluates to true. Users can set this to hide permissions.
 	UIHidden *bool `json:"@UI.Hidden,omitempty"`
 }
@@ -1080,6 +1082,38 @@ func (o *DriveItem) SetClientSynchronize(v bool) {
 	o.ClientSynchronize = &v
 }
 
+// GetMicrosoftGraphDownloadUrl returns the MicrosoftGraphDownloadUrl field value if set, zero value otherwise.
+func (o *DriveItem) GetMicrosoftGraphDownloadUrl() string {
+	if o == nil || IsNil(o.MicrosoftGraphDownloadUrl) {
+		var ret string
+		return ret
+	}
+	return *o.MicrosoftGraphDownloadUrl
+}
+
+// GetMicrosoftGraphDownloadUrlOk returns a tuple with the MicrosoftGraphDownloadUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DriveItem) GetMicrosoftGraphDownloadUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.MicrosoftGraphDownloadUrl) {
+		return nil, false
+	}
+	return o.MicrosoftGraphDownloadUrl, true
+}
+
+// HasMicrosoftGraphDownloadUrl returns a boolean if a field has been set.
+func (o *DriveItem) HasMicrosoftGraphDownloadUrl() bool {
+	if o != nil && !IsNil(o.MicrosoftGraphDownloadUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetMicrosoftGraphDownloadUrl gets a reference to the given string and assigns it to the MicrosoftGraphDownloadUrl field.
+func (o *DriveItem) SetMicrosoftGraphDownloadUrl(v string) {
+	o.MicrosoftGraphDownloadUrl = &v
+}
+
 // GetUIHidden returns the UIHidden field value if set, zero value otherwise.
 func (o *DriveItem) GetUIHidden() bool {
 	if o == nil || IsNil(o.UIHidden) {
@@ -1214,6 +1248,9 @@ func (o DriveItem) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ClientSynchronize) {
 		toSerialize["@client.synchronize"] = o.ClientSynchronize
+	}
+	if !IsNil(o.MicrosoftGraphDownloadUrl) {
+		toSerialize["@microsoft.graph.downloadUrl"] = o.MicrosoftGraphDownloadUrl
 	}
 	if !IsNil(o.UIHidden) {
 		toSerialize["@UI.Hidden"] = o.UIHidden
