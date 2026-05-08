@@ -65,6 +65,7 @@ type DriveItem struct {
 	Permissions []Permission `json:"permissions,omitempty"`
 	Audio *Audio `json:"audio,omitempty"`
 	Video *Video `json:"video,omitempty"`
+	LibreGraphMotionPhoto *MotionPhoto `json:"@libre.graph.motionPhoto,omitempty"`
 	// Indicates if the item is synchronized with the underlying storage provider. Read-only.
 	ClientSynchronize *bool `json:"@client.synchronize,omitempty"`
 	// A pre-authenticated URL that can be used to download the item's content without providing an Authorization header. The URL is short-lived and cannot be cached.  This annotation is only populated when explicitly requested via `$select`, and only for items that have a `file` facet. The returned URL is valid for a limited time and should be used promptly. 
@@ -1050,6 +1051,38 @@ func (o *DriveItem) SetVideo(v Video) {
 	o.Video = &v
 }
 
+// GetLibreGraphMotionPhoto returns the LibreGraphMotionPhoto field value if set, zero value otherwise.
+func (o *DriveItem) GetLibreGraphMotionPhoto() MotionPhoto {
+	if o == nil || IsNil(o.LibreGraphMotionPhoto) {
+		var ret MotionPhoto
+		return ret
+	}
+	return *o.LibreGraphMotionPhoto
+}
+
+// GetLibreGraphMotionPhotoOk returns a tuple with the LibreGraphMotionPhoto field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DriveItem) GetLibreGraphMotionPhotoOk() (*MotionPhoto, bool) {
+	if o == nil || IsNil(o.LibreGraphMotionPhoto) {
+		return nil, false
+	}
+	return o.LibreGraphMotionPhoto, true
+}
+
+// HasLibreGraphMotionPhoto returns a boolean if a field has been set.
+func (o *DriveItem) HasLibreGraphMotionPhoto() bool {
+	if o != nil && !IsNil(o.LibreGraphMotionPhoto) {
+		return true
+	}
+
+	return false
+}
+
+// SetLibreGraphMotionPhoto gets a reference to the given MotionPhoto and assigns it to the LibreGraphMotionPhoto field.
+func (o *DriveItem) SetLibreGraphMotionPhoto(v MotionPhoto) {
+	o.LibreGraphMotionPhoto = &v
+}
+
 // GetClientSynchronize returns the ClientSynchronize field value if set, zero value otherwise.
 func (o *DriveItem) GetClientSynchronize() bool {
 	if o == nil || IsNil(o.ClientSynchronize) {
@@ -1245,6 +1278,9 @@ func (o DriveItem) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Video) {
 		toSerialize["video"] = o.Video
+	}
+	if !IsNil(o.LibreGraphMotionPhoto) {
+		toSerialize["@libre.graph.motionPhoto"] = o.LibreGraphMotionPhoto
 	}
 	if !IsNil(o.ClientSynchronize) {
 		toSerialize["@client.synchronize"] = o.ClientSynchronize

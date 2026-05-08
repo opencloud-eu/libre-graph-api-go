@@ -106,6 +106,7 @@ docs/MeDrivesApi.md
 docs/MePhotoApi.md
 docs/MeUserApi.md
 docs/MemberReference.md
+docs/MotionPhoto.md
 docs/ObjectIdentity.md
 docs/OdataError.md
 docs/OdataErrorDetail.md
@@ -198,6 +199,7 @@ model_invitation.go
 model_invited_user_message_info.go
 model_item_reference.go
 model_member_reference.go
+model_motion_photo.go
 model_object_identity.go
 model_odata_error.go
 model_odata_error_detail.go
