@@ -77,6 +77,8 @@ type DriveItem struct {
 	LibreGraphMeFollowing *bool `json:"@libre.graph.me.following,omitempty"`
 	// The list of tags assigned to this DriveItem. Read-only. Use the AssignTags and UnassignTags operations to modify tags. 
 	LibreGraphTags []string `json:"@libre.graph.tags,omitempty"`
+	// A list of actions the caller is allowed to perform on this item.  Only returned when explicitly requested via `$select` on endpoints that support it. Mirrors the annotation of the same name on the `/permissions` endpoint, allowing clients to learn a caller's effective actions on an item without a separate round-trip. 
+	LibreGraphPermissionsActionsAllowedValues []string `json:"@libre.graph.permissions.actions.allowedValues,omitempty"`
 }
 
 // NewDriveItem instantiates a new DriveItem object
@@ -1280,6 +1282,38 @@ func (o *DriveItem) SetLibreGraphTags(v []string) {
 	o.LibreGraphTags = v
 }
 
+// GetLibreGraphPermissionsActionsAllowedValues returns the LibreGraphPermissionsActionsAllowedValues field value if set, zero value otherwise.
+func (o *DriveItem) GetLibreGraphPermissionsActionsAllowedValues() []string {
+	if o == nil || IsNil(o.LibreGraphPermissionsActionsAllowedValues) {
+		var ret []string
+		return ret
+	}
+	return o.LibreGraphPermissionsActionsAllowedValues
+}
+
+// GetLibreGraphPermissionsActionsAllowedValuesOk returns a tuple with the LibreGraphPermissionsActionsAllowedValues field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DriveItem) GetLibreGraphPermissionsActionsAllowedValuesOk() ([]string, bool) {
+	if o == nil || IsNil(o.LibreGraphPermissionsActionsAllowedValues) {
+		return nil, false
+	}
+	return o.LibreGraphPermissionsActionsAllowedValues, true
+}
+
+// HasLibreGraphPermissionsActionsAllowedValues returns a boolean if a field has been set.
+func (o *DriveItem) HasLibreGraphPermissionsActionsAllowedValues() bool {
+	if o != nil && !IsNil(o.LibreGraphPermissionsActionsAllowedValues) {
+		return true
+	}
+
+	return false
+}
+
+// SetLibreGraphPermissionsActionsAllowedValues gets a reference to the given []string and assigns it to the LibreGraphPermissionsActionsAllowedValues field.
+func (o *DriveItem) SetLibreGraphPermissionsActionsAllowedValues(v []string) {
+	o.LibreGraphPermissionsActionsAllowedValues = v
+}
+
 func (o DriveItem) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -1400,6 +1434,9 @@ func (o DriveItem) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LibreGraphTags) {
 		toSerialize["@libre.graph.tags"] = o.LibreGraphTags
+	}
+	if !IsNil(o.LibreGraphPermissionsActionsAllowedValues) {
+		toSerialize["@libre.graph.permissions.actions.allowedValues"] = o.LibreGraphPermissionsActionsAllowedValues
 	}
 	return toSerialize, nil
 }

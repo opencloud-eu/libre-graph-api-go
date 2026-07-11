@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## HomeGetChildren
 
-> CollectionOfDriveItems HomeGetChildren(ctx).Execute()
+> CollectionOfDriveItems HomeGetChildren(ctx).Select_(select_).Execute()
 
 Get children from drive
 
@@ -27,10 +27,11 @@ import (
 )
 
 func main() {
+	select_ := []string{"Select_example"} // []string | Select additional properties to be returned. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MeDriveRootChildrenApi.HomeGetChildren(context.Background()).Execute()
+	resp, r, err := apiClient.MeDriveRootChildrenApi.HomeGetChildren(context.Background()).Select_(select_).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MeDriveRootChildrenApi.HomeGetChildren``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -42,12 +43,16 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiHomeGetChildrenRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **select_** | **[]string** | Select additional properties to be returned. | 
 
 ### Return type
 

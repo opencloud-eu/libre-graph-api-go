@@ -547,6 +547,13 @@ type ApiGetRootRequest struct {
 	ctx context.Context
 	ApiService *DrivesRootApiService
 	driveId string
+	select_ *[]string
+}
+
+// Select additional properties to be returned.
+func (r ApiGetRootRequest) Select_(select_ []string) ApiGetRootRequest {
+	r.select_ = &select_
+	return r
 }
 
 func (r ApiGetRootRequest) Execute() (*DriveItem, *http.Response, error) {
@@ -590,6 +597,9 @@ func (a *DrivesRootApiService) GetRootExecute(r ApiGetRootRequest) (*DriveItem, 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.select_ != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$select", r.select_, "form", "csv")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

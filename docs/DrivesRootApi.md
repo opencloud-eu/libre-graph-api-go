@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ## GetRoot
 
-> DriveItem GetRoot(ctx, driveId).Execute()
+> DriveItem GetRoot(ctx, driveId).Select_(select_).Execute()
 
 Get root from arbitrary space
 
@@ -328,10 +328,11 @@ import (
 
 func main() {
 	driveId := "driveId_example" // string | key: id of drive
+	select_ := []string{"Select_example"} // []string | Select additional properties to be returned. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DrivesRootApi.GetRoot(context.Background(), driveId).Execute()
+	resp, r, err := apiClient.DrivesRootApi.GetRoot(context.Background(), driveId).Select_(select_).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.GetRoot``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -357,6 +358,7 @@ Other parameters are passed through a pointer to a apiGetRootRequest struct via 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **select_** | **[]string** | Select additional properties to be returned. | 
 
 ### Return type
 

@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 **UIHidden** | Pointer to **bool** | Properties or facets (see UI.Facet) annotated with this term will not be rendered if the annotation evaluates to true. Users can set this to hide permissions. | [optional] 
 **LibreGraphMeFollowing** | Pointer to **bool** | Indicates whether the current user is following this DriveItem. Read-only. Use the FollowDriveItem and UnfollowDriveItem operations to change the following state.  | [optional] [readonly] 
 **LibreGraphTags** | Pointer to **[]string** | The list of tags assigned to this DriveItem. Read-only. Use the AssignTags and UnassignTags operations to modify tags.  | [optional] [readonly] 
+**LibreGraphPermissionsActionsAllowedValues** | Pointer to **[]string** | A list of actions the caller is allowed to perform on this item.  Only returned when explicitly requested via &#x60;$select&#x60; on endpoints that support it. Mirrors the annotation of the same name on the &#x60;/permissions&#x60; endpoint, allowing clients to learn a caller&#39;s effective actions on an item without a separate round-trip.  | [optional] [readonly] 
 
 ## Methods
 
@@ -985,6 +986,31 @@ SetLibreGraphTags sets LibreGraphTags field to given value.
 `func (o *DriveItem) HasLibreGraphTags() bool`
 
 HasLibreGraphTags returns a boolean if a field has been set.
+
+### GetLibreGraphPermissionsActionsAllowedValues
+
+`func (o *DriveItem) GetLibreGraphPermissionsActionsAllowedValues() []string`
+
+GetLibreGraphPermissionsActionsAllowedValues returns the LibreGraphPermissionsActionsAllowedValues field if non-nil, zero value otherwise.
+
+### GetLibreGraphPermissionsActionsAllowedValuesOk
+
+`func (o *DriveItem) GetLibreGraphPermissionsActionsAllowedValuesOk() (*[]string, bool)`
+
+GetLibreGraphPermissionsActionsAllowedValuesOk returns a tuple with the LibreGraphPermissionsActionsAllowedValues field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLibreGraphPermissionsActionsAllowedValues
+
+`func (o *DriveItem) SetLibreGraphPermissionsActionsAllowedValues(v []string)`
+
+SetLibreGraphPermissionsActionsAllowedValues sets LibreGraphPermissionsActionsAllowedValues field to given value.
+
+### HasLibreGraphPermissionsActionsAllowedValues
+
+`func (o *DriveItem) HasLibreGraphPermissionsActionsAllowedValues() bool`
+
+HasLibreGraphPermissionsActionsAllowedValues returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
