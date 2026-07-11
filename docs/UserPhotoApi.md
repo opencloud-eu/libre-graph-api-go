@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetUserPhoto
 
-> *os.File GetUserPhoto(ctx, userId).Execute()
+> io.Reader GetUserPhoto(ctx, userId).Execute()
 
 Get the photo of a user
 
@@ -36,7 +36,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserPhotoApi.GetUserPhoto``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetUserPhoto`: *os.File
+	// response from `GetUserPhoto`: io.Reader
 	fmt.Fprintf(os.Stdout, "Response from `UserPhotoApi.GetUserPhoto`: %v\n", resp)
 }
 ```
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[***os.File**](*os.File.md)
+[**io.Reader**](io.Reader.md)
 
 ### Authorization
 

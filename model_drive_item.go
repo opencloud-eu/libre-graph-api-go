@@ -66,12 +66,17 @@ type DriveItem struct {
 	Audio *Audio `json:"audio,omitempty"`
 	Video *Video `json:"video,omitempty"`
 	LibreGraphMotionPhoto *MotionPhoto `json:"@libre.graph.motionPhoto,omitempty"`
+	LibreGraphLivePhoto *LivePhoto `json:"@libre.graph.livePhoto,omitempty"`
 	// Indicates if the item is synchronized with the underlying storage provider. Read-only.
 	ClientSynchronize *bool `json:"@client.synchronize,omitempty"`
 	// A pre-authenticated URL that can be used to download the item's content without providing an Authorization header. The URL is short-lived and cannot be cached.  This annotation is only populated when explicitly requested via `$select`, and only for items that have a `file` facet. The returned URL is valid for a limited time and should be used promptly. 
 	MicrosoftGraphDownloadUrl *string `json:"@microsoft.graph.downloadUrl,omitempty"`
 	// Properties or facets (see UI.Facet) annotated with this term will not be rendered if the annotation evaluates to true. Users can set this to hide permissions.
 	UIHidden *bool `json:"@UI.Hidden,omitempty"`
+	// Indicates whether the current user is following this DriveItem. Read-only. Use the FollowDriveItem and UnfollowDriveItem operations to change the following state. 
+	LibreGraphMeFollowing *bool `json:"@libre.graph.me.following,omitempty"`
+	// The list of tags assigned to this DriveItem. Read-only. Use the AssignTags and UnassignTags operations to modify tags. 
+	LibreGraphTags []string `json:"@libre.graph.tags,omitempty"`
 }
 
 // NewDriveItem instantiates a new DriveItem object
@@ -1083,6 +1088,38 @@ func (o *DriveItem) SetLibreGraphMotionPhoto(v MotionPhoto) {
 	o.LibreGraphMotionPhoto = &v
 }
 
+// GetLibreGraphLivePhoto returns the LibreGraphLivePhoto field value if set, zero value otherwise.
+func (o *DriveItem) GetLibreGraphLivePhoto() LivePhoto {
+	if o == nil || IsNil(o.LibreGraphLivePhoto) {
+		var ret LivePhoto
+		return ret
+	}
+	return *o.LibreGraphLivePhoto
+}
+
+// GetLibreGraphLivePhotoOk returns a tuple with the LibreGraphLivePhoto field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DriveItem) GetLibreGraphLivePhotoOk() (*LivePhoto, bool) {
+	if o == nil || IsNil(o.LibreGraphLivePhoto) {
+		return nil, false
+	}
+	return o.LibreGraphLivePhoto, true
+}
+
+// HasLibreGraphLivePhoto returns a boolean if a field has been set.
+func (o *DriveItem) HasLibreGraphLivePhoto() bool {
+	if o != nil && !IsNil(o.LibreGraphLivePhoto) {
+		return true
+	}
+
+	return false
+}
+
+// SetLibreGraphLivePhoto gets a reference to the given LivePhoto and assigns it to the LibreGraphLivePhoto field.
+func (o *DriveItem) SetLibreGraphLivePhoto(v LivePhoto) {
+	o.LibreGraphLivePhoto = &v
+}
+
 // GetClientSynchronize returns the ClientSynchronize field value if set, zero value otherwise.
 func (o *DriveItem) GetClientSynchronize() bool {
 	if o == nil || IsNil(o.ClientSynchronize) {
@@ -1177,6 +1214,70 @@ func (o *DriveItem) HasUIHidden() bool {
 // SetUIHidden gets a reference to the given bool and assigns it to the UIHidden field.
 func (o *DriveItem) SetUIHidden(v bool) {
 	o.UIHidden = &v
+}
+
+// GetLibreGraphMeFollowing returns the LibreGraphMeFollowing field value if set, zero value otherwise.
+func (o *DriveItem) GetLibreGraphMeFollowing() bool {
+	if o == nil || IsNil(o.LibreGraphMeFollowing) {
+		var ret bool
+		return ret
+	}
+	return *o.LibreGraphMeFollowing
+}
+
+// GetLibreGraphMeFollowingOk returns a tuple with the LibreGraphMeFollowing field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DriveItem) GetLibreGraphMeFollowingOk() (*bool, bool) {
+	if o == nil || IsNil(o.LibreGraphMeFollowing) {
+		return nil, false
+	}
+	return o.LibreGraphMeFollowing, true
+}
+
+// HasLibreGraphMeFollowing returns a boolean if a field has been set.
+func (o *DriveItem) HasLibreGraphMeFollowing() bool {
+	if o != nil && !IsNil(o.LibreGraphMeFollowing) {
+		return true
+	}
+
+	return false
+}
+
+// SetLibreGraphMeFollowing gets a reference to the given bool and assigns it to the LibreGraphMeFollowing field.
+func (o *DriveItem) SetLibreGraphMeFollowing(v bool) {
+	o.LibreGraphMeFollowing = &v
+}
+
+// GetLibreGraphTags returns the LibreGraphTags field value if set, zero value otherwise.
+func (o *DriveItem) GetLibreGraphTags() []string {
+	if o == nil || IsNil(o.LibreGraphTags) {
+		var ret []string
+		return ret
+	}
+	return o.LibreGraphTags
+}
+
+// GetLibreGraphTagsOk returns a tuple with the LibreGraphTags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DriveItem) GetLibreGraphTagsOk() ([]string, bool) {
+	if o == nil || IsNil(o.LibreGraphTags) {
+		return nil, false
+	}
+	return o.LibreGraphTags, true
+}
+
+// HasLibreGraphTags returns a boolean if a field has been set.
+func (o *DriveItem) HasLibreGraphTags() bool {
+	if o != nil && !IsNil(o.LibreGraphTags) {
+		return true
+	}
+
+	return false
+}
+
+// SetLibreGraphTags gets a reference to the given []string and assigns it to the LibreGraphTags field.
+func (o *DriveItem) SetLibreGraphTags(v []string) {
+	o.LibreGraphTags = v
 }
 
 func (o DriveItem) MarshalJSON() ([]byte, error) {
@@ -1282,6 +1383,9 @@ func (o DriveItem) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LibreGraphMotionPhoto) {
 		toSerialize["@libre.graph.motionPhoto"] = o.LibreGraphMotionPhoto
 	}
+	if !IsNil(o.LibreGraphLivePhoto) {
+		toSerialize["@libre.graph.livePhoto"] = o.LibreGraphLivePhoto
+	}
 	if !IsNil(o.ClientSynchronize) {
 		toSerialize["@client.synchronize"] = o.ClientSynchronize
 	}
@@ -1290,6 +1394,12 @@ func (o DriveItem) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.UIHidden) {
 		toSerialize["@UI.Hidden"] = o.UIHidden
+	}
+	if !IsNil(o.LibreGraphMeFollowing) {
+		toSerialize["@libre.graph.me.following"] = o.LibreGraphMeFollowing
+	}
+	if !IsNil(o.LibreGraphTags) {
+		toSerialize["@libre.graph.tags"] = o.LibreGraphTags
 	}
 	return toSerialize, nil
 }

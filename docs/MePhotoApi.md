@@ -70,7 +70,7 @@ Other parameters are passed through a pointer to a apiDeleteOwnUserPhotoRequest 
 
 ## GetOwnUserPhoto
 
-> *os.File GetOwnUserPhoto(ctx).Execute()
+> io.Reader GetOwnUserPhoto(ctx).Execute()
 
 Get the current user's profile photo
 
@@ -95,7 +95,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MePhotoApi.GetOwnUserPhoto``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetOwnUserPhoto`: *os.File
+	// response from `GetOwnUserPhoto`: io.Reader
 	fmt.Fprintf(os.Stdout, "Response from `MePhotoApi.GetOwnUserPhoto`: %v\n", resp)
 }
 ```
@@ -111,7 +111,7 @@ Other parameters are passed through a pointer to a apiGetOwnUserPhotoRequest str
 
 ### Return type
 
-[***os.File**](*os.File.md)
+[**io.Reader**](io.Reader.md)
 
 ### Authorization
 
@@ -146,7 +146,7 @@ import (
 )
 
 func main() {
-	body := os.NewFile(1234, "some_file") // *os.File | New user photo (optional)
+	body := os.NewFile(1234, "some_file") // io.Reader | New user photo (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -169,7 +169,7 @@ Other parameters are passed through a pointer to a apiUpdateOwnUserPhotoPatchReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | ***os.File** | New user photo | 
+ **body** | **io.Reader** | New user photo | 
 
 ### Return type
 
@@ -208,7 +208,7 @@ import (
 )
 
 func main() {
-	body := os.NewFile(1234, "some_file") // *os.File | New user photo (optional)
+	body := os.NewFile(1234, "some_file") // io.Reader | New user photo (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -231,7 +231,7 @@ Other parameters are passed through a pointer to a apiUpdateOwnUserPhotoPutReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | ***os.File** | New user photo | 
+ **body** | **io.Reader** | New user photo | 
 
 ### Return type
 

@@ -4,7 +4,7 @@ All URIs are relative to *https://localhost:9200/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateDriveItem**](DrivesRootApi.md#CreateDriveItem) | **Post** /v1beta1/drives/{drive-id}/root/children | Create a drive item
+[**CreateDriveItem**](DrivesRootApi.md#CreateDriveItem) | **Post** /v1beta1/drives/{drive-id}/root/children | Create a new DriveItem at the drive root
 [**CreateLinkSpaceRoot**](DrivesRootApi.md#CreateLinkSpaceRoot) | **Post** /v1beta1/drives/{drive-id}/root/createLink | Create a sharing link for the root item of a Drive
 [**DeletePermissionSpaceRoot**](DrivesRootApi.md#DeletePermissionSpaceRoot) | **Delete** /v1beta1/drives/{drive-id}/root/permissions/{perm-id} | Remove access to a Drive
 [**GetPermissionSpaceRoot**](DrivesRootApi.md#GetPermissionSpaceRoot) | **Get** /v1beta1/drives/{drive-id}/root/permissions/{perm-id} | Get a single sharing permission for the root item of a drive
@@ -18,9 +18,9 @@ Method | HTTP request | Description
 
 ## CreateDriveItem
 
-> DriveItem CreateDriveItem(ctx, driveId).DriveItem(driveItem).Execute()
+> DriveItem CreateDriveItem(ctx, driveId).LibreGraphConflictBehavior(libreGraphConflictBehavior).LibreGraphMissingParentsBehavior(libreGraphMissingParentsBehavior).DriveItem(driveItem).Execute()
 
-Create a drive item
+Create a new DriveItem at the drive root
 
 
 
@@ -38,11 +38,13 @@ import (
 
 func main() {
 	driveId := "a0ca6a90-a365-4782-871e-d44447bbc668$a0ca6a90-a365-4782-871e-d44447bbc668" // string | key: id of drive
-	driveItem := *openapiclient.NewDriveItem() // DriveItem | In the request body, provide a JSON object with the following parameters. For mounting a share the necessary remoteItem id and permission id can be taken from the [sharedWithMe](#/me.drive/ListSharedWithMe) endpoint. (optional)
+	libreGraphConflictBehavior := "libreGraphConflictBehavior_example" // string | Controls what happens when a child with the same name already exists. `fail` (default) returns 409; `replace` overwrites the existing item. MS Graph's `rename` value is not supported.  (optional) (default to "fail")
+	libreGraphMissingParentsBehavior := "libreGraphMissingParentsBehavior_example" // string | Controls what happens when a colon-syntax URL refers to a path whose intermediate folders don't all exist yet. `fail` (default) returns 404; `create` creates the missing intermediate folders before creating the final item. Only meaningful for colon-syntax URLs; ignored otherwise.  (optional) (default to "fail")
+	driveItem := *openapiclient.NewDriveItem() // DriveItem | In the request body, provide a JSON object describing the new driveItem. Must specify exactly one of `folder`, `file`, or `remoteItem`. For mount-share, see [sharedWithMe](#/me.drive/ListSharedWithMe) for obtaining the source `remoteItem.id` and `permission` id. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DrivesRootApi.CreateDriveItem(context.Background(), driveId).DriveItem(driveItem).Execute()
+	resp, r, err := apiClient.DrivesRootApi.CreateDriveItem(context.Background(), driveId).LibreGraphConflictBehavior(libreGraphConflictBehavior).LibreGraphMissingParentsBehavior(libreGraphMissingParentsBehavior).DriveItem(driveItem).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DrivesRootApi.CreateDriveItem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -68,7 +70,9 @@ Other parameters are passed through a pointer to a apiCreateDriveItemRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **driveItem** | [**DriveItem**](DriveItem.md) | In the request body, provide a JSON object with the following parameters. For mounting a share the necessary remoteItem id and permission id can be taken from the [sharedWithMe](#/me.drive/ListSharedWithMe) endpoint. | 
+ **libreGraphConflictBehavior** | **string** | Controls what happens when a child with the same name already exists. &#x60;fail&#x60; (default) returns 409; &#x60;replace&#x60; overwrites the existing item. MS Graph&#39;s &#x60;rename&#x60; value is not supported.  | [default to &quot;fail&quot;]
+ **libreGraphMissingParentsBehavior** | **string** | Controls what happens when a colon-syntax URL refers to a path whose intermediate folders don&#39;t all exist yet. &#x60;fail&#x60; (default) returns 404; &#x60;create&#x60; creates the missing intermediate folders before creating the final item. Only meaningful for colon-syntax URLs; ignored otherwise.  | [default to &quot;fail&quot;]
+ **driveItem** | [**DriveItem**](DriveItem.md) | In the request body, provide a JSON object describing the new driveItem. Must specify exactly one of &#x60;folder&#x60;, &#x60;file&#x60;, or &#x60;remoteItem&#x60;. For mount-share, see [sharedWithMe](#/me.drive/ListSharedWithMe) for obtaining the source &#x60;remoteItem.id&#x60; and &#x60;permission&#x60; id. | 
 
 ### Return type
 
@@ -466,7 +470,7 @@ import (
 
 func main() {
 	driveId := "driveId_example" // string | key: id of drive
-	filter := "@libre.graph.permissions.roles.allowedValues/rolePermissions/any(p:contains(p/condition, '@Subject.UserType=="Federated"'))" // string | Filter items by property values. By default all permissions are returned and the avalable sharing roles are limited to normal users. To get a list of sharing roles applicable to federated users use the example $select query and combine it with $filter to omit the list of permissions. (optional)
+	filter := "@libre.graph.permissions.roles.allowedValues/rolePermissions/any(p:contains(p/condition, '@Subject.UserType==\"Federated\"'))" // string | Filter items by property values. By default all permissions are returned and the avalable sharing roles are limited to normal users. To get a list of sharing roles applicable to federated users use the example $select query and combine it with $filter to omit the list of permissions. (optional)
 	select_ := []string{"Select_example"} // []string | Select properties to be returned. By default all properties are returned. Select the roles property to fetch the available sharing roles without resolving all the permissions. Combine this with the $filter parameter to fetch the actions applicable to federated users. (optional)
 	count := true // bool | Include count of items (optional)
 	top := int32(50) // int32 | Show only the first n items (optional)

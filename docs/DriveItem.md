@@ -35,9 +35,12 @@ Name | Type | Description | Notes
 **Audio** | Pointer to [**Audio**](Audio.md) |  | [optional] 
 **Video** | Pointer to [**Video**](Video.md) |  | [optional] 
 **LibreGraphMotionPhoto** | Pointer to [**MotionPhoto**](MotionPhoto.md) |  | [optional] 
+**LibreGraphLivePhoto** | Pointer to [**LivePhoto**](LivePhoto.md) |  | [optional] 
 **ClientSynchronize** | Pointer to **bool** | Indicates if the item is synchronized with the underlying storage provider. Read-only. | [optional] 
 **MicrosoftGraphDownloadUrl** | Pointer to **string** | A pre-authenticated URL that can be used to download the item&#39;s content without providing an Authorization header. The URL is short-lived and cannot be cached.  This annotation is only populated when explicitly requested via &#x60;$select&#x60;, and only for items that have a &#x60;file&#x60; facet. The returned URL is valid for a limited time and should be used promptly.  | [optional] [readonly] 
 **UIHidden** | Pointer to **bool** | Properties or facets (see UI.Facet) annotated with this term will not be rendered if the annotation evaluates to true. Users can set this to hide permissions. | [optional] 
+**LibreGraphMeFollowing** | Pointer to **bool** | Indicates whether the current user is following this DriveItem. Read-only. Use the FollowDriveItem and UnfollowDriveItem operations to change the following state.  | [optional] [readonly] 
+**LibreGraphTags** | Pointer to **[]string** | The list of tags assigned to this DriveItem. Read-only. Use the AssignTags and UnassignTags operations to modify tags.  | [optional] [readonly] 
 
 ## Methods
 
@@ -833,6 +836,31 @@ SetLibreGraphMotionPhoto sets LibreGraphMotionPhoto field to given value.
 
 HasLibreGraphMotionPhoto returns a boolean if a field has been set.
 
+### GetLibreGraphLivePhoto
+
+`func (o *DriveItem) GetLibreGraphLivePhoto() LivePhoto`
+
+GetLibreGraphLivePhoto returns the LibreGraphLivePhoto field if non-nil, zero value otherwise.
+
+### GetLibreGraphLivePhotoOk
+
+`func (o *DriveItem) GetLibreGraphLivePhotoOk() (*LivePhoto, bool)`
+
+GetLibreGraphLivePhotoOk returns a tuple with the LibreGraphLivePhoto field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLibreGraphLivePhoto
+
+`func (o *DriveItem) SetLibreGraphLivePhoto(v LivePhoto)`
+
+SetLibreGraphLivePhoto sets LibreGraphLivePhoto field to given value.
+
+### HasLibreGraphLivePhoto
+
+`func (o *DriveItem) HasLibreGraphLivePhoto() bool`
+
+HasLibreGraphLivePhoto returns a boolean if a field has been set.
+
 ### GetClientSynchronize
 
 `func (o *DriveItem) GetClientSynchronize() bool`
@@ -907,6 +935,56 @@ SetUIHidden sets UIHidden field to given value.
 `func (o *DriveItem) HasUIHidden() bool`
 
 HasUIHidden returns a boolean if a field has been set.
+
+### GetLibreGraphMeFollowing
+
+`func (o *DriveItem) GetLibreGraphMeFollowing() bool`
+
+GetLibreGraphMeFollowing returns the LibreGraphMeFollowing field if non-nil, zero value otherwise.
+
+### GetLibreGraphMeFollowingOk
+
+`func (o *DriveItem) GetLibreGraphMeFollowingOk() (*bool, bool)`
+
+GetLibreGraphMeFollowingOk returns a tuple with the LibreGraphMeFollowing field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLibreGraphMeFollowing
+
+`func (o *DriveItem) SetLibreGraphMeFollowing(v bool)`
+
+SetLibreGraphMeFollowing sets LibreGraphMeFollowing field to given value.
+
+### HasLibreGraphMeFollowing
+
+`func (o *DriveItem) HasLibreGraphMeFollowing() bool`
+
+HasLibreGraphMeFollowing returns a boolean if a field has been set.
+
+### GetLibreGraphTags
+
+`func (o *DriveItem) GetLibreGraphTags() []string`
+
+GetLibreGraphTags returns the LibreGraphTags field if non-nil, zero value otherwise.
+
+### GetLibreGraphTagsOk
+
+`func (o *DriveItem) GetLibreGraphTagsOk() (*[]string, bool)`
+
+GetLibreGraphTagsOk returns a tuple with the LibreGraphTags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLibreGraphTags
+
+`func (o *DriveItem) SetLibreGraphTags(v []string)`
+
+SetLibreGraphTags sets LibreGraphTags field to given value.
+
+### HasLibreGraphTags
+
+`func (o *DriveItem) HasLibreGraphTags() bool`
+
+HasLibreGraphTags returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
