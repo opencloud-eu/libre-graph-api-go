@@ -2563,6 +2563,73 @@ paths:
       tags:
       - drives.root
       x-ms-docs-operation-type: operation
+  /v1.0/drives/{drive-id}/items/{item-id}:
+    get:
+      description: |
+        Get a DriveItem by using its ID.
+
+        Modeled on the MS Graph get driveItem endpoint
+        (https://learn.microsoft.com/en-us/graph/api/driveitem-get).
+      operationId: GetDriveItemV1
+      parameters:
+      - description: "key: id of drive"
+        example: a0ca6a90-a365-4782-871e-d44447bbc668$a0ca6a90-a365-4782-871e-d44447bbc668
+        explode: false
+        in: path
+        name: drive-id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-ms-docs-key-type: drive
+      - description: "key: id of item"
+        example: a0ca6a90-a365-4782-871e-d44447bbc668$a0ca6a90-a365-4782-871e-d44447bbc668!item-id
+        explode: false
+        in: path
+        name: item-id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-ms-docs-key-type: item
+      - description: Select additional properties to be returned.
+        examples:
+          request download url:
+            value:
+            - '@microsoft.graph.downloadUrl'
+          request allowed actions:
+            value:
+            - '@libre.graph.permissions.actions.allowedValues'
+        explode: false
+        in: query
+        name: $select
+        required: false
+        schema:
+          items:
+            enum:
+            - '@microsoft.graph.downloadUrl'
+            - '@libre.graph.permissions.actions.allowedValues'
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/driveItem"
+          description: Retrieved driveItem
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/odata.error"
+          description: error
+      summary: Get a DriveItem.
+      tags:
+      - driveItem
+      x-ms-docs-operation-type: operation
   /v1.0/drives/{drive-id}/items/{item-id}/children:
     get:
       description: |

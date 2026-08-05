@@ -739,6 +739,135 @@ func (a *DriveItemApiService) GetDriveItemContentExecute(r ApiGetDriveItemConten
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiGetDriveItemV1Request struct {
+	ctx context.Context
+	ApiService *DriveItemApiService
+	driveId string
+	itemId string
+	select_ *[]string
+}
+
+// Select additional properties to be returned.
+func (r ApiGetDriveItemV1Request) Select_(select_ []string) ApiGetDriveItemV1Request {
+	r.select_ = &select_
+	return r
+}
+
+func (r ApiGetDriveItemV1Request) Execute() (*DriveItem, *http.Response, error) {
+	return r.ApiService.GetDriveItemV1Execute(r)
+}
+
+/*
+GetDriveItemV1 Get a DriveItem.
+
+Get a DriveItem by using its ID.
+
+Modeled on the MS Graph get driveItem endpoint
+(https://learn.microsoft.com/en-us/graph/api/driveitem-get).
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param driveId key: id of drive
+ @param itemId key: id of item
+ @return ApiGetDriveItemV1Request
+*/
+func (a *DriveItemApiService) GetDriveItemV1(ctx context.Context, driveId string, itemId string) ApiGetDriveItemV1Request {
+	return ApiGetDriveItemV1Request{
+		ApiService: a,
+		ctx: ctx,
+		driveId: driveId,
+		itemId: itemId,
+	}
+}
+
+// Execute executes the request
+//  @return DriveItem
+func (a *DriveItemApiService) GetDriveItemV1Execute(r ApiGetDriveItemV1Request) (*DriveItem, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *DriveItem
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DriveItemApiService.GetDriveItemV1")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v1.0/drives/{drive-id}/items/{item-id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"drive-id"+"}", url.PathEscape(parameterValueToString(r.driveId, "driveId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"item-id"+"}", url.PathEscape(parameterValueToString(r.itemId, "itemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.select_ != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$select", r.select_, "form", "csv")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+			var v OdataError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiUpdateDriveItemRequest struct {
 	ctx context.Context
 	ApiService *DriveItemApiService

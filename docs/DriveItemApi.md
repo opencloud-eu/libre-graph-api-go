@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**GetDriveItem**](DriveItemApi.md#GetDriveItem) | **Get** /v1beta1/drives/{drive-id}/items/{item-id} | Get a DriveItem.
 [**GetDriveItemChildren**](DriveItemApi.md#GetDriveItemChildren) | **Get** /v1.0/drives/{drive-id}/items/{item-id}/children | List children of a DriveItem
 [**GetDriveItemContent**](DriveItemApi.md#GetDriveItemContent) | **Get** /v1beta1/drives/{drive-id}/items/{item-id}/content | Download the content of a DriveItem
+[**GetDriveItemV1**](DriveItemApi.md#GetDriveItemV1) | **Get** /v1.0/drives/{drive-id}/items/{item-id} | Get a DriveItem.
 [**UpdateDriveItem**](DriveItemApi.md#UpdateDriveItem) | **Patch** /v1beta1/drives/{drive-id}/items/{item-id} | Update a DriveItem.
 
 
@@ -369,6 +370,81 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OdataError**](OdataError.md)
+
+### Authorization
+
+[openId](../README.md#openId), [basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetDriveItemV1
+
+> DriveItem GetDriveItemV1(ctx, driveId, itemId).Select_(select_).Execute()
+
+Get a DriveItem.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
+)
+
+func main() {
+	driveId := "a0ca6a90-a365-4782-871e-d44447bbc668$a0ca6a90-a365-4782-871e-d44447bbc668" // string | key: id of drive
+	itemId := "a0ca6a90-a365-4782-871e-d44447bbc668$a0ca6a90-a365-4782-871e-d44447bbc668!item-id" // string | key: id of item
+	select_ := []string{"Select_example"} // []string | Select additional properties to be returned. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DriveItemApi.GetDriveItemV1(context.Background(), driveId, itemId).Select_(select_).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DriveItemApi.GetDriveItemV1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDriveItemV1`: DriveItem
+	fmt.Fprintf(os.Stdout, "Response from `DriveItemApi.GetDriveItemV1`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**driveId** | **string** | key: id of drive | 
+**itemId** | **string** | key: id of item | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDriveItemV1Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **select_** | **[]string** | Select additional properties to be returned. | 
+
+### Return type
+
+[**DriveItem**](DriveItem.md)
 
 ### Authorization
 

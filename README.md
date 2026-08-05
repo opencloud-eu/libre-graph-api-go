@@ -79,6 +79,7 @@ Class | Method | HTTP request | Description
 *DriveItemApi* | [**GetDriveItem**](docs/DriveItemApi.md#getdriveitem) | **Get** /v1beta1/drives/{drive-id}/items/{item-id} | Get a DriveItem.
 *DriveItemApi* | [**GetDriveItemChildren**](docs/DriveItemApi.md#getdriveitemchildren) | **Get** /v1.0/drives/{drive-id}/items/{item-id}/children | List children of a DriveItem
 *DriveItemApi* | [**GetDriveItemContent**](docs/DriveItemApi.md#getdriveitemcontent) | **Get** /v1beta1/drives/{drive-id}/items/{item-id}/content | Download the content of a DriveItem
+*DriveItemApi* | [**GetDriveItemV1**](docs/DriveItemApi.md#getdriveitemv1) | **Get** /v1.0/drives/{drive-id}/items/{item-id} | Get a DriveItem.
 *DriveItemApi* | [**UpdateDriveItem**](docs/DriveItemApi.md#updatedriveitem) | **Patch** /v1beta1/drives/{drive-id}/items/{item-id} | Update a DriveItem.
 *DrivesApi* | [**CreateDrive**](docs/DrivesApi.md#createdrive) | **Post** /v1.0/drives | Create a new drive of a specific type
 *DrivesApi* | [**DeleteDrive**](docs/DrivesApi.md#deletedrive) | **Delete** /v1.0/drives/{drive-id} | Delete a specific space
