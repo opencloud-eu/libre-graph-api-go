@@ -475,6 +475,13 @@ type ApiGetDriveItemChildrenRequest struct {
 	ApiService *DriveItemApiService
 	driveId string
 	itemId string
+	select_ *[]string
+}
+
+// Select additional properties to be returned.
+func (r ApiGetDriveItemChildrenRequest) Select_(select_ []string) ApiGetDriveItemChildrenRequest {
+	r.select_ = &select_
+	return r
 }
 
 func (r ApiGetDriveItemChildrenRequest) Execute() (*CollectionOfDriveItems, *http.Response, error) {
@@ -534,6 +541,9 @@ func (a *DriveItemApiService) GetDriveItemChildrenExecute(r ApiGetDriveItemChild
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.select_ != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$select", r.select_, "form", "csv")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

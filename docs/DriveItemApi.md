@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ## GetDriveItemChildren
 
-> CollectionOfDriveItems GetDriveItemChildren(ctx, driveId, itemId).Execute()
+> CollectionOfDriveItems GetDriveItemChildren(ctx, driveId, itemId).Select_(select_).Execute()
 
 List children of a DriveItem
 
@@ -262,10 +262,11 @@ import (
 func main() {
 	driveId := "a0ca6a90-a365-4782-871e-d44447bbc668$a0ca6a90-a365-4782-871e-d44447bbc668" // string | key: id of drive
 	itemId := "a0ca6a90-a365-4782-871e-d44447bbc668$a0ca6a90-a365-4782-871e-d44447bbc668!share-id" // string | key: id of item
+	select_ := []string{"Select_example"} // []string | Select additional properties to be returned. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DriveItemApi.GetDriveItemChildren(context.Background(), driveId, itemId).Execute()
+	resp, r, err := apiClient.DriveItemApi.GetDriveItemChildren(context.Background(), driveId, itemId).Select_(select_).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DriveItemApi.GetDriveItemChildren``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -293,6 +294,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+ **select_** | **[]string** | Select additional properties to be returned. | 
 
 ### Return type
 
