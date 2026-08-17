@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **Root** | Pointer to [**DriveItem**](DriveItem.md) |  | [optional] 
 **Special** | Pointer to [**[]DriveItem**](DriveItem.md) | A collection of special drive resources. | [optional] 
 **LibreGraphHasTrashedItems** | Pointer to **bool** | Indicates whether the drive has items in the trash. Read-only. | [optional] [readonly] 
+**UIExtension** | Pointer to **string** | Specifier for the web client that a drive has an associated extension that could potentially be opened by a specific web app (like a file extension).  | [optional] 
 
 ## Methods
 
@@ -491,6 +492,31 @@ SetLibreGraphHasTrashedItems sets LibreGraphHasTrashedItems field to given value
 `func (o *DriveUpdate) HasLibreGraphHasTrashedItems() bool`
 
 HasLibreGraphHasTrashedItems returns a boolean if a field has been set.
+
+### GetUIExtension
+
+`func (o *DriveUpdate) GetUIExtension() string`
+
+GetUIExtension returns the UIExtension field if non-nil, zero value otherwise.
+
+### GetUIExtensionOk
+
+`func (o *DriveUpdate) GetUIExtensionOk() (*string, bool)`
+
+GetUIExtensionOk returns a tuple with the UIExtension field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUIExtension
+
+`func (o *DriveUpdate) SetUIExtension(v string)`
+
+SetUIExtension sets UIExtension field to given value.
+
+### HasUIExtension
+
+`func (o *DriveUpdate) HasUIExtension() bool`
+
+HasUIExtension returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

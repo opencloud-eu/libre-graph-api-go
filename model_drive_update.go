@@ -50,6 +50,8 @@ type DriveUpdate struct {
 	Special []DriveItem `json:"special,omitempty"`
 	// Indicates whether the drive has items in the trash. Read-only.
 	LibreGraphHasTrashedItems *bool `json:"@libre.graph.hasTrashedItems,omitempty"`
+	// Specifier for the web client that a drive has an associated extension that could potentially be opened by a specific web app (like a file extension). 
+	UIExtension *string `json:"@UI.extension,omitempty"`
 }
 
 // NewDriveUpdate instantiates a new DriveUpdate object
@@ -645,6 +647,38 @@ func (o *DriveUpdate) SetLibreGraphHasTrashedItems(v bool) {
 	o.LibreGraphHasTrashedItems = &v
 }
 
+// GetUIExtension returns the UIExtension field value if set, zero value otherwise.
+func (o *DriveUpdate) GetUIExtension() string {
+	if o == nil || IsNil(o.UIExtension) {
+		var ret string
+		return ret
+	}
+	return *o.UIExtension
+}
+
+// GetUIExtensionOk returns a tuple with the UIExtension field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DriveUpdate) GetUIExtensionOk() (*string, bool) {
+	if o == nil || IsNil(o.UIExtension) {
+		return nil, false
+	}
+	return o.UIExtension, true
+}
+
+// HasUIExtension returns a boolean if a field has been set.
+func (o *DriveUpdate) HasUIExtension() bool {
+	if o != nil && !IsNil(o.UIExtension) {
+		return true
+	}
+
+	return false
+}
+
+// SetUIExtension gets a reference to the given string and assigns it to the UIExtension field.
+func (o *DriveUpdate) SetUIExtension(v string) {
+	o.UIExtension = &v
+}
+
 func (o DriveUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -708,6 +742,9 @@ func (o DriveUpdate) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LibreGraphHasTrashedItems) {
 		toSerialize["@libre.graph.hasTrashedItems"] = o.LibreGraphHasTrashedItems
+	}
+	if !IsNil(o.UIExtension) {
+		toSerialize["@UI.extension"] = o.UIExtension
 	}
 	return toSerialize, nil
 }

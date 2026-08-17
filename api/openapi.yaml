@@ -8577,6 +8577,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -11623,6 +11624,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -14669,6 +14671,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -17715,6 +17718,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -20761,6 +20765,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           drive:
             id: id
             createdBy:
@@ -23808,6 +23813,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           identities:
           - issuer: issuer
             issuerAssignedId: issuerAssignedId
@@ -26924,6 +26930,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -29970,6 +29977,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -33016,6 +33024,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -36062,6 +36071,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -39108,6 +39118,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           drive:
             id: id
             createdBy:
@@ -42155,6 +42166,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           identities:
           - issuer: issuer
             issuerAssignedId: issuerAssignedId
@@ -45304,6 +45316,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         - id: id
           createdBy:
             application:
@@ -48350,6 +48363,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         - id: id
           createdBy:
             application:
@@ -51396,6 +51410,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         - id: id
           createdBy:
             application:
@@ -54442,6 +54457,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         - id: id
           createdBy:
             application:
@@ -57488,6 +57504,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         drive:
           id: id
           createdBy:
@@ -60535,6 +60552,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         externalId: externalId
         identities:
         - issuer: issuer
@@ -63696,6 +63714,7 @@ components:
           - '@libre.graph.permissions.actions.allowedValues'
           - '@libre.graph.permissions.actions.allowedValues'
         '@libre.graph.hasTrashedItems': true
+        '@UI.extension': '@UI.extension'
       required:
       - name
     driveUpdate:
@@ -63769,6 +63788,12 @@ components:
           description: Indicates whether the drive has items in the trash. Read-only.
           readOnly: true
           type: boolean
+        '@UI.extension':
+          description: |
+            Specifier for the web client that a drive has an associated extension
+            that could potentially be opened by a specific web app (like a file
+            extension).
+          type: string
       type: object
     driveRecipient:
       description: |
@@ -66949,6 +66974,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -69995,6 +70021,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -73041,6 +73068,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -76087,6 +76115,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -79133,6 +79162,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           drive:
             id: id
             createdBy:
@@ -82180,6 +82210,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           identities:
           - issuer: issuer
             issuerAssignedId: issuerAssignedId
@@ -85455,6 +85486,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         - id: id
           createdBy:
             application:
@@ -88501,6 +88533,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         - id: id
           createdBy:
             application:
@@ -91547,6 +91580,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         - id: id
           createdBy:
             application:
@@ -94593,6 +94627,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         - id: id
           createdBy:
             application:
@@ -97639,6 +97674,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         drive:
           id: id
           createdBy:
@@ -100686,6 +100722,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         identities:
         - issuer: issuer
           issuerAssignedId: issuerAssignedId
@@ -106273,6 +106310,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         - id: id
           createdBy:
             application:
@@ -109319,6 +109357,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         - id: id
           createdBy:
             application:
@@ -112365,6 +112404,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         - id: id
           createdBy:
             application:
@@ -115411,6 +115451,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         - id: id
           createdBy:
             application:
@@ -118457,6 +118498,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         '@odata.nextLink': '@odata.nextLink'
       properties:
         value:
@@ -121517,6 +121559,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
         - id: id
           createdBy:
             application:
@@ -124563,6 +124606,7 @@ components:
             - '@libre.graph.permissions.actions.allowedValues'
             - '@libre.graph.permissions.actions.allowedValues'
           '@libre.graph.hasTrashedItems': true
+          '@UI.extension': '@UI.extension'
       properties:
         value:
           items:
@@ -131062,6 +131106,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -134108,6 +134153,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -137154,6 +137200,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -140200,6 +140247,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -143246,6 +143294,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           drive:
             id: id
             createdBy:
@@ -146293,6 +146342,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           identities:
           - issuer: issuer
             issuerAssignedId: issuerAssignedId
@@ -149409,6 +149459,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -152455,6 +152506,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -155501,6 +155553,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -158547,6 +158600,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -161593,6 +161647,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           drive:
             id: id
             createdBy:
@@ -164640,6 +164695,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           identities:
           - issuer: issuer
             issuerAssignedId: issuerAssignedId
@@ -168987,6 +169043,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -172033,6 +172090,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -175079,6 +175137,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -178125,6 +178184,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -181171,6 +181231,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             drive:
               id: id
               createdBy:
@@ -184218,6 +184279,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             identities:
             - issuer: issuer
               issuerAssignedId: issuerAssignedId
@@ -187352,6 +187414,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -190398,6 +190461,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -193444,6 +193508,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -196490,6 +196555,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -199536,6 +199602,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             drive:
               id: id
               createdBy:
@@ -202583,6 +202650,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             identities:
             - issuer: issuer
               issuerAssignedId: issuerAssignedId
@@ -205710,6 +205778,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -208756,6 +208825,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -211802,6 +211872,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -214848,6 +214919,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -217894,6 +217966,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           drive:
             id: id
             createdBy:
@@ -220941,6 +221014,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           identities:
           - issuer: issuer
             issuerAssignedId: issuerAssignedId
@@ -224057,6 +224131,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -227103,6 +227178,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -230149,6 +230225,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -233195,6 +233272,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -236241,6 +236319,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           drive:
             id: id
             createdBy:
@@ -239288,6 +239367,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           identities:
           - issuer: issuer
             issuerAssignedId: issuerAssignedId
@@ -242463,6 +242543,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -245509,6 +245590,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -248555,6 +248637,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -251601,6 +251684,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -254647,6 +254731,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           drive:
             id: id
             createdBy:
@@ -257694,6 +257779,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           externalId: externalId
           identities:
           - issuer: issuer
@@ -260790,6 +260876,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -263836,6 +263923,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -266882,6 +266970,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -269928,6 +270017,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           - id: id
             createdBy:
               application:
@@ -272974,6 +273064,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           drive:
             id: id
             createdBy:
@@ -276021,6 +276112,7 @@ components:
               - '@libre.graph.permissions.actions.allowedValues'
               - '@libre.graph.permissions.actions.allowedValues'
             '@libre.graph.hasTrashedItems': true
+            '@UI.extension': '@UI.extension'
           externalId: externalId
           identities:
           - issuer: issuer
@@ -279177,6 +279269,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -282223,6 +282316,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -285269,6 +285363,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -288315,6 +288410,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -291361,6 +291457,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             drive:
               id: id
               createdBy:
@@ -294408,6 +294505,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             identities:
             - issuer: issuer
               issuerAssignedId: issuerAssignedId
@@ -297524,6 +297622,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -300570,6 +300669,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -303616,6 +303716,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -306662,6 +306763,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -309708,6 +309810,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             drive:
               id: id
               createdBy:
@@ -312755,6 +312858,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             identities:
             - issuer: issuer
               issuerAssignedId: issuerAssignedId
@@ -315883,6 +315987,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -318929,6 +319034,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -321975,6 +322081,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -325021,6 +325128,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -328067,6 +328175,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             drive:
               id: id
               createdBy:
@@ -331114,6 +331223,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             identities:
             - issuer: issuer
               issuerAssignedId: issuerAssignedId
@@ -334230,6 +334340,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -337276,6 +337387,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -340322,6 +340434,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -343368,6 +343481,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -346414,6 +346528,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             drive:
               id: id
               createdBy:
@@ -349461,6 +349576,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             identities:
             - issuer: issuer
               issuerAssignedId: issuerAssignedId
@@ -352606,6 +352722,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -355652,6 +355769,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -358698,6 +358816,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -361744,6 +361863,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -364790,6 +364910,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             drive:
               id: id
               createdBy:
@@ -367837,6 +367958,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             identities:
             - issuer: issuer
               issuerAssignedId: issuerAssignedId
@@ -370953,6 +371075,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -373999,6 +374122,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -377045,6 +377169,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -380091,6 +380216,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -383137,6 +383263,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             drive:
               id: id
               createdBy:
@@ -386184,6 +386311,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             identities:
             - issuer: issuer
               issuerAssignedId: issuerAssignedId
@@ -389312,6 +389440,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -392358,6 +392487,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -395404,6 +395534,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -398450,6 +398581,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -401496,6 +401628,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             drive:
               id: id
               createdBy:
@@ -404543,6 +404676,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             identities:
             - issuer: issuer
               issuerAssignedId: issuerAssignedId
@@ -407659,6 +407793,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -410705,6 +410840,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -413751,6 +413887,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -416797,6 +416934,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             - id: id
               createdBy:
                 application:
@@ -419843,6 +419981,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             drive:
               id: id
               createdBy:
@@ -422890,6 +423029,7 @@ components:
                 - '@libre.graph.permissions.actions.allowedValues'
                 - '@libre.graph.permissions.actions.allowedValues'
               '@libre.graph.hasTrashedItems': true
+              '@UI.extension': '@UI.extension'
             identities:
             - issuer: issuer
               issuerAssignedId: issuerAssignedId
