@@ -170,6 +170,7 @@ Class | Method | HTTP request | Description
 *UserAppRoleAssignmentApi* | [**UserDeleteAppRoleAssignments**](docs/UserAppRoleAssignmentApi.md#userdeleteapproleassignments) | **Delete** /v1.0/users/{user-id}/appRoleAssignments/{appRoleAssignment-id} | Delete the appRoleAssignment from a user
 *UserAppRoleAssignmentApi* | [**UserListAppRoleAssignments**](docs/UserAppRoleAssignmentApi.md#userlistapproleassignments) | **Get** /v1.0/users/{user-id}/appRoleAssignments | Get appRoleAssignments from a user
 *UserPhotoApi* | [**GetUserPhoto**](docs/UserPhotoApi.md#getuserphoto) | **Get** /v1.0/users/{user-id}/photo/$value | Get the photo of a user
+*UserTeamworkApi* | [**SendActivityNotification**](docs/UserTeamworkApi.md#sendactivitynotification) | **Post** /v1.0/users/{user-id}/teamwork/sendActivityNotification | Send an activity notification to a user
 *UsersApi* | [**CreateUser**](docs/UsersApi.md#createuser) | **Post** /v1.0/users | Add new entity to users
 *UsersApi* | [**ListUsers**](docs/UsersApi.md#listusers) | **Get** /v1.0/users | Get entities from users
 
@@ -177,8 +178,10 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Activity](docs/Activity.md)
+ - [ActivityNotification](docs/ActivityNotification.md)
  - [ActivityTemplate](docs/ActivityTemplate.md)
  - [ActivityTimes](docs/ActivityTimes.md)
+ - [ActivityTopic](docs/ActivityTopic.md)
  - [AppRole](docs/AppRole.md)
  - [AppRoleAssignment](docs/AppRoleAssignment.md)
  - [Application](docs/Application.md)

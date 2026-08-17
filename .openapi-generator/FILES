@@ -28,13 +28,16 @@ api_tags.go
 api_user.go
 api_user_app_role_assignment.go
 api_user_photo.go
+api_user_teamwork.go
 api_users.go
 client.go
 configuration.go
 docs/ActivitiesApi.md
 docs/Activity.md
+docs/ActivityNotification.md
 docs/ActivityTemplate.md
 docs/ActivityTimes.md
+docs/ActivityTopic.md
 docs/AppRole.md
 docs/AppRoleAssignment.md
 docs/Application.md
@@ -140,6 +143,7 @@ docs/User.md
 docs/UserApi.md
 docs/UserAppRoleAssignmentApi.md
 docs/UserPhotoApi.md
+docs/UserTeamworkApi.md
 docs/UserUpdate.md
 docs/UsersApi.md
 docs/Video.md
@@ -147,8 +151,10 @@ git_push.sh
 go.mod
 go.sum
 model_activity.go
+model_activity_notification.go
 model_activity_template.go
 model_activity_times.go
+model_activity_topic.go
 model_app_role.go
 model_app_role_assignment.go
 model_application.go
@@ -257,6 +263,7 @@ test/api_role_management_test.go
 test/api_tags_test.go
 test/api_user_app_role_assignment_test.go
 test/api_user_photo_test.go
+test/api_user_teamwork_test.go
 test/api_user_test.go
 test/api_users_test.go
 utils.go

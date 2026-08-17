@@ -3708,6 +3708,50 @@ paths:
       tags:
       - user
       x-ms-docs-operation-type: operation
+  /v1.0/users/{user-id}/teamwork/sendActivityNotification:
+    post:
+      description: |
+        Sends a notification about an activity to a user. The sender is the caller, the recipient is
+        the user in the path, `activityType` says what happened and `topic` says what it happened on.
+      operationId: SendActivityNotification
+      parameters:
+      - description: "key: id or name of user"
+        explode: false
+        in: path
+        name: user-id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-ms-docs-key-type: user
+      requestBody:
+        content:
+          application/json:
+            examples:
+              a user was mentioned on a driveItem:
+                value:
+                  topic:
+                    source: text
+                    value: a0ca6a90-a365-4782-871e-d44447bbc668$a0ca6a90-a365-4782-871e-d44447bbc668!item-id
+                  activityType: mentioned
+                  teamsAppId: 8d1c9c88-9e2c-4d0b-9a1e-6a9de1cb9d3c
+            schema:
+              $ref: "#/components/schemas/activityNotification"
+        description: The activity the user is notified about.
+        required: true
+      responses:
+        "202":
+          description: Accepted
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/odata.error"
+          description: error
+      summary: Send an activity notification to a user
+      tags:
+      - user.teamwork
+      x-ms-docs-operation-type: action
   /v1.0/users/{user-id}/appRoleAssignments:
     description: Provides operations to manage assignments of roles to users.
     get:
@@ -101721,6 +101765,42 @@ components:
           description: Specifies the dateTime after which the permission expires.
           format: date-time
           type: string
+      type: object
+    activityNotification:
+      description: |
+        An activity someone is notified about.
+      properties:
+        topic:
+          $ref: "#/components/schemas/activityTopic"
+        activityType:
+          description: |
+            What happened. Only `mentioned` is supported at the time of writing.
+          type: string
+        teamsAppId:
+          description: |
+            The app the activity happened in, as an id the server knows.
+          type: string
+      required:
+      - activityType
+      - teamsAppId
+      - topic
+      type: object
+    activityTopic:
+      description: What an activity happened on.
+      properties:
+        source:
+          default: text
+          description: |
+            How to read the value. Only `text` is supported at the time of writing.
+            built from it.
+          type: string
+        value:
+          description: "With the source `text`, the id of the resource the activity\
+            \ happened on."
+          type: string
+      required:
+      - source
+      - value
       type: object
     deleted:
       description: Information about the deleted state of the item. Read-only.
