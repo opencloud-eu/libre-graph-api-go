@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **Root** | Pointer to [**DriveItem**](DriveItem.md) |  | [optional] 
 **Special** | Pointer to [**[]DriveItem**](DriveItem.md) | A collection of special drive resources. | [optional] 
 **LibreGraphHasTrashedItems** | Pointer to **bool** | Indicates whether the drive has items in the trash. Read-only. | [optional] [readonly] 
-**UIExtension** | Pointer to **string** | Specifier for the web client that a drive has an associated extension that could potentially be opened by a specific web app (like a file extension).  | [optional] 
+**LibreGraphContentType** | Pointer to **string** | Specifier for the web client that a drive is of a certain content type that could potentially be opened by a specific web app. Example: &#x60;application/vnd.opencloud.vault&#x60;, indicating the drive can be opened by the rclone-crypt web app.  | [optional] 
 
 ## Methods
 
@@ -488,30 +488,30 @@ SetLibreGraphHasTrashedItems sets LibreGraphHasTrashedItems field to given value
 
 HasLibreGraphHasTrashedItems returns a boolean if a field has been set.
 
-### GetUIExtension
+### GetLibreGraphContentType
 
-`func (o *Drive) GetUIExtension() string`
+`func (o *Drive) GetLibreGraphContentType() string`
 
-GetUIExtension returns the UIExtension field if non-nil, zero value otherwise.
+GetLibreGraphContentType returns the LibreGraphContentType field if non-nil, zero value otherwise.
 
-### GetUIExtensionOk
+### GetLibreGraphContentTypeOk
 
-`func (o *Drive) GetUIExtensionOk() (*string, bool)`
+`func (o *Drive) GetLibreGraphContentTypeOk() (*string, bool)`
 
-GetUIExtensionOk returns a tuple with the UIExtension field if it's non-nil, zero value otherwise
+GetLibreGraphContentTypeOk returns a tuple with the LibreGraphContentType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUIExtension
+### SetLibreGraphContentType
 
-`func (o *Drive) SetUIExtension(v string)`
+`func (o *Drive) SetLibreGraphContentType(v string)`
 
-SetUIExtension sets UIExtension field to given value.
+SetLibreGraphContentType sets LibreGraphContentType field to given value.
 
-### HasUIExtension
+### HasLibreGraphContentType
 
-`func (o *Drive) HasUIExtension() bool`
+`func (o *Drive) HasLibreGraphContentType() bool`
 
-HasUIExtension returns a boolean if a field has been set.
+HasLibreGraphContentType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
