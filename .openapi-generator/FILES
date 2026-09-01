@@ -118,6 +118,8 @@ docs/OdataErrorMain.md
 docs/OpenGraphFile.md
 docs/PasswordChange.md
 docs/PasswordProfile.md
+docs/PendingOperations.md
+docs/PendingOperationsPendingContentUpdate.md
 docs/Permission.md
 docs/Photo.md
 docs/Quota.md
@@ -215,6 +217,8 @@ model_odata_error_main.go
 model_open_graph_file.go
 model_password_change.go
 model_password_profile.go
+model_pending_operations.go
+model_pending_operations_pending_content_update.go
 model_permission.go
 model_photo.go
 model_quota.go

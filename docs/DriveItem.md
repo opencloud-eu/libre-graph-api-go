@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Content** | Pointer to **string** | The content stream, if the item represents a file. | [optional] 
 **CTag** | Pointer to **string** | An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only. | [optional] [readonly] 
 **Deleted** | Pointer to [**Deleted**](Deleted.md) |  | [optional] 
+**PendingOperations** | Pointer to [**PendingOperations**](PendingOperations.md) |  | [optional] 
 **File** | Pointer to [**OpenGraphFile**](OpenGraphFile.md) |  | [optional] 
 **FileSystemInfo** | Pointer to [**FileSystemInfo**](FileSystemInfo.md) |  | [optional] 
 **Folder** | Pointer to [**Folder**](Folder.md) |  | [optional] 
@@ -386,6 +387,31 @@ SetDeleted sets Deleted field to given value.
 `func (o *DriveItem) HasDeleted() bool`
 
 HasDeleted returns a boolean if a field has been set.
+
+### GetPendingOperations
+
+`func (o *DriveItem) GetPendingOperations() PendingOperations`
+
+GetPendingOperations returns the PendingOperations field if non-nil, zero value otherwise.
+
+### GetPendingOperationsOk
+
+`func (o *DriveItem) GetPendingOperationsOk() (*PendingOperations, bool)`
+
+GetPendingOperationsOk returns a tuple with the PendingOperations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPendingOperations
+
+`func (o *DriveItem) SetPendingOperations(v PendingOperations)`
+
+SetPendingOperations sets PendingOperations field to given value.
+
+### HasPendingOperations
+
+`func (o *DriveItem) HasPendingOperations() bool`
+
+HasPendingOperations returns a boolean if a field has been set.
 
 ### GetFile
 
