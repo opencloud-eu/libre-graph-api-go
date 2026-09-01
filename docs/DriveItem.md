@@ -43,6 +43,7 @@ Name | Type | Description | Notes
 **LibreGraphMeFollowing** | Pointer to **bool** | Indicates whether the current user is following this DriveItem. Read-only. Use the FollowDriveItem and UnfollowDriveItem operations to change the following state.  | [optional] [readonly] 
 **LibreGraphTags** | Pointer to **[]string** | The list of tags assigned to this DriveItem. Read-only. Use the AssignTags and UnassignTags operations to modify tags.  | [optional] [readonly] 
 **LibreGraphPermissionsActionsAllowedValues** | Pointer to **[]string** | A list of actions the caller is allowed to perform on this item.  Only returned when explicitly requested via &#x60;$select&#x60; on endpoints that support it. Mirrors the annotation of the same name on the &#x60;/permissions&#x60; endpoint, allowing clients to learn a caller&#39;s effective actions on an item without a separate round-trip.  | [optional] [readonly] 
+**LibreGraphShareTypes** | Pointer to **[]string** | The types of shares existing on this item, aggregated over all of its grants. Absent or empty if the item is not shared.  This is a summary of the item&#39;s &#x60;permissions&#x60; collection. For the full grants use the permissions endpoints, for the caller&#39;s own capabilities use &#x60;@libre.graph.permissions.actions.allowedValues&#x60;.  Only returned when explicitly requested via &#x60;$select&#x60;.  | [optional] [readonly] 
 
 ## Methods
 
@@ -1037,6 +1038,31 @@ SetLibreGraphPermissionsActionsAllowedValues sets LibreGraphPermissionsActionsAl
 `func (o *DriveItem) HasLibreGraphPermissionsActionsAllowedValues() bool`
 
 HasLibreGraphPermissionsActionsAllowedValues returns a boolean if a field has been set.
+
+### GetLibreGraphShareTypes
+
+`func (o *DriveItem) GetLibreGraphShareTypes() []string`
+
+GetLibreGraphShareTypes returns the LibreGraphShareTypes field if non-nil, zero value otherwise.
+
+### GetLibreGraphShareTypesOk
+
+`func (o *DriveItem) GetLibreGraphShareTypesOk() (*[]string, bool)`
+
+GetLibreGraphShareTypesOk returns a tuple with the LibreGraphShareTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLibreGraphShareTypes
+
+`func (o *DriveItem) SetLibreGraphShareTypes(v []string)`
+
+SetLibreGraphShareTypes sets LibreGraphShareTypes field to given value.
+
+### HasLibreGraphShareTypes
+
+`func (o *DriveItem) HasLibreGraphShareTypes() bool`
+
+HasLibreGraphShareTypes returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
