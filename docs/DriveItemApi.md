@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ## GetDriveItem
 
-> DriveItem GetDriveItem(ctx, driveId, itemId).Select_(select_).Execute()
+> DriveItem GetDriveItem(ctx, driveId, itemId).Select_(select_).Expand(expand).Execute()
 
 Get a DriveItem.
 
@@ -188,10 +188,11 @@ func main() {
 	driveId := "a0ca6a90-a365-4782-871e-d44447bbc668$a0ca6a90-a365-4782-871e-d44447bbc668" // string | key: id of drive
 	itemId := "a0ca6a90-a365-4782-871e-d44447bbc668$a0ca6a90-a365-4782-871e-d44447bbc668!share-id" // string | key: id of item
 	select_ := []string{"Select_example"} // []string | Select additional properties to be returned. (optional)
+	expand := []string{"Expand_example"} // []string | Expand related entities to be returned. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DriveItemApi.GetDriveItem(context.Background(), driveId, itemId).Select_(select_).Execute()
+	resp, r, err := apiClient.DriveItemApi.GetDriveItem(context.Background(), driveId, itemId).Select_(select_).Expand(expand).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DriveItemApi.GetDriveItem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -220,6 +221,7 @@ Name | Type | Description  | Notes
 
 
  **select_** | **[]string** | Select additional properties to be returned. | 
+ **expand** | **[]string** | Expand related entities to be returned. | 
 
 ### Return type
 
@@ -389,7 +391,7 @@ Name | Type | Description  | Notes
 
 ## GetDriveItemV1
 
-> DriveItem GetDriveItemV1(ctx, driveId, itemId).Select_(select_).Execute()
+> DriveItem GetDriveItemV1(ctx, driveId, itemId).Select_(select_).Expand(expand).Execute()
 
 Get a DriveItem.
 
@@ -411,10 +413,11 @@ func main() {
 	driveId := "a0ca6a90-a365-4782-871e-d44447bbc668$a0ca6a90-a365-4782-871e-d44447bbc668" // string | key: id of drive
 	itemId := "a0ca6a90-a365-4782-871e-d44447bbc668$a0ca6a90-a365-4782-871e-d44447bbc668!item-id" // string | key: id of item
 	select_ := []string{"Select_example"} // []string | Select additional properties to be returned. (optional)
+	expand := []string{"Expand_example"} // []string | Expand related entities to be returned. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DriveItemApi.GetDriveItemV1(context.Background(), driveId, itemId).Select_(select_).Execute()
+	resp, r, err := apiClient.DriveItemApi.GetDriveItemV1(context.Background(), driveId, itemId).Select_(select_).Expand(expand).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DriveItemApi.GetDriveItemV1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -443,6 +446,7 @@ Name | Type | Description  | Notes
 
 
  **select_** | **[]string** | Select additional properties to be returned. | 
+ **expand** | **[]string** | Expand related entities to be returned. | 
 
 ### Return type
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## HomeGetRoot
 
-> DriveItem HomeGetRoot(ctx).Select_(select_).Execute()
+> DriveItem HomeGetRoot(ctx).Select_(select_).Expand(expand).Execute()
 
 Get root from personal space
 
@@ -28,10 +28,11 @@ import (
 
 func main() {
 	select_ := []string{"Select_example"} // []string | Select additional properties to be returned. (optional)
+	expand := []string{"Expand_example"} // []string | Expand related entities to be returned. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MeDriveRootApi.HomeGetRoot(context.Background()).Select_(select_).Execute()
+	resp, r, err := apiClient.MeDriveRootApi.HomeGetRoot(context.Background()).Select_(select_).Expand(expand).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MeDriveRootApi.HomeGetRoot``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -53,6 +54,7 @@ Other parameters are passed through a pointer to a apiHomeGetRootRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **select_** | **[]string** | Select additional properties to be returned. | 
+ **expand** | **[]string** | Expand related entities to be returned. | 
 
 ### Return type
 

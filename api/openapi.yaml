@@ -1529,6 +1529,23 @@ paths:
           type: array
           uniqueItems: true
         style: form
+      - description: Expand related entities to be returned.
+        examples:
+          request children:
+            value:
+            - children
+        explode: false
+        in: query
+        name: $expand
+        required: false
+        schema:
+          items:
+            enum:
+            - children
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -2546,6 +2563,23 @@ paths:
           type: array
           uniqueItems: true
         style: form
+      - description: Expand related entities to be returned.
+        examples:
+          request children:
+            value:
+            - children
+        explode: false
+        in: query
+        name: $expand
+        required: false
+        schema:
+          items:
+            enum:
+            - children
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
       responses:
         "200":
           content:
@@ -2609,6 +2643,23 @@ paths:
             enum:
             - '@microsoft.graph.downloadUrl'
             - '@libre.graph.permissions.actions.allowedValues'
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
+      - description: Expand related entities to be returned.
+        examples:
+          request children:
+            value:
+            - children
+        explode: false
+        in: query
+        name: $expand
+        required: false
+        schema:
+          items:
+            enum:
+            - children
             type: string
           type: array
           uniqueItems: true
@@ -3089,6 +3140,23 @@ paths:
             enum:
             - '@microsoft.graph.downloadUrl'
             - '@libre.graph.permissions.actions.allowedValues'
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
+      - description: Expand related entities to be returned.
+        examples:
+          request children:
+            value:
+            - children
+        explode: false
+        in: query
+        name: $expand
+        required: false
+        schema:
+          items:
+            enum:
+            - children
             type: string
           type: array
           uniqueItems: true
@@ -5349,6 +5417,24 @@ components:
           enum:
           - '@microsoft.graph.downloadUrl'
           - '@libre.graph.permissions.actions.allowedValues'
+          type: string
+        type: array
+        uniqueItems: true
+      style: form
+    driveItemExpand:
+      description: Expand related entities to be returned.
+      examples:
+        request children:
+          value:
+          - children
+      explode: false
+      in: query
+      name: $expand
+      required: false
+      schema:
+        items:
+          enum:
+          - children
           type: string
         type: array
         uniqueItems: true
