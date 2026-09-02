@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **Video** | Pointer to [**Video**](Video.md) |  | [optional] 
 **LibreGraphMotionPhoto** | Pointer to [**MotionPhoto**](MotionPhoto.md) |  | [optional] 
 **LibreGraphLivePhoto** | Pointer to [**LivePhoto**](LivePhoto.md) |  | [optional] 
+**LockInfo** | Pointer to [**LockInfo**](LockInfo.md) |  | [optional] 
 **ClientSynchronize** | Pointer to **bool** | Indicates if the item is synchronized with the underlying storage provider. Read-only. | [optional] 
 **MicrosoftGraphDownloadUrl** | Pointer to **string** | A pre-authenticated URL that can be used to download the item&#39;s content without providing an Authorization header. The URL is short-lived and cannot be cached.  This annotation is only populated when explicitly requested via &#x60;$select&#x60;, and only for items that have a &#x60;file&#x60; facet. The returned URL is valid for a limited time and should be used promptly.  | [optional] [readonly] 
 **UIHidden** | Pointer to **bool** | Properties or facets (see UI.Facet) annotated with this term will not be rendered if the annotation evaluates to true. Users can set this to hide permissions. | [optional] 
@@ -888,6 +889,31 @@ SetLibreGraphLivePhoto sets LibreGraphLivePhoto field to given value.
 `func (o *DriveItem) HasLibreGraphLivePhoto() bool`
 
 HasLibreGraphLivePhoto returns a boolean if a field has been set.
+
+### GetLockInfo
+
+`func (o *DriveItem) GetLockInfo() LockInfo`
+
+GetLockInfo returns the LockInfo field if non-nil, zero value otherwise.
+
+### GetLockInfoOk
+
+`func (o *DriveItem) GetLockInfoOk() (*LockInfo, bool)`
+
+GetLockInfoOk returns a tuple with the LockInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLockInfo
+
+`func (o *DriveItem) SetLockInfo(v LockInfo)`
+
+SetLockInfo sets LockInfo field to given value.
+
+### HasLockInfo
+
+`func (o *DriveItem) HasLockInfo() bool`
+
+HasLockInfo returns a boolean if a field has been set.
 
 ### GetClientSynchronize
 

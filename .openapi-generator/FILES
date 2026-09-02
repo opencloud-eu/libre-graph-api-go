@@ -102,6 +102,7 @@ docs/InvitationsApi.md
 docs/InvitedUserMessageInfo.md
 docs/ItemReference.md
 docs/LivePhoto.md
+docs/LockInfo.md
 docs/MeChangepasswordApi.md
 docs/MeDriveApi.md
 docs/MeDriveRootApi.md
@@ -208,6 +209,7 @@ model_invitation.go
 model_invited_user_message_info.go
 model_item_reference.go
 model_live_photo.go
+model_lock_info.go
 model_member_reference.go
 model_motion_photo.go
 model_object_identity.go
