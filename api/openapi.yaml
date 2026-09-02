@@ -64502,6 +64502,10 @@ components:
         When using invite to add permissions, the `driveRecipient` object would specify the `email`, `alias`,
         or `objectId` of the recipient. Only one of these values is required; multiple values are not accepted.
       properties:
+        email:
+          description: "The email address for the recipient, if the recipient has\
+            \ an associated email address."
+          type: string
         objectId:
           description: The unique identifier for the recipient in the directory.
           type: string

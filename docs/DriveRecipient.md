@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Email** | Pointer to **string** | The email address for the recipient, if the recipient has an associated email address. | [optional] 
 **ObjectId** | Pointer to **string** | The unique identifier for the recipient in the directory. | [optional] 
 **LibreGraphRecipientType** | Pointer to **string** | When the recipient is referenced by objectId this annotation is used to differentiate &#x60;user&#x60; and &#x60;group&#x60; recipients. | [optional] [default to "user"]
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewDriveRecipientWithDefaults instantiates a new DriveRecipient object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetEmail
+
+`func (o *DriveRecipient) GetEmail() string`
+
+GetEmail returns the Email field if non-nil, zero value otherwise.
+
+### GetEmailOk
+
+`func (o *DriveRecipient) GetEmailOk() (*string, bool)`
+
+GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmail
+
+`func (o *DriveRecipient) SetEmail(v string)`
+
+SetEmail sets Email field to given value.
+
+### HasEmail
+
+`func (o *DriveRecipient) HasEmail() bool`
+
+HasEmail returns a boolean if a field has been set.
 
 ### GetObjectId
 
