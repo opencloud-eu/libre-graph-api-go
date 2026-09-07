@@ -1516,6 +1516,9 @@ paths:
           request allowed actions:
             value:
             - '@libre.graph.permissions.actions.allowedValues'
+          request share types:
+            value:
+            - '@libre.graph.shareTypes'
         explode: false
         in: query
         name: $select
@@ -1525,6 +1528,7 @@ paths:
             enum:
             - '@microsoft.graph.downloadUrl'
             - '@libre.graph.permissions.actions.allowedValues'
+            - '@libre.graph.shareTypes'
             type: string
           type: array
           uniqueItems: true
@@ -1534,6 +1538,9 @@ paths:
           request children:
             value:
             - children
+          request thumbnails:
+            value:
+            - thumbnails
         explode: false
         in: query
         name: $expand
@@ -1542,6 +1549,7 @@ paths:
           items:
             enum:
             - children
+            - thumbnails
             type: string
           type: array
           uniqueItems: true
@@ -2550,6 +2558,9 @@ paths:
           request allowed actions:
             value:
             - '@libre.graph.permissions.actions.allowedValues'
+          request share types:
+            value:
+            - '@libre.graph.shareTypes'
         explode: false
         in: query
         name: $select
@@ -2559,6 +2570,7 @@ paths:
             enum:
             - '@microsoft.graph.downloadUrl'
             - '@libre.graph.permissions.actions.allowedValues'
+            - '@libre.graph.shareTypes'
             type: string
           type: array
           uniqueItems: true
@@ -2568,6 +2580,9 @@ paths:
           request children:
             value:
             - children
+          request thumbnails:
+            value:
+            - thumbnails
         explode: false
         in: query
         name: $expand
@@ -2576,6 +2591,7 @@ paths:
           items:
             enum:
             - children
+            - thumbnails
             type: string
           type: array
           uniqueItems: true
@@ -2634,6 +2650,9 @@ paths:
           request allowed actions:
             value:
             - '@libre.graph.permissions.actions.allowedValues'
+          request share types:
+            value:
+            - '@libre.graph.shareTypes'
         explode: false
         in: query
         name: $select
@@ -2643,6 +2662,7 @@ paths:
             enum:
             - '@microsoft.graph.downloadUrl'
             - '@libre.graph.permissions.actions.allowedValues'
+            - '@libre.graph.shareTypes'
             type: string
           type: array
           uniqueItems: true
@@ -2652,6 +2672,9 @@ paths:
           request children:
             value:
             - children
+          request thumbnails:
+            value:
+            - thumbnails
         explode: false
         in: query
         name: $expand
@@ -2660,6 +2683,7 @@ paths:
           items:
             enum:
             - children
+            - thumbnails
             type: string
           type: array
           uniqueItems: true
@@ -2725,6 +2749,9 @@ paths:
           request allowed actions:
             value:
             - '@libre.graph.permissions.actions.allowedValues'
+          request share types:
+            value:
+            - '@libre.graph.shareTypes'
         explode: false
         in: query
         name: $select
@@ -2734,6 +2761,7 @@ paths:
             enum:
             - '@microsoft.graph.downloadUrl'
             - '@libre.graph.permissions.actions.allowedValues'
+            - '@libre.graph.shareTypes'
             type: string
           type: array
           uniqueItems: true
@@ -3131,6 +3159,9 @@ paths:
           request allowed actions:
             value:
             - '@libre.graph.permissions.actions.allowedValues'
+          request share types:
+            value:
+            - '@libre.graph.shareTypes'
         explode: false
         in: query
         name: $select
@@ -3140,6 +3171,7 @@ paths:
             enum:
             - '@microsoft.graph.downloadUrl'
             - '@libre.graph.permissions.actions.allowedValues'
+            - '@libre.graph.shareTypes'
             type: string
           type: array
           uniqueItems: true
@@ -3149,6 +3181,9 @@ paths:
           request children:
             value:
             - children
+          request thumbnails:
+            value:
+            - thumbnails
         explode: false
         in: query
         name: $expand
@@ -3157,6 +3192,7 @@ paths:
           items:
             enum:
             - children
+            - thumbnails
             type: string
           type: array
           uniqueItems: true
@@ -3190,6 +3226,9 @@ paths:
           request allowed actions:
             value:
             - '@libre.graph.permissions.actions.allowedValues'
+          request share types:
+            value:
+            - '@libre.graph.shareTypes'
         explode: false
         in: query
         name: $select
@@ -3199,6 +3238,7 @@ paths:
             enum:
             - '@microsoft.graph.downloadUrl'
             - '@libre.graph.permissions.actions.allowedValues'
+            - '@libre.graph.shareTypes'
             type: string
           type: array
           uniqueItems: true
@@ -5408,6 +5448,9 @@ components:
         request allowed actions:
           value:
           - '@libre.graph.permissions.actions.allowedValues'
+        request share types:
+          value:
+          - '@libre.graph.shareTypes'
       explode: false
       in: query
       name: $select
@@ -5417,6 +5460,7 @@ components:
           enum:
           - '@microsoft.graph.downloadUrl'
           - '@libre.graph.permissions.actions.allowedValues'
+          - '@libre.graph.shareTypes'
           type: string
         type: array
         uniqueItems: true
@@ -5427,6 +5471,9 @@ components:
         request children:
           value:
           - children
+        request thumbnails:
+          value:
+          - thumbnails
       explode: false
       in: query
       name: $expand
@@ -5435,6 +5482,7 @@ components:
         items:
           enum:
           - children
+          - thumbnails
           type: string
         type: array
         uniqueItems: true
