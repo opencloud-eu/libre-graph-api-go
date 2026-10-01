@@ -17,7 +17,7 @@ import (
 // checks if the SearchMetric type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SearchMetric{}
 
-// SearchMetric The result of a metric aggregation, the counterpart of `buckets` for aggregations requested with a `@libre.graph.metricDefinition`. Absent for terms and range aggregations. Libregraph extension not present in MS Graph. 
+// SearchMetric The result of a metric aggregation, the counterpart of `buckets` for aggregations requested with a `@libre.graph.metricDefinition`. Absent for terms, range and geohash aggregations. Libregraph extension not present in MS Graph. 
 type SearchMetric struct {
 	// Echoes the `kind` of the corresponding `metricDefinition`, allowing consumers (and the search service's cross-space merge layer) to pick the right reducer when combining results. 
 	Kind *string `json:"kind,omitempty"`

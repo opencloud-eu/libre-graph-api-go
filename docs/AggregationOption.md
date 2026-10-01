@@ -5,10 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Field** | **string** | Specifies the field in the schema of the specified entity type that the aggregation should be computed on. Required.  Examples: &#x60;audio.artist&#x60;, &#x60;audio.genre&#x60;, &#x60;audio.year&#x60;, &#x60;mimeType&#x60;.  | 
-**Size** | Pointer to **int32** | The number of &#x60;searchBucket&#x60; resources to be returned. This is optional and only applies to terms aggregations. Combined with &#x60;bucketDefinition.sortBy&#x60; and &#x60;bucketDefinition.isDescending&#x60; to produce the top N results by count or key. When not specified, all buckets are returned.  | [optional] 
+**Size** | Pointer to **int32** | The number of &#x60;searchBucket&#x60; resources to be returned. This is optional and only applies to terms and geohash aggregations. For terms aggregations it combines with &#x60;bucketDefinition.sortBy&#x60; and &#x60;bucketDefinition.isDescending&#x60; to produce the top N results by count or key; for geohash aggregations it limits the buckets to the top N cells by count. When not specified, all buckets are returned.  | [optional] 
 **BucketDefinition** | Pointer to [**BucketDefinition**](BucketDefinition.md) |  | [optional] 
 **LibreGraphSubAggregations** | Pointer to [**[]AggregationOption**](AggregationOption.md) | Nested aggregations computed within each bucket of this aggregation. Libregraph extension not present in MS Graph.  Backends that don&#39;t support native composite aggregations (e.g. bleve) emulate them by walking the matched result set; OpenSearch translates them to native composite aggregations.  | [optional] 
 **LibreGraphMetricDefinition** | Pointer to [**MetricDefinition**](MetricDefinition.md) |  | [optional] 
+**LibreGraphGeohashDefinition** | Pointer to [**GeohashDefinition**](GeohashDefinition.md) |  | [optional] 
 
 ## Methods
 
@@ -148,6 +149,31 @@ SetLibreGraphMetricDefinition sets LibreGraphMetricDefinition field to given val
 `func (o *AggregationOption) HasLibreGraphMetricDefinition() bool`
 
 HasLibreGraphMetricDefinition returns a boolean if a field has been set.
+
+### GetLibreGraphGeohashDefinition
+
+`func (o *AggregationOption) GetLibreGraphGeohashDefinition() GeohashDefinition`
+
+GetLibreGraphGeohashDefinition returns the LibreGraphGeohashDefinition field if non-nil, zero value otherwise.
+
+### GetLibreGraphGeohashDefinitionOk
+
+`func (o *AggregationOption) GetLibreGraphGeohashDefinitionOk() (*GeohashDefinition, bool)`
+
+GetLibreGraphGeohashDefinitionOk returns a tuple with the LibreGraphGeohashDefinition field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLibreGraphGeohashDefinition
+
+`func (o *AggregationOption) SetLibreGraphGeohashDefinition(v GeohashDefinition)`
+
+SetLibreGraphGeohashDefinition sets LibreGraphGeohashDefinition field to given value.
+
+### HasLibreGraphGeohashDefinition
+
+`func (o *AggregationOption) HasLibreGraphGeohashDefinition() bool`
+
+HasLibreGraphGeohashDefinition returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

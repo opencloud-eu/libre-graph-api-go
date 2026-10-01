@@ -21,7 +21,7 @@ var _ MappedNullable = &SearchAggregation{}
 type SearchAggregation struct {
 	// Defines the field in the request on which the aggregation was computed. 
 	Field *string `json:"field,omitempty"`
-	// Defines the computed buckets for this aggregation. Buckets are sorted according to the `sortBy` and `isDescending` specified in the `bucketDefinition` of the corresponding `aggregationOption`. 
+	// Defines the computed buckets for this aggregation. For bucket aggregations they are sorted according to the `sortBy` and `isDescending` specified in the `bucketDefinition` of the corresponding `aggregationOption`; for geohash aggregations they are ordered by `count`, descending. 
 	Buckets []SearchBucket `json:"buckets,omitempty"`
 	LibreGraphMetric *SearchMetric `json:"@libre.graph.metric,omitempty"`
 }

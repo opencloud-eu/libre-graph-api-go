@@ -19,7 +19,7 @@ import (
 // checks if the MetricDefinition type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MetricDefinition{}
 
-// MetricDefinition Provides the details of how to compute a scalar metric over the aggregation `field`, the counterpart of `bucketDefinition` for metric aggregations. When set on an `aggregationOption`, `size` and `bucketDefinition` are ignored, and the corresponding `searchAggregation` in the response carries a `@libre.graph.metric` rather than `buckets`. Libregraph extension not present in MS Graph. 
+// MetricDefinition Provides the details of how to compute a scalar metric over the aggregation `field`, the counterpart of `bucketDefinition` for metric aggregations. When set on an `aggregationOption`, `size` is ignored, and the corresponding `searchAggregation` in the response carries a `@libre.graph.metric` rather than `buckets`. Libregraph extension not present in MS Graph. 
 type MetricDefinition struct {
 	// The reducer applied to the field values of all matches. Required.  `avg` is not a simple reducer (averages of averages are not averages): the backend carries `(sum, count)` internally and emits only the final value on the outermost merge. 
 	Kind string `json:"kind"`

@@ -19,16 +19,17 @@ import (
 // checks if the AggregationOption type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AggregationOption{}
 
-// AggregationOption Specifies an aggregation that should be computed and returned alongside search results. Follows the [MS Graph aggregationOption](https://learn.microsoft.com/en-us/graph/api/resources/aggregationoption) resource type.  For string fields, terms aggregations return the distinct values and their counts. For numeric and date fields, range aggregations can be defined using the `ranges` property of `bucketDefinition`. 
+// AggregationOption Specifies an aggregation that should be computed and returned alongside search results. Follows the [MS Graph aggregationOption](https://learn.microsoft.com/en-us/graph/api/resources/aggregationoption) resource type.  For string fields, terms aggregations return the distinct values and their counts. For numeric and date fields, range aggregations can be defined using the `ranges` property of `bucketDefinition`.  At most one of `bucketDefinition`, `@libre.graph.metricDefinition` and `@libre.graph.geohashDefinition` may be set; requests specifying more than one are rejected with `invalidRequest`. 
 type AggregationOption struct {
 	// Specifies the field in the schema of the specified entity type that the aggregation should be computed on. Required.  Examples: `audio.artist`, `audio.genre`, `audio.year`, `mimeType`. 
 	Field string `json:"field"`
-	// The number of `searchBucket` resources to be returned. This is optional and only applies to terms aggregations. Combined with `bucketDefinition.sortBy` and `bucketDefinition.isDescending` to produce the top N results by count or key. When not specified, all buckets are returned. 
+	// The number of `searchBucket` resources to be returned. This is optional and only applies to terms and geohash aggregations. For terms aggregations it combines with `bucketDefinition.sortBy` and `bucketDefinition.isDescending` to produce the top N results by count or key; for geohash aggregations it limits the buckets to the top N cells by count. When not specified, all buckets are returned. 
 	Size *int32 `json:"size,omitempty"`
 	BucketDefinition *BucketDefinition `json:"bucketDefinition,omitempty"`
 	// Nested aggregations computed within each bucket of this aggregation. Libregraph extension not present in MS Graph.  Backends that don't support native composite aggregations (e.g. bleve) emulate them by walking the matched result set; OpenSearch translates them to native composite aggregations. 
 	LibreGraphSubAggregations []AggregationOption `json:"@libre.graph.subAggregations,omitempty"`
 	LibreGraphMetricDefinition *MetricDefinition `json:"@libre.graph.metricDefinition,omitempty"`
+	LibreGraphGeohashDefinition *GeohashDefinition `json:"@libre.graph.geohashDefinition,omitempty"`
 }
 
 type _AggregationOption AggregationOption
@@ -203,6 +204,38 @@ func (o *AggregationOption) SetLibreGraphMetricDefinition(v MetricDefinition) {
 	o.LibreGraphMetricDefinition = &v
 }
 
+// GetLibreGraphGeohashDefinition returns the LibreGraphGeohashDefinition field value if set, zero value otherwise.
+func (o *AggregationOption) GetLibreGraphGeohashDefinition() GeohashDefinition {
+	if o == nil || IsNil(o.LibreGraphGeohashDefinition) {
+		var ret GeohashDefinition
+		return ret
+	}
+	return *o.LibreGraphGeohashDefinition
+}
+
+// GetLibreGraphGeohashDefinitionOk returns a tuple with the LibreGraphGeohashDefinition field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AggregationOption) GetLibreGraphGeohashDefinitionOk() (*GeohashDefinition, bool) {
+	if o == nil || IsNil(o.LibreGraphGeohashDefinition) {
+		return nil, false
+	}
+	return o.LibreGraphGeohashDefinition, true
+}
+
+// HasLibreGraphGeohashDefinition returns a boolean if a field has been set.
+func (o *AggregationOption) HasLibreGraphGeohashDefinition() bool {
+	if o != nil && !IsNil(o.LibreGraphGeohashDefinition) {
+		return true
+	}
+
+	return false
+}
+
+// SetLibreGraphGeohashDefinition gets a reference to the given GeohashDefinition and assigns it to the LibreGraphGeohashDefinition field.
+func (o *AggregationOption) SetLibreGraphGeohashDefinition(v GeohashDefinition) {
+	o.LibreGraphGeohashDefinition = &v
+}
+
 func (o AggregationOption) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -225,6 +258,9 @@ func (o AggregationOption) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LibreGraphMetricDefinition) {
 		toSerialize["@libre.graph.metricDefinition"] = o.LibreGraphMetricDefinition
+	}
+	if !IsNil(o.LibreGraphGeohashDefinition) {
+		toSerialize["@libre.graph.geohashDefinition"] = o.LibreGraphGeohashDefinition
 	}
 	return toSerialize, nil
 }

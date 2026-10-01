@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Field** | Pointer to **string** | Defines the field in the request on which the aggregation was computed.  | [optional] 
-**Buckets** | Pointer to [**[]SearchBucket**](SearchBucket.md) | Defines the computed buckets for this aggregation. Buckets are sorted according to the &#x60;sortBy&#x60; and &#x60;isDescending&#x60; specified in the &#x60;bucketDefinition&#x60; of the corresponding &#x60;aggregationOption&#x60;.  | [optional] 
+**Buckets** | Pointer to [**[]SearchBucket**](SearchBucket.md) | Defines the computed buckets for this aggregation. For bucket aggregations they are sorted according to the &#x60;sortBy&#x60; and &#x60;isDescending&#x60; specified in the &#x60;bucketDefinition&#x60; of the corresponding &#x60;aggregationOption&#x60;; for geohash aggregations they are ordered by &#x60;count&#x60;, descending.  | [optional] 
 **LibreGraphMetric** | Pointer to [**SearchMetric**](SearchMetric.md) |  | [optional] 
 
 ## Methods

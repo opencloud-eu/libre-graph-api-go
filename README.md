@@ -229,6 +229,7 @@ Class | Method | HTTP request | Description
  - [Folder](docs/Folder.md)
  - [FolderView](docs/FolderView.md)
  - [GeoCoordinates](docs/GeoCoordinates.md)
+ - [GeohashDefinition](docs/GeohashDefinition.md)
  - [Group](docs/Group.md)
  - [GuestLinkError](docs/GuestLinkError.md)
  - [GuestLinkRedeemRequest](docs/GuestLinkRedeemRequest.md)
