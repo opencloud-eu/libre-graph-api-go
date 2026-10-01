@@ -95,6 +95,8 @@ type APIClient struct {
 
 	RoleManagementApi *RoleManagementApiService
 
+	SearchApi *SearchApiService
+
 	TagsApi *TagsApiService
 
 	UserApi *UserApiService
@@ -147,6 +149,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.MePhotoApi = (*MePhotoApiService)(&c.common)
 	c.MeUserApi = (*MeUserApiService)(&c.common)
 	c.RoleManagementApi = (*RoleManagementApiService)(&c.common)
+	c.SearchApi = (*SearchApiService)(&c.common)
 	c.TagsApi = (*TagsApiService)(&c.common)
 	c.UserApi = (*UserApiService)(&c.common)
 	c.UserAppRoleAssignmentApi = (*UserAppRoleAssignmentApiService)(&c.common)
