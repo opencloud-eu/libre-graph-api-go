@@ -75,6 +75,8 @@ type APIClient struct {
 
 	GroupsApi *GroupsApiService
 
+	GuestLinksApi *GuestLinksApiService
+
 	InvitationsApi *InvitationsApiService
 
 	MeChangepasswordApi *MeChangepasswordApiService
@@ -135,6 +137,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.EducationUserApi = (*EducationUserApiService)(&c.common)
 	c.GroupApi = (*GroupApiService)(&c.common)
 	c.GroupsApi = (*GroupsApiService)(&c.common)
+	c.GuestLinksApi = (*GuestLinksApiService)(&c.common)
 	c.InvitationsApi = (*InvitationsApiService)(&c.common)
 	c.MeChangepasswordApi = (*MeChangepasswordApiService)(&c.common)
 	c.MeDriveApi = (*MeDriveApiService)(&c.common)

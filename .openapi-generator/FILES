@@ -15,6 +15,7 @@ api_education_school.go
 api_education_user.go
 api_group.go
 api_groups.go
+api_guest_links.go
 api_invitations.go
 api_me_changepassword.go
 api_me_drive.go
@@ -93,6 +94,10 @@ docs/GeoCoordinates.md
 docs/Group.md
 docs/GroupApi.md
 docs/GroupsApi.md
+docs/GuestLinkError.md
+docs/GuestLinkRedeemRequest.md
+docs/GuestLinkRedeemResponse.md
+docs/GuestLinksApi.md
 docs/Hashes.md
 docs/Identity.md
 docs/IdentitySet.md
@@ -201,6 +206,9 @@ model_folder.go
 model_folder_view.go
 model_geo_coordinates.go
 model_group.go
+model_guest_link_error.go
+model_guest_link_redeem_request.go
+model_guest_link_redeem_response.go
 model_hashes.go
 model_identity.go
 model_identity_set.go
@@ -257,6 +265,7 @@ test/api_education_school_test.go
 test/api_education_user_test.go
 test/api_group_test.go
 test/api_groups_test.go
+test/api_guest_links_test.go
 test/api_invitations_test.go
 test/api_me_changepassword_test.go
 test/api_me_drive_root_children_test.go
