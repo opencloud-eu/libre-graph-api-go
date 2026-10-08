@@ -1,4 +1,4 @@
-# GuestLinkRedeemRequest
+# GuestLinkVerifyTokenRequest
 
 ## Properties
 
@@ -8,39 +8,39 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewGuestLinkRedeemRequest
+### NewGuestLinkVerifyTokenRequest
 
-`func NewGuestLinkRedeemRequest(token string, ) *GuestLinkRedeemRequest`
+`func NewGuestLinkVerifyTokenRequest(token string, ) *GuestLinkVerifyTokenRequest`
 
-NewGuestLinkRedeemRequest instantiates a new GuestLinkRedeemRequest object
+NewGuestLinkVerifyTokenRequest instantiates a new GuestLinkVerifyTokenRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGuestLinkRedeemRequestWithDefaults
+### NewGuestLinkVerifyTokenRequestWithDefaults
 
-`func NewGuestLinkRedeemRequestWithDefaults() *GuestLinkRedeemRequest`
+`func NewGuestLinkVerifyTokenRequestWithDefaults() *GuestLinkVerifyTokenRequest`
 
-NewGuestLinkRedeemRequestWithDefaults instantiates a new GuestLinkRedeemRequest object
+NewGuestLinkVerifyTokenRequestWithDefaults instantiates a new GuestLinkVerifyTokenRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetToken
 
-`func (o *GuestLinkRedeemRequest) GetToken() string`
+`func (o *GuestLinkVerifyTokenRequest) GetToken() string`
 
 GetToken returns the Token field if non-nil, zero value otherwise.
 
 ### GetTokenOk
 
-`func (o *GuestLinkRedeemRequest) GetTokenOk() (*string, bool)`
+`func (o *GuestLinkVerifyTokenRequest) GetTokenOk() (*string, bool)`
 
 GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetToken
 
-`func (o *GuestLinkRedeemRequest) SetToken(v string)`
+`func (o *GuestLinkVerifyTokenRequest) SetToken(v string)`
 
 SetToken sets Token field to given value.
 

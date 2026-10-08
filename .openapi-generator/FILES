@@ -100,8 +100,10 @@ docs/Group.md
 docs/GroupApi.md
 docs/GroupsApi.md
 docs/GuestLinkError.md
-docs/GuestLinkRedeemRequest.md
-docs/GuestLinkRedeemResponse.md
+docs/GuestLinkRenewRequest.md
+docs/GuestLinkSessionResponse.md
+docs/GuestLinkVerifyPinRequest.md
+docs/GuestLinkVerifyTokenRequest.md
 docs/GuestLinksApi.md
 docs/Hashes.md
 docs/Identity.md
@@ -229,8 +231,10 @@ model_geo_coordinates.go
 model_geohash_definition.go
 model_group.go
 model_guest_link_error.go
-model_guest_link_redeem_request.go
-model_guest_link_redeem_response.go
+model_guest_link_renew_request.go
+model_guest_link_session_response.go
+model_guest_link_verify_pin_request.go
+model_guest_link_verify_token_request.go
 model_hashes.go
 model_identity.go
 model_identity_set.go

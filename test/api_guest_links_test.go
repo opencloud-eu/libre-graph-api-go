@@ -22,11 +22,34 @@ func Test_libregraph_GuestLinksApiService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test GuestLinksApiService RedeemGuestLink", func(t *testing.T) {
+	t.Run("Test GuestLinksApiService RenewGuestLink", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.GuestLinksApi.RedeemGuestLink(context.Background()).Execute()
+		httpRes, err := apiClient.GuestLinksApi.RenewGuestLink(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test GuestLinksApiService VerifyGuestLinkPin", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.GuestLinksApi.VerifyGuestLinkPin(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test GuestLinksApiService VerifyGuestLinkToken", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.GuestLinksApi.VerifyGuestLinkToken(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
