@@ -5,12 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PermissionId** | **string** | Identifier of the share (permission) the guest was invited to. | 
+**ExpirationDateTime** | **time.Time** | The date and time when the guest session expires, in UTC. After that the guest has to renew the guest link. | 
 
 ## Methods
 
 ### NewGuestLinkSessionResponse
 
-`func NewGuestLinkSessionResponse(permissionId string, ) *GuestLinkSessionResponse`
+`func NewGuestLinkSessionResponse(permissionId string, expirationDateTime time.Time, ) *GuestLinkSessionResponse`
 
 NewGuestLinkSessionResponse instantiates a new GuestLinkSessionResponse object
 This constructor will assign default values to properties that have it defined,
@@ -43,6 +44,26 @@ and a boolean to check if the value has been set.
 `func (o *GuestLinkSessionResponse) SetPermissionId(v string)`
 
 SetPermissionId sets PermissionId field to given value.
+
+
+### GetExpirationDateTime
+
+`func (o *GuestLinkSessionResponse) GetExpirationDateTime() time.Time`
+
+GetExpirationDateTime returns the ExpirationDateTime field if non-nil, zero value otherwise.
+
+### GetExpirationDateTimeOk
+
+`func (o *GuestLinkSessionResponse) GetExpirationDateTimeOk() (*time.Time, bool)`
+
+GetExpirationDateTimeOk returns a tuple with the ExpirationDateTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpirationDateTime
+
+`func (o *GuestLinkSessionResponse) SetExpirationDateTime(v time.Time)`
+
+SetExpirationDateTime sets ExpirationDateTime field to given value.
 
 
 
