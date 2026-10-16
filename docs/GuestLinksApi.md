@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ## VerifyGuestLinkPin
 
-> GuestLinkSessionResponse VerifyGuestLinkPin(ctx).GuestLinkVerifyPinRequest(guestLinkVerifyPinRequest).Execute()
+> GuestLinkSessionResponse VerifyGuestLinkPin(ctx).HostOcGuestNonce(hostOcGuestNonce).GuestLinkVerifyPinRequest(guestLinkVerifyPinRequest).Execute()
 
 Verify a guest link PIN
 
@@ -95,11 +95,12 @@ import (
 )
 
 func main() {
+	hostOcGuestNonce := "hostOcGuestNonce_example" // string | Per-share nonce cookie set by the renew endpoint (`__Host-oc_guest_nonce_<share-hash>`), binding the PIN to the browser that renewed the link.
 	guestLinkVerifyPinRequest := *openapiclient.NewGuestLinkVerifyPinRequest("Pin_example", "PermissionId_example") // GuestLinkVerifyPinRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GuestLinksApi.VerifyGuestLinkPin(context.Background()).GuestLinkVerifyPinRequest(guestLinkVerifyPinRequest).Execute()
+	resp, r, err := apiClient.GuestLinksApi.VerifyGuestLinkPin(context.Background()).HostOcGuestNonce(hostOcGuestNonce).GuestLinkVerifyPinRequest(guestLinkVerifyPinRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `GuestLinksApi.VerifyGuestLinkPin``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,6 +121,7 @@ Other parameters are passed through a pointer to a apiVerifyGuestLinkPinRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **hostOcGuestNonce** | **string** | Per-share nonce cookie set by the renew endpoint (&#x60;__Host-oc_guest_nonce_&lt;share-hash&gt;&#x60;), binding the PIN to the browser that renewed the link. | 
  **guestLinkVerifyPinRequest** | [**GuestLinkVerifyPinRequest**](GuestLinkVerifyPinRequest.md) |  | 
 
 ### Return type

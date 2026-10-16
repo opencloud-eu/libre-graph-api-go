@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ErrorType** | **string** | Machine-readable error identifier. | 
 **Message** | **string** | Human-readable error message. | 
 **PermissionId** | **string** | Permission (share) identifier related to the error, when known. | 
+**RetryAfter** | Pointer to **int32** | Number of seconds the client should wait before retrying. Present on rate-limited (429) responses and mirrored in the Retry-After response header. | [optional] 
 
 ## Methods
 
@@ -86,6 +87,31 @@ and a boolean to check if the value has been set.
 
 SetPermissionId sets PermissionId field to given value.
 
+
+### GetRetryAfter
+
+`func (o *GuestLinkError) GetRetryAfter() int32`
+
+GetRetryAfter returns the RetryAfter field if non-nil, zero value otherwise.
+
+### GetRetryAfterOk
+
+`func (o *GuestLinkError) GetRetryAfterOk() (*int32, bool)`
+
+GetRetryAfterOk returns a tuple with the RetryAfter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRetryAfter
+
+`func (o *GuestLinkError) SetRetryAfter(v int32)`
+
+SetRetryAfter sets RetryAfter field to given value.
+
+### HasRetryAfter
+
+`func (o *GuestLinkError) HasRetryAfter() bool`
+
+HasRetryAfter returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
