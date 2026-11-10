@@ -22,6 +22,17 @@ func Test_libregraph_GuestLinksApiService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test GuestLinksApiService LogoutGuestLink", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.GuestLinksApi.LogoutGuestLink(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test GuestLinksApiService RenewGuestLink", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

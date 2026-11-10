@@ -4,10 +4,70 @@ All URIs are relative to *https://localhost:9200/graph*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**LogoutGuestLink**](GuestLinksApi.md#LogoutGuestLink) | **Post** /v1beta1/extensions/org.libregraph/guestLinks/logout | Log out of a guest session
 [**RenewGuestLink**](GuestLinksApi.md#RenewGuestLink) | **Post** /v1beta1/extensions/org.libregraph/guestLinks/renew | Renew a guest link
 [**VerifyGuestLinkPin**](GuestLinksApi.md#VerifyGuestLinkPin) | **Post** /v1beta1/extensions/org.libregraph/guestLinks/verify/pin | Verify a guest link PIN
 [**VerifyGuestLinkToken**](GuestLinksApi.md#VerifyGuestLinkToken) | **Post** /v1beta1/extensions/org.libregraph/guestLinks/verify/token | Verify a guest link token
 
+
+
+## LogoutGuestLink
+
+> LogoutGuestLink(ctx).Execute()
+
+Log out of a guest session
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/opencloud-eu/libre-graph-api-go"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.GuestLinksApi.LogoutGuestLink(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GuestLinksApi.LogoutGuestLink``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLogoutGuestLinkRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[openId](../README.md#openId), [basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## RenewGuestLink

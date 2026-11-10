@@ -138,6 +138,7 @@ Class | Method | HTTP request | Description
 *GroupApi* | [**UpdateGroup**](docs/GroupApi.md#updategroup) | **Patch** /v1.0/groups/{group-id} | Update entity in groups
 *GroupsApi* | [**CreateGroup**](docs/GroupsApi.md#creategroup) | **Post** /v1.0/groups | Add new entity to groups
 *GroupsApi* | [**ListGroups**](docs/GroupsApi.md#listgroups) | **Get** /v1.0/groups | Get entities from groups
+*GuestLinksApi* | [**LogoutGuestLink**](docs/GuestLinksApi.md#logoutguestlink) | **Post** /v1beta1/extensions/org.libregraph/guestLinks/logout | Log out of a guest session
 *GuestLinksApi* | [**RenewGuestLink**](docs/GuestLinksApi.md#renewguestlink) | **Post** /v1beta1/extensions/org.libregraph/guestLinks/renew | Renew a guest link
 *GuestLinksApi* | [**VerifyGuestLinkPin**](docs/GuestLinksApi.md#verifyguestlinkpin) | **Post** /v1beta1/extensions/org.libregraph/guestLinks/verify/pin | Verify a guest link PIN
 *GuestLinksApi* | [**VerifyGuestLinkToken**](docs/GuestLinksApi.md#verifyguestlinktoken) | **Post** /v1beta1/extensions/org.libregraph/guestLinks/verify/token | Verify a guest link token
