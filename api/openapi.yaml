@@ -902,6 +902,199 @@ paths:
       tags:
       - drives.GetDrives
       x-ms-docs-operation-type: operation
+    post:
+      operationId: CreateDriveBeta
+      requestBody:
+        content:
+          application/json:
+            examples:
+              multiple values:
+                value:
+                  name: Mars
+                  quota:
+                    total: 1000000000
+                  description: Team space mars project
+              minimal:
+                value:
+                  name: Venus
+            schema:
+              $ref: "#/components/schemas/drive"
+        description: New space property values
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/drive"
+          description: Created
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/odata.error"
+          description: error
+      summary: "Alias for creating a drive with '/v1.0/drives', but the new drive\
+        \ is returned in the v1beta1 format, with grantedToV2 and unified role IDs\
+        \ in its permissions"
+      tags:
+      - drives
+      x-ms-docs-operation-type: operation
+  /v1beta1/drives/{drive-id}:
+    delete:
+      operationId: DeleteDriveBeta
+      parameters:
+      - description: "key: id of drive"
+        explode: false
+        in: path
+        name: drive-id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-ms-docs-key-type: drive
+      - description: ETag
+        explode: false
+        in: header
+        name: If-Match
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: Success
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/odata.error"
+          description: error
+      summary: "Alias for deleting a drive with '/v1.0/drives/{drive-id}'"
+      tags:
+      - drives
+      x-ms-docs-operation-type: operation
+    get:
+      operationId: GetDriveBeta
+      parameters:
+      - description: "key: id of drive"
+        explode: false
+        in: path
+        name: drive-id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-ms-docs-key-type: drive
+      - description: Expand related entities
+        examples:
+          expand drive permissions:
+            value: root($expand=permissions)
+        explode: true
+        in: query
+        name: $expand
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Select properties to be returned. By default all properties are
+          returned.
+        explode: false
+        in: query
+        name: $select
+        required: false
+        schema:
+          items:
+            enum:
+            - '@libre.graph.hasTrashedItems'
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/drive"
+          description: Retrieved drive
+          links:
+            root:
+              operationId: GetRoot
+              parameters:
+                drive-id: $request.path.drive-id
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/odata.error"
+          description: error
+      summary: "Alias for '/v1.0/drives/{drive-id}', but the drive is returned in\
+        \ the v1beta1 format, with grantedToV2 and unified role IDs in its permissions"
+      tags:
+      - drives
+      x-ms-docs-operation-type: operation
+    patch:
+      operationId: UpdateDriveBeta
+      parameters:
+      - description: "key: id of drive"
+        explode: false
+        in: path
+        name: drive-id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-ms-docs-key-type: drive
+      requestBody:
+        content:
+          application/json:
+            examples:
+              change quota:
+                value:
+                  quota:
+                    total: 1000000000
+              change name:
+                value:
+                  name: Physics
+              change description:
+                value:
+                  description: Marketing team collaboration area
+              change drive image:
+                value:
+                  special:
+                    id: 408f26e3-d6d8-4aa4-bd5c-3fd6f5032b51$aba2bafc-e1a0-421e-a37a-9acf5f655f83!14fd3432-e8d9-42a7-9446-2e3fd621afca
+                    specialFolder:
+                      name: image
+              change drive readme:
+                value:
+                  special:
+                    id: 408f26e3-d6d8-4aa4-bd5c-3fd6f5032b51$aba2bafc-e1a0-421e-a37a-9acf5f655f83!14fd3432-e8d9-42a7-9446-2e3fd621afca
+                    specialFolder:
+                      name: readme
+            schema:
+              $ref: "#/components/schemas/driveUpdate"
+        description: New space values
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/drive"
+          description: Success
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/odata.error"
+          description: error
+      summary: "Alias for updating a drive with '/v1.0/drives/{drive-id}', but the\
+        \ updated drive is returned in the v1beta1 format, with grantedToV2 and unified\
+        \ role IDs in its permissions"
+      tags:
+      - drives
+      x-ms-docs-operation-type: operation
   /v1.0/drives:
     get:
       operationId: ListAllDrives
