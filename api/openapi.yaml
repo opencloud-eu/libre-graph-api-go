@@ -106671,7 +106671,7 @@ components:
             enum:
             - user
             - group
-            - guest
+            - email
             - link
             - remote
             type: string
