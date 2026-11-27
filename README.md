@@ -178,6 +178,7 @@ Class | Method | HTTP request | Description
 *UserAppRoleAssignmentApi* | [**UserCreateAppRoleAssignments**](docs/UserAppRoleAssignmentApi.md#usercreateapproleassignments) | **Post** /v1.0/users/{user-id}/appRoleAssignments | Grant an appRoleAssignment to a user
 *UserAppRoleAssignmentApi* | [**UserDeleteAppRoleAssignments**](docs/UserAppRoleAssignmentApi.md#userdeleteapproleassignments) | **Delete** /v1.0/users/{user-id}/appRoleAssignments/{appRoleAssignment-id} | Delete the appRoleAssignment from a user
 *UserAppRoleAssignmentApi* | [**UserListAppRoleAssignments**](docs/UserAppRoleAssignmentApi.md#userlistapproleassignments) | **Get** /v1.0/users/{user-id}/appRoleAssignments | Get appRoleAssignments from a user
+*UserDriveApi* | [**GetUserDrive**](docs/UserDriveApi.md#getuserdrive) | **Get** /v1.0/users/{user-id}/drive | Get a user&#39;s drive.
 *UserPhotoApi* | [**GetUserPhoto**](docs/UserPhotoApi.md#getuserphoto) | **Get** /v1.0/users/{user-id}/photo/$value | Get the photo of a user
 *UserTeamworkApi* | [**SendActivityNotification**](docs/UserTeamworkApi.md#sendactivitynotification) | **Post** /v1.0/users/{user-id}/teamwork/sendActivityNotification | Send an activity notification to a user
 *UsersApi* | [**CreateUser**](docs/UsersApi.md#createuser) | **Post** /v1.0/users | Add new entity to users

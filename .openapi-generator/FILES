@@ -29,6 +29,7 @@ api_search.go
 api_tags.go
 api_user.go
 api_user_app_role_assignment.go
+api_user_drive.go
 api_user_photo.go
 api_user_teamwork.go
 api_users.go
@@ -170,6 +171,7 @@ docs/UnifiedRolePermission.md
 docs/User.md
 docs/UserApi.md
 docs/UserAppRoleAssignmentApi.md
+docs/UserDriveApi.md
 docs/UserPhotoApi.md
 docs/UserTeamworkApi.md
 docs/UserUpdate.md
@@ -316,6 +318,7 @@ test/api_role_management_test.go
 test/api_search_test.go
 test/api_tags_test.go
 test/api_user_app_role_assignment_test.go
+test/api_user_drive_test.go
 test/api_user_photo_test.go
 test/api_user_teamwork_test.go
 test/api_user_test.go
